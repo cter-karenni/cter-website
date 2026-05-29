@@ -8,11 +8,11 @@
   --blue:     #2E5A9C;
   --light:    #D6E4F0;
   --white:    #FFFFFF;
-  --offwhite: #F4F6F9;
-  --text:     #1a2a3a;
-  --muted:    #6b7f99;
+  --offwhite: #F4F6F8;
+  --text:     #1a1714;
+  --muted:    #6b7068;
   --accent:   #C8A84B;
-  --dark:     #0d1f3c;
+  --dark:     #1a1714;
 }
 
 *, *::before, *::after {
@@ -57,7 +57,7 @@ nav {
   justify-content: space-between;
   padding: 0 5vw;
   transition: background 0.3s, box-shadow 0.3s;
-  background: transparent;
+  background: var(--dark);
 }
 
 nav.scrolled {
@@ -298,7 +298,7 @@ nav.scrolled {
   position: absolute;
   bottom: 0;
   left: 0; right: 0;
-  background: rgba(13, 31, 60, 0.85);
+  background: var(--dark);
   backdrop-filter: blur(8px);
   display: flex;
   justify-content: center;
@@ -419,8 +419,8 @@ section {
 }
 
 .who-visual img {
-  width: 100px;
-  height: 100px;
+  width: 300px;
+  height: 300px;
   object-fit: contain;
 }
 
