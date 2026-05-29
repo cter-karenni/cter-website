@@ -5,7 +5,7 @@
 
 :root {
   --navy:     #1F3864;
-  --blue:     #2E5A9C;
+  --blue:     #000071;
   --light:    #D6E4F0;
   --white:    #FFFFFF;
   --offwhite: #F4F6F8;
@@ -444,7 +444,7 @@ section {
    CRISIS STATS
 ════════════════════════════════ */
 #crisis-glance {
-  background: var(--navy);
+  background: var(--dark);
 }
 
 #crisis-glance .section-title { color: var(--white); }
