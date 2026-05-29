@@ -2,7 +2,7 @@
    VARIABLES & RESET
 ════════════════════════════════ */
 @import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600&family=Barlow+Condensed:wght@600;700;800&display=swap');
-
+@import url('https://fonts.googleapis.com/css2?family=Padauk:wght@400;700&display=swap');
 :root {
   --navy:     #1F3864;
   --blue:     #000071;
@@ -163,6 +163,27 @@ nav.scrolled {
 .mobile-menu a:hover { color: var(--white); }
 .mobile-menu.open { display: flex; }
 
+/* ── LANGUAGE TOGGLE ── */
+#language-toggle {
+  background: transparent;
+  border: 1.5px solid rgba(255,255,255,0.4);
+  color: rgba(255,255,255,0.85);
+  padding: 0.35rem 0.85rem;
+  border-radius: 2px;
+  font-size: 0.75rem;
+  font-weight: 600;
+  cursor: pointer;
+  letter-spacing: 0.05em;
+  transition: all 0.2s;
+  font-family: 'Inter', sans-serif;
+}
+
+#language-toggle:hover {
+  border-color: var(--white);
+  color: var(--white);
+}
+/* ── LANGUAGE TOGGLE end ── */
+
 /* ════════════════════════════════
    BUTTONS
 ════════════════════════════════ */
@@ -220,6 +241,8 @@ nav.scrolled {
   background: var(--navy);
   color: var(--white);
 }
+
+
 
 /* ════════════════════════════════
    HERO
@@ -329,6 +352,12 @@ nav.scrolled {
   text-transform: uppercase;
   letter-spacing: 0.08em;
   margin-top: 0.35rem;
+}
+
+/* ── BURMESE FONT ── */
+.lang-my {
+  font-family: 'Padauk', sans-serif;
+  line-height: 2;
 }
 
 /* ════════════════════════════════
@@ -713,4 +742,142 @@ footer {
   .stats-grid { grid-template-columns: 1fr; }
   .work-grid  { grid-template-columns: 1fr; }
   .hero-btns  { flex-direction: column; }
+}
+
+/* ════════════════════════════════
+   BRIEFERS PAGE
+════════════════════════════════ */
+#briefers-hero {
+  background: var(--dark);
+  padding: 8rem 5vw 4rem;
+  text-align: center;
+}
+
+#briefers-hero .section-tag { color: var(--accent); }
+
+#briefers-hero h1 {
+  font-size: clamp(2.5rem, 5vw, 4rem);
+  color: var(--white);
+  font-weight: 800;
+  text-transform: uppercase;
+  margin-bottom: 1rem;
+}
+
+#briefers-hero p {
+  color: rgba(255,255,255,0.6);
+  font-size: 1rem;
+  max-width: 500px;
+  margin: 0 auto;
+  font-weight: 300;
+}
+
+/* filter bar */
+.filter-bar {
+  display: flex;
+  justify-content: center;
+  gap: 0.75rem;
+  margin-top: 2rem;
+  flex-wrap: wrap;
+}
+
+.filter-btn {
+  background: transparent;
+  border: 1.5px solid rgba(255,255,255,0.2);
+  color: rgba(255,255,255,0.6);
+  padding: 0.5rem 1.25rem;
+  border-radius: 2px;
+  font-size: 0.8rem;
+  font-weight: 600;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  cursor: pointer;
+  transition: all 0.2s;
+  font-family: 'Inter', sans-serif;
+}
+
+.filter-btn:hover,
+.filter-btn.active {
+  border-color: var(--accent);
+  color: var(--accent);
+}
+
+/* briefers archive grid */
+#briefers-archive {
+  background: var(--offwhite);
+  padding: 5rem 5vw;
+}
+
+.briefers-archive-grid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 1.5rem;
+  margin-top: 2rem;
+}
+
+.briefer-archive-card {
+  background: var(--white);
+  border-radius: 3px;
+  overflow: hidden;
+  transition: all 0.25s;
+  border: 1px solid var(--light);
+}
+
+.briefer-archive-card:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 12px 32px rgba(31,56,100,0.1);
+}
+
+.briefer-archive-card.hidden {
+  display: none;
+}
+
+.briefer-cover {
+  width: 100%;
+  aspect-ratio: 3/4;
+  object-fit: cover;
+  object-position: top;
+  display: block;
+}
+
+.briefer-card-body {
+  padding: 1rem 1.25rem 1.25rem;
+}
+
+.briefer-card-date {
+  font-size: 0.7rem;
+  font-weight: 600;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  color: var(--accent);
+  margin-bottom: 0.4rem;
+}
+
+.briefer-card-title {
+  font-size: 1rem;
+  font-weight: 700;
+  color: var(--navy);
+  text-transform: uppercase;
+  margin-bottom: 0.5rem;
+  font-family: 'Barlow Condensed', sans-serif;
+}
+
+.briefer-card-body p {
+  font-size: 0.8rem;
+  color: var(--muted);
+  line-height: 1.6;
+  margin-bottom: 1rem;
+  font-weight: 300;
+}
+
+/* responsive */
+@media (max-width: 1024px) {
+  .briefers-archive-grid { grid-template-columns: repeat(3, 1fr); }
+}
+
+@media (max-width: 768px) {
+  .briefers-archive-grid { grid-template-columns: repeat(2, 1fr); }
+}
+
+@media (max-width: 480px) {
+  .briefers-archive-grid { grid-template-columns: 1fr; }
 }
