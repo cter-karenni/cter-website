@@ -1,0 +1,577 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>May 2026 Briefer – CTER Karenni</title>
+  <link rel="stylesheet" href="../../css/style.css" />
+  <link href="https://fonts.googleapis.com/css2?family=Courier+Prime:ital,wght@0,400;0,700;1,400&family=Tinos:ital,wght@0,400;0,700;1,400;1,700&family=League+Spartan:wght@400;600;700;800&display=swap" rel="stylesheet"/>
+  <style>
+    /* ── BRIEFER PAGE RESET ── */
+    .briefer-page * {
+      box-sizing: border-box;
+    }
+
+    .briefer-page {
+      background: linear-gradient(135deg, #f0f1ec 0%, #ffffff 50%, #f0f1ec 100%);
+      font-family: 'Tinos', serif;
+      color: #1a1714;
+      max-width: 900px;
+      margin: 80px auto 0;
+      padding: 2rem;
+    }
+
+    /* ── BRIEFER HEADER ── */
+    .briefer-header {
+      display: grid;
+      grid-template-columns: auto 1fr;
+      gap: 1rem;
+      align-items: center;
+      margin-bottom: 0.5rem;
+    }
+
+    .briefer-header-logo {
+      width: 160px;
+      height: 160px;
+      object-fit: contain;
+    }
+
+    .briefer-header-text h1 {
+      font-family: 'Courier Prime', monospace;
+      font-size: 38px;
+      color: #1F3864;
+      font-weight: 700;
+      line-height: 1.1;
+      margin-bottom: 0.25rem;
+    }
+
+    .briefer-header-text h2 {
+      font-family: 'Tinos', serif;
+      font-size: 1.5rem;
+      color: #2E5A9C;
+      font-weight: bold;
+      font-style: italic;
+      margin-left: 45px;
+    }
+
+    /* ── META BAR ── */
+    .briefer-meta-bar {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      border-top: 2px solid #1F3864;
+      border-bottom: 1px solid #1F3864;
+      padding: 0.4rem 0;
+      margin-bottom: 1rem;
+      font-family: 'Tinos', serif;
+      font-size: 18px;
+      color: #1a1714;
+      font-weight: bold;
+    }
+
+    #hero_photo_container{
+       display: grid;
+       place-content: center;
+        
+    }
+
+    /* ── HERO PHOTO ── */
+    .briefer-hero-photo {
+      width: 100%;
+      max-height: 420px;
+      object-fit: cover;
+      object-position: center;
+      display: block;
+      margin-bottom: 0.4rem;
+      position: relative;
+      left: 5px;
+    }
+
+    .briefer-hero-caption {
+      font-family: 'Tinos', serif;
+      font-size: 15px;
+      font-style: italic;
+      text-align: center;
+      color: #1a1714;
+      margin-bottom: 1rem;
+      border-bottom: 1px solid #1F3864;
+      padding-bottom: 0.5rem;
+    }
+
+    /* ── TWO COLUMN LAYOUT ── */
+    .briefer-two-col {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 1.5rem;
+      margin-bottom: 1rem;
+    }
+
+    /* ── HIGHLIGHTS BOX ── */
+    .highlights-box h3 {
+      font-family: 'League Spartan', sans-serif;
+      font-size: 20px;
+      font-weight: 800;
+      color: #1F3864;
+      text-transform: uppercase;
+      letter-spacing: 0.05em;
+      margin-bottom: 0.75rem;
+      border-bottom: 2px solid #1F3864;
+      padding-bottom: 0.25rem;
+    }
+
+    .highlights-box ul {
+      list-style: disc;
+      padding-left: 1.25rem;
+    }
+
+    .highlights-box ul li {
+      font-family: 'Tinos', serif;
+      font-size: 18px;
+      line-height: 1.6;
+      margin-bottom: 0.5rem;
+      color: #1a1714;
+    }
+
+    /* ── KEY NUMBERS BOX ── */
+    .key-numbers-box {
+      width: 80%;
+      background: #919593;
+      padding: 1rem 1.25rem;
+      border-radius: 10px;
+      margin-left: 50px;
+    }
+
+    .key-numbers-box h3 {
+      font-family: 'League Spartan', sans-serif;
+      font-size: 20px;
+      font-weight: 800;
+      color: #ffffff;
+      text-transform: uppercase;
+      letter-spacing: 0.05em;
+      text-align: center;
+      margin-bottom: 0.75rem;
+      background: #1F3864;
+      padding: 0.35rem;
+      border-radius: 2px;
+    }
+
+    .key-numbers-box .since {
+      font-family: 'Tinos', serif;
+      font-size: 18px;
+      color: rgba(255,255,255,0.8);
+      margin-bottom: 0.75rem;
+      font-style: italic;
+    }
+
+    .key-numbers-box ul {
+      list-style: disc;
+      padding-left: 1.25rem;
+    }
+
+    .key-numbers-box ul li {
+      font-family: 'Tinos', serif;
+      font-size: 18px;
+      color: #ffffff;
+      line-height: 1.7;
+    }
+
+    .key-numbers-box ul li strong {
+      color: #0d3563;
+      font-weight: 700;
+    }
+
+    /* ── STORY HEADLINE ── */
+    .briefer-story-headline {
+      font-family: 'League Spartan', sans-serif;
+      font-size: 22px;
+      font-weight: 800;
+      color: #1F3864;
+      text-transform: uppercase;
+      letter-spacing: 0.03em;
+      line-height: 1.2;
+      margin-bottom: 0.75rem;
+      margin-top: 0.5rem;
+    }
+
+    /* ── ARTICLE TEXT ── */
+    .briefer-article-text {
+      font-family: 'Tinos', serif;
+      font-size: 18px;
+      line-height: 1.75;
+      text-align: justify;
+      color: #1a1714;
+    }
+
+    .briefer-article-text p {
+      margin-bottom: 5px;
+    }
+
+    /* ── PAGE DIVIDER ── */
+    .briefer-page-divider {
+      border: none;
+      border-top: 2px solid #1F3864;
+      margin: 1.5rem 0;
+    }
+
+    /* ── PAGE 2 LAYOUT ── */
+    .briefer-p2-left {
+      display: flex;
+      flex-direction: column;
+      gap: 0.5rem;
+    }
+
+    .briefer-p2-right {
+      display: flex;
+      flex-direction: column;
+      gap: 1rem;
+    }
+
+    .briefer-inline-photo {
+      width: 100%;
+      object-fit: cover;
+      display: block;
+      border-radius: 2px;
+    }
+
+    .briefer-inline-caption {
+      font-family: 'Tinos', serif;
+      font-size: 16px;
+      font-style: italic;
+      text-align: center;
+      color: #555;
+      margin-top: 0.25rem;
+    }
+
+    /* ── PAGE 3 LAYOUT ── */
+    .briefer-p3-left {
+      display: flex;
+      flex-direction: column;
+      font-size: 16px;
+    }
+
+    .briefer-p3-right {
+      display: flex;
+      flex-direction: column;
+      gap: 0.75rem;
+    }
+
+    /* ── ABOUT CTER ── */
+    .about-cter-section {
+      border-top: 2px solid #1F3864;
+      margin-top: 1.5rem;
+      padding-top: 1rem;
+    }
+
+    .about-cter-label {
+      display: inline-block;
+      border: 1.5px solid #1F3864;
+      padding: 0.2rem 0.75rem;
+      font-family: 'League Spartan', sans-serif;
+      font-size: 0.75rem;
+      font-weight: 700;
+      letter-spacing: 0.1em;
+      text-transform: uppercase;
+      color: #1F3864;
+      margin-bottom: 0.75rem;
+    }
+
+    .about-cter-section p {
+      font-family: 'Tinos', serif;
+      font-size: 0.85rem;
+      line-height: 1.7;
+      color: #1a1714;
+      margin-bottom: 0.4rem;
+    }
+
+    .about-cter-section p strong {
+      font-weight: 700;
+    }
+
+    /* ── CONTACT US ── */
+    .contact-us-section {
+      margin-top: 1rem;
+    }
+
+    .contact-us-bar {
+      background: #2E5A9C;
+      display: flex;
+      align-items: center;
+      gap: 0.75rem;
+      padding: 0.5rem 1rem;
+      border-radius: 20px;
+      margin-bottom: 0.75rem;
+      width: fit-content;
+    }
+
+    .contact-us-bar span {
+      font-family: 'Courier Prime', monospace;
+      font-size: 1rem;
+      font-weight: 700;
+      color: #ffffff;
+    }
+
+    .contact-item {
+      display: flex;
+      align-items: center;
+      gap: 0.75rem;
+      font-family: 'Tinos', serif;
+      font-size: 0.85rem;
+      margin-bottom: 0.4rem;
+      color: #1a1714;
+    }
+
+    .contact-item strong {
+      min-width: 70px;
+    }
+
+    .contact-item a {
+      color: #2E5A9C;
+      text-decoration: none;
+    }
+
+    /* ── BACK LINK ── */
+    .briefer-back-link {
+      display: inline-flex;
+      align-items: center;
+      gap: 0.5rem;
+      font-family: 'League Spartan', sans-serif;
+      font-size: 0.75rem;
+      font-weight: 600;
+      letter-spacing: 0.08em;
+      text-transform: uppercase;
+      color: #6b7f99;
+      margin-bottom: 1.5rem;
+      transition: color 0.2s;
+      text-decoration: none;
+    }
+
+    .briefer-back-link:hover { color: #1F3864; }
+
+    /* ── RESPONSIVE ── */
+    @media (max-width: 768px) {
+      .briefer-page {
+        padding: 1rem;
+        margin-top: 68px;
+      }
+
+      .briefer-header {
+        grid-template-columns: 60px 1fr;
+        gap: 0.75rem;
+      }
+
+      .briefer-header-logo { width: 60px; height: 60px; }
+
+      .briefer-header-text h1 { font-size: 1.3rem; }
+
+      .briefer-meta-bar {
+        flex-direction: column;
+        gap: 0.25rem;
+        text-align: center;
+        font-size: 0.75rem;
+      }
+
+      .briefer-two-col {
+        grid-template-columns: 1fr;
+        gap: 1rem;
+      }
+
+      .briefer-hero-photo { max-height: 250px; }
+
+      .briefer-story-headline { font-size: 0.95rem; }
+
+      .briefer-article-text { font-size: 0.85rem; }
+    }
+    
+  </style>
+</head>
+<body>
+
+  <!-- ── NAVBAR ── -->
+  <nav id="navbar">
+    <div class="nav-logo">
+      <img src="../../images/cter-logo-bg-free.png" alt="CTER Logo" />
+      <span>CTER – Karenni</span>
+    </div>
+    <ul class="nav-links">
+      <li><a href="../../index.html">Home</a></li>
+      <li><a href="../../about.html">About Us</a></li>
+      <li><a href="../../our-work.html">Our Work</a></li>
+      <li><a href="../../crisis.html">The Crisis</a></li>
+      <li><a href="../../briefer.html" class="active">Briefers</a></li>
+      <li><a href="../../support.html">Support Us</a></li>
+      <li><a href="../../contact.html">Contact</a></li>
+    </ul>
+    <button class="hamburger" id="hamburger">
+      <span></span>
+      <span></span>
+      <span></span>
+    </button>
+  </nav>
+
+  <!-- Mobile Menu -->
+  <div class="mobile-menu" id="mobileMenu">
+    <a href="../../index.html">Home</a>
+    <a href="../../about.html">About Us</a>
+    <a href="../../our-work.html">Our Work</a>
+    <a href="../../crisis.html">The Crisis</a>
+    <a href="../../briefer.html">Briefers</a>
+    <a href="../../support.html">Support Us</a>
+    <a href="../../contact.html">Contact</a>
+  </div>
+
+  <!-- ── BRIEFER CONTENT ── -->
+  <div class="briefer-page">
+
+    <a href="../../briefer.html" class="briefer-back-link">← Back to All Briefers</a>
+
+    <!-- ════════════════════════════
+         PAGE 1
+    ════════════════════════════ -->
+
+    <!-- HEADER -->
+    <div class="briefer-header">
+      <img src="../../images/cter-logo-bg-free.png" alt="CTER Logo" class="briefer-header-logo" />
+      <div class="briefer-header-text">
+        <h1>Humanitarian Monthly Briefer</h1>
+        <h2>Coordination Team for Emergency Relief (Karenni)</h2>
+      </div>
+    </div>
+
+    <!-- META BAR -->
+    <div class="briefer-meta-bar">
+      <span>@CTER-Karenni</span>
+      <span>www.cterkarenniinfo@gmail.com</span>
+      <span>May 1<sup>ST</sup> – 31<sup>TH</sup> 2026</span>
+    </div>
+
+    <!-- HERO PHOTO -->
+    <div id="hero_photo_container">
+        <img src="../may-2026-photos/hero.png" alt="Displaced people under tarpaulin" class="briefer-hero-photo" />
+    <p class="briefer-hero-caption">Displaced people crowd together under a single makeshift tarpaulin shelter after fleeing the military raid</p>
+    </div>
+
+    <!-- HIGHLIGHTS + KEY NUMBERS -->
+    <div class="briefer-two-col">
+      <div class="highlights-box">
+        <h3>Highlights in This Issue</h3>
+        <ul>
+          <li>Military raid displaces 1,000+ IDPs, creating an urgent need for shelter.</li>
+          <li>Escalating disease outbreaks and critical medical gaps threaten vulnerable IDPs.</li>
+          <li>Severe teacher and supply shortages, compounded by storm damage, cripple education across IDP camps.</li>
+        </ul>
+      </div>
+      <div class="key-numbers-box">
+        <h3>Key Numbers</h3>
+        <p class="since">Since February 2021,</p>
+        <ul>
+          <li><strong>1,415+</strong> armed clashes</li>
+          <li><strong>742+</strong> civilian deaths</li>
+          <li><strong>165+</strong> civilians arrested</li>
+          <li><strong>365+</strong> CRSV cases reported</li>
+        </ul>
+      </div>
+    </div>
+
+    <!-- STORY 1 HEADLINE -->
+    <h2 class="briefer-story-headline">Military Raid on IDP Camp Triggers Mass Displacement and Humanitarian Emergency</h2>
+
+    <!-- STORY 1 TWO COLUMN TEXT -->
+    <div class="briefer-two-col">
+      <div class="briefer-article-text">
+        <p>On May 8, a military raid forced IDPs in Hpruso Township's Hway Du Lar camp to flee for their lives. Leaving behind vehicles and rations, 700 residents walked for half a day to safety, with several elderly individuals injured. Armed forces occupied the site and burned down tents. Currently, up to three displaced families are crowding into single makeshift tarpaulin shelters.</p>
+      </div>
+      <div class="briefer-article-text">
+        <p>The crisis is rapidly deteriorating as military operations escalate along the Hpruso-Nan Hpa highway. Heavy weapons fire and drone strikes on civilian areas have forced nearby villages to evacuate, displacing over 1,000 people across the township. With heavy rains starting, aid workers are urgently appealing for emergency food, medicine, and roofing materials to provide life-saving shelter for newly displaced families.</p>
+      </div>
+    </div>
+
+    <hr class="briefer-page-divider" />
+
+    <!-- ════════════════════════════
+         PAGE 2
+    ════════════════════════════ -->
+
+    <div class="briefer-two-col">
+
+      <!-- LEFT COLUMN -->
+      <div class="briefer-p2-left">
+        <h2 class="briefer-story-headline">Disease Outbreaks and Lack of Care Severely Impact IDP Camps</h2>
+        <div class="briefer-article-text">
+          <p>Across Karenni State and the Shan-Karenni border, displaced populations are facing escalating health emergencies as the rainy season begins. Infectious diseases are spreading rapidly through crowded settlements; in the Saung Cherry camp, a severe diarrhea outbreak caused by contaminated water has sickened dozens of children under five. Meanwhile, the Kyea Tone camp is battling widespread fevers and respiratory illnesses among children and the elderly, with the recent tragic death of a 40-year-old man raising urgent fears of a dengue fever outbreak. Additionally, a persistent mumps outbreak continues to spread among children under 15 across camps in western Hpruso and Demoso townships, compounding the suffering of families who cannot afford basic medical costs.</p>
+          <p>These active outbreaks are being severely exacerbated by a collapsing healthcare infrastructure and logistical barriers. In western Pekhon, skyrocketing fuel prices and degraded roads are preventing pregnant women from accessing essential prenatal care, tragically resulting in miscarriages and premature births. Simultaneously, a critical, months-long shortage of routine childhood vaccines in Demoso Township has left infants highly vulnerable to preventable diseases. With displaced families increasingly unable to reach distant hospitals or afford rising medical expenses, healthcare workers are urgently appealing for immediate medical supplies, emergency interventions, and secure access to mobile clinics.</p>
+        </div>
+      </div>
+
+      <!-- RIGHT COLUMN -->
+      <div class="briefer-p2-right">
+        <img src="../may-2026-photos/health.png" alt="Storm damaged shelter" class="briefer-inline-photo" />
+        <p class="briefer-inline-caption">IDP residents assess the damage to a temporary shelter destroyed by severe storms.</p>
+        <h2 class="briefer-story-headline">Education Crisis: Shortages Cripple IDP Schools</h2>
+        <div class="briefer-article-text">
+          <p>The approaching rainy season and ongoing conflict are severely disrupting education in Karenni State IDP camps. In western Mobye, pre-monsoon storms have destroyed school buildings and residential tents, leaving families exposed. Relief efforts are hindered by broken supply routes and tarpaulin prices surging to 100,000 MMK. Simultaneously, schools in eastern Demoso face critical stationary shortages for the 2026-2027 academic year. Textbooks are worn beyond use, and essential supplies like notebooks are prohibitively expensive for displaced parents.</p>
+          <p>Adding to the crisis is a severe shortage of teaching staff. In eastern Loikaw Township, where over 40 schools operate, existing teachers are overburdened and often forced to teach multiple grades simultaneously. As camps attempt to expand curriculums to include high school science subjects, they face a critical lack of qualified instructors. Parents are urgently appealing for higher education programs within safe zones, fearing that without further opportunities, displaced youth face high risks of substance abuse or forced migration.</p>
+        </div>
+      </div>
+
+    </div>
+
+    <hr class="briefer-page-divider" />
+
+    <!-- ════════════════════════════
+         PAGE 3
+    ════════════════════════════ -->
+
+    <h2 class="briefer-story-headline" style="text-align:center;">CTER Installs Bio-Sand Filtration System to Secure Clean Water for IDPs and Students</h2>
+
+    <div class="briefer-two-col">
+
+      <!-- LEFT -->
+      <div class="briefer-p3-left">
+        <div class="briefer-article-text">
+          <p>Between May 18 and 23, 2026, CTER successfully installed a bio-sand water filtration system at the Daw Nye Khu IDP camp in Huai Pu Long, serving 442 displaced individuals and 248 students across two local schools. Working alongside community volunteers and two water specialists, CTER renovated the damaged pipeline with durable LDPE pipes and constructed a multi-stage filtration system layered with graded stones, charcoal, and sand. The upgraded system now provides safe drinking and cooking water, with an additional outlet improving sanitation at community toilets. While community members received hands-on technical training, long-term sustainability remains a concern due to monsoon flooding and limited local funds for repairs.</p>
+        </div>
+      </div>
+
+      <!-- RIGHT -->
+      <div class="briefer-p3-right">
+        <img src="../may-2026-photos/water-1.png" alt="Filtration tanks" class="briefer-inline-photo" />
+        <img src="../may-2026-photos/water-2.png" alt="Community installation" class="briefer-inline-photo" />
+        <p class="briefer-inline-caption">CTER installs a bio-sand filtration system at Daw Nye Khu IDP camp, Huai Pu Long</p>
+      </div>
+
+    </div>
+
+    <!-- ABOUT CTER -->
+    <div class="about-cter-section">
+      <div class="about-cter-label">About CTER</div>
+      <p><strong>CTER</strong> was formed in March 2021 to respond to humanitarian needs triggered by the Myanmar military coup in 2021.</p>
+      <p><strong>CTER</strong> provides humanitarian assistance, including through cross-border for IDPs throughout Karenni State.</p>
+      <p><strong>CTER</strong> partners with local CBOs to distribute food, shelter, and medicines to the IDPs.</p>
+      <p><strong>CTER</strong> engages with Karenni diasporas and conducts advocacy and fundraising for Karenni IDPs.</p>
+    </div>
+
+    <!-- CONTACT US -->
+    <div class="contact-us-section">
+      <div class="contact-us-bar">
+        <span>Contact Us</span>
+      </div>
+      <div class="contact-item">
+        <strong>Email:</strong>
+        <a href="mailto:cterkarenniinfo@gmail.com">cterkarenniinfo@gmail.com</a>
+      </div>
+      <div class="contact-item">
+        <strong>Facebook:</strong>
+        <a href="https://facebook.com/CTER-Karenni">@CTER-Karenni</a>
+      </div>
+      <div class="contact-item">
+        <strong>YouTube:</strong>
+        <a href="https://www.youtube.com/@CTERKarenni">https://www.youtube.com/@CTERKarenni</a>
+      </div>
+    </div>
+
+  </div>
+
+  <script src="../../js/main.js"></script>
+
+</body>
+</html>
