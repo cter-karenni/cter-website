@@ -23,11 +23,7 @@
       <li><a href="support.html">Support Us</a></li>
       <li><a href="contact.html">Contact</a></li>
     </ul>
-    <button class="hamburger" id="hamburger">
-      <span></span>
-      <span></span>
-      <span></span>
-    </button>
+    
   </nav>
 
   <!-- Mobile Menu -->
@@ -47,9 +43,9 @@
     <h1>Monthly Briefers</h1>
     <p>Field reports documenting the humanitarian situation in Karenni State, published monthly since May 2025.</p>
     <div class="filter-bar">
-      <button class="filter-btn active" onclick="filterBriefers('all')">All</button>
-      <button class="filter-btn" onclick="filterBriefers('2025')">2025</button>
-      <button class="filter-btn" onclick="filterBriefers('2026')">2026</button>
+        <button class="filter-btn active" onclick="filterBriefers('all', this)">All</button>
+        <button class="filter-btn" onclick="filterBriefers('2025', this)">2025</button>
+        <button class="filter-btn" onclick="filterBriefers('2026', this)">2026</button>
     </div>
   </section>
 
