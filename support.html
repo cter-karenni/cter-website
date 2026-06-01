@@ -1,0 +1,642 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Support Our Mission – CTER Karenni</title>
+  <link rel="stylesheet" href="css/style.css" />
+  <style>
+    /* ── SUPPORT PAGE ── */
+    #support-hero {
+      background: var(--dark);
+      padding: 8rem 5vw 5rem;
+      text-align: center;
+    }
+
+    #support-hero .section-tag { color: var(--accent); }
+
+    #support-hero h1 {
+      font-size: clamp(2.5rem, 5vw, 4rem);
+      color: var(--white);
+      font-weight: 800;
+      text-transform: uppercase;
+      margin-bottom: 1rem;
+    }
+
+    #support-hero p {
+      color: rgba(255,255,255,0.7);
+      font-size: 1.05rem;
+      max-width: 600px;
+      margin: 0 auto;
+      font-weight: 300;
+      line-height: 1.8;
+    }
+
+    /* ── URGENCY BANNER ── */
+    .urgency-banner {
+      background: #8B1A1A;
+      padding: 1rem 5vw;
+      text-align: center;
+    }
+
+    .urgency-banner p {
+      color: var(--white);
+      font-size: 0.9rem;
+      font-weight: 500;
+      letter-spacing: 0.03em;
+    }
+
+    .urgency-banner p span {
+      color: #FFD700;
+      font-weight: 700;
+    }
+
+    /* ── WHERE MONEY GOES ── */
+    #where-money-goes {
+      background: var(--offwhite);
+      padding: 6rem 5vw;
+    }
+
+    .funding-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 1.5rem;
+      margin-top: 3rem;
+    }
+
+    .funding-card {
+      background: var(--white);
+      border-radius: 3px;
+      padding: 2rem 1.75rem;
+      border-top: 3px solid var(--blue);
+      transition: all 0.25s;
+    }
+
+    .funding-card:hover {
+      transform: translateY(-4px);
+      box-shadow: 0 12px 32px rgba(31,56,100,0.1);
+      border-top-color: var(--accent);
+    }
+
+    .funding-icon {
+      font-size: 2.5rem;
+      margin-bottom: 1rem;
+    }
+
+    .funding-icon img {
+        width: 100%;
+        height: 250px;
+        object-fit: cover;
+        border-radius: 2px;
+        display: block;
+        margin-bottom: 1rem;
+    }
+
+
+    .funding-card h3 {
+      font-family: 'Barlow Condensed', sans-serif;
+      font-size: 1.2rem;
+      font-weight: 800;
+      color: var(--navy);
+      text-transform: uppercase;
+      margin-bottom: 0.75rem;
+    }
+
+    .funding-card p {
+      font-size: 0.9rem;
+      color: var(--muted);
+      line-height: 1.7;
+      font-weight: 300;
+      margin-bottom: 1rem;
+    }
+
+    .funding-items {
+      list-style: none;
+      display: flex;
+      flex-direction: column;
+      gap: 0.4rem;
+    }
+
+    .funding-items li {
+      font-size: 0.85rem;
+      color: var(--navy);
+      display: flex;
+      align-items: center;
+      gap: 0.5rem;
+    }
+
+    .funding-items li::before {
+      content: '→';
+      color: var(--accent);
+      font-weight: 700;
+      flex-shrink: 0;
+    }
+
+    /* ── IMPACT METRICS ── */
+    #impact-metrics {
+      background: var(--navy);
+      padding: 6rem 5vw;
+    }
+
+    #impact-metrics .section-tag { color: var(--accent); }
+    #impact-metrics .section-title { color: var(--white); }
+    #impact-metrics .section-body { color: rgba(214,228,240,0.7); }
+
+    .metrics-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 1.5rem;
+      margin-top: 3rem;
+    }
+
+    .metric-card {
+      background: rgba(255,255,255,0.05);
+      border: 1px solid rgba(255,255,255,0.1);
+      border-radius: 3px;
+      padding: 2rem 1.5rem;
+      text-align: center;
+      transition: background 0.2s;
+    }
+
+    .metric-card:hover {
+      background: rgba(255,255,255,0.08);
+    }
+
+    .metric-val {
+      font-family: 'Barlow Condensed', sans-serif;
+      font-size: 3rem;
+      font-weight: 800;
+      color: var(--accent);
+      line-height: 1;
+      margin-bottom: 0.75rem;
+    }
+
+    .metric-lbl {
+      font-size: 0.875rem;
+      color: rgba(214,228,240,0.75);
+      line-height: 1.6;
+      font-weight: 300;
+    }
+
+    .townships-list {
+      margin-top: 2.5rem;
+      background: rgba(255,255,255,0.05);
+      border: 1px solid rgba(255,255,255,0.1);
+      border-radius: 3px;
+      padding: 1.5rem 2rem;
+    }
+
+    .townships-list h4 {
+      font-family: 'Barlow Condensed', sans-serif;
+      font-size: 0.75rem;
+      font-weight: 700;
+      letter-spacing: 0.12em;
+      text-transform: uppercase;
+      color: var(--accent);
+      margin-bottom: 0.75rem;
+    }
+
+    .townships-list p {
+      font-size: 0.9rem;
+      color: rgba(214,228,240,0.7);
+      line-height: 1.7;
+      font-weight: 300;
+    }
+
+    /* ── HOW TO DONATE ── */
+    #how-to-donate {
+      background: var(--white);
+      padding: 6rem 5vw;
+    }
+
+    .donate-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 3rem;
+      margin-top: 3rem;
+      align-items: start;
+    }
+
+    .donate-method {
+      background: var(--offwhite);
+      border-radius: 3px;
+      padding: 2rem;
+      border-left: 4px solid var(--blue);
+    }
+
+    .donate-method h3 {
+      font-family: 'Barlow Condensed', sans-serif;
+      font-size: 1.1rem;
+      font-weight: 800;
+      color: var(--navy);
+      text-transform: uppercase;
+      margin-bottom: 1.25rem;
+      display: flex;
+      align-items: center;
+      gap: 0.5rem;
+    }
+
+    .donate-method-flag {
+      font-size: 1.2rem;
+    }
+
+    .bank-detail {
+      display: flex;
+      flex-direction: column;
+      gap: 0.5rem;
+      margin-bottom: 1rem;
+    }
+
+    .bank-detail-row {
+      display: flex;
+      gap: 0.5rem;
+      font-size: 0.875rem;
+    }
+
+    .bank-detail-row .label {
+      color: var(--muted);
+      min-width: 100px;
+      flex-shrink: 0;
+    }
+
+    .bank-detail-row .value {
+      color: var(--navy);
+      font-weight: 600;
+    }
+
+    .donate-method-note {
+      font-size: 0.8rem;
+      color: var(--muted);
+      font-style: italic;
+      margin-top: 1rem;
+      line-height: 1.6;
+    }
+
+    .international-note {
+      background: var(--light);
+      border-radius: 3px;
+      padding: 1.5rem;
+      margin-top: 1rem;
+      font-size: 0.875rem;
+      color: var(--navy);
+      line-height: 1.7;
+    }
+
+    .international-note strong {
+      display: block;
+      margin-bottom: 0.5rem;
+      font-weight: 700;
+    }
+
+    /* ── CONFIDENTIALITY ── */
+    #confidentiality {
+      background: var(--offwhite);
+      padding: 4rem 5vw;
+    }
+
+    .confidentiality-inner {
+      max-width: 760px;
+      margin: 0 auto;
+      text-align: center;
+    }
+
+    .confidentiality-inner .section-tag { color: var(--blue); }
+
+    .confidentiality-inner h2 {
+      font-family: 'Barlow Condensed', sans-serif;
+      font-size: clamp(1.5rem, 3vw, 2.2rem);
+      color: var(--navy);
+      font-weight: 800;
+      text-transform: uppercase;
+      margin-bottom: 1rem;
+    }
+
+    .confidentiality-pledges {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 1.5rem;
+      margin-top: 2.5rem;
+      text-align: left;
+    }
+
+    .pledge-item {
+      display: flex;
+      flex-direction: column;
+      gap: 0.5rem;
+    }
+
+    .pledge-icon {
+      font-size: 1.75rem;
+    }
+
+    .pledge-item h4 {
+      font-size: 0.8rem;
+      font-weight: 700;
+      text-transform: uppercase;
+      letter-spacing: 0.08em;
+      color: var(--navy);
+    }
+
+    .pledge-item p {
+      font-size: 0.85rem;
+      color: var(--muted);
+      line-height: 1.7;
+      font-weight: 300;
+    }
+
+    .confidentiality-statement {
+      margin-top: 2.5rem;
+      background: var(--navy);
+      border-radius: 3px;
+      padding: 1.5rem 2rem;
+      font-size: 0.875rem;
+      color: rgba(214,228,240,0.85);
+      line-height: 1.8;
+      font-style: italic;
+      text-align: left;
+    }
+
+    /* ── CONTACT FOR DONATIONS ── */
+    #donation-contact {
+      background: var(--blue);
+      padding: 5rem 5vw;
+      text-align: center;
+    }
+
+    #donation-contact h2 {
+      font-family: 'Barlow Condensed', sans-serif;
+      font-size: clamp(2rem, 4vw, 3rem);
+      color: var(--white);
+      font-weight: 800;
+      text-transform: uppercase;
+      margin-bottom: 1rem;
+    }
+
+    #donation-contact p {
+      color: rgba(255,255,255,0.8);
+      font-size: 1rem;
+      max-width: 520px;
+      margin: 0 auto 2rem;
+      font-weight: 300;
+      line-height: 1.8;
+    }
+
+    /* ── RESPONSIVE ── */
+    @media (max-width: 1024px) {
+      .funding-grid { grid-template-columns: repeat(2, 1fr); }
+      .metrics-grid { grid-template-columns: repeat(2, 1fr); }
+    }
+
+    @media (max-width: 768px) {
+      .funding-grid { grid-template-columns: 1fr; }
+      .metrics-grid { grid-template-columns: 1fr; }
+      .donate-grid { grid-template-columns: 1fr; gap: 1.5rem; }
+      .confidentiality-pledges { grid-template-columns: 1fr; }
+    }
+  </style>
+</head>
+<body>
+
+  <!-- ── NAVBAR ── -->
+  <nav id="navbar">
+    <div class="nav-logo">
+      <img src="images/cter-logo-bg-free.png" alt="CTER Logo" />
+      <span>CTER – Karenni</span>
+    </div>
+    <ul class="nav-links">
+      <li><a href="index.html">Home</a></li>
+      <li><a href="about.html">About Us</a></li>
+      <li><a href="our-work.html">Our Work</a></li>
+      <li><a href="crisis.html">The Crisis</a></li>
+      <li><a href="briefer.html">Briefers</a></li>
+      <li><a href="support.html" class="active">Support Us</a></li>
+      <li><a href="contact.html">Contact</a></li>
+    </ul>
+    <button class="hamburger" id="hamburger">
+      <span></span>
+      <span></span>
+      <span></span>
+    </button>
+  </nav>
+
+  <!-- Mobile Menu -->
+  <div class="mobile-menu" id="mobileMenu">
+    <a href="index.html">Home</a>
+    <a href="about.html">About Us</a>
+    <a href="our-work.html">Our Work</a>
+    <a href="crisis.html">The Crisis</a>
+    <a href="briefer.html">Briefers</a>
+    <a href="support.html">Support Us</a>
+    <a href="contact.html">Contact</a>
+  </div>
+
+  <!-- ── HERO ── -->
+  <section id="support-hero">
+    <span class="section-tag">Make a Difference</span>
+    <h1>Support Our Mission</h1>
+    <p>Every contribution directly funds life-saving food, shelter, and medical support for internally displaced families in Karenni State. Your generosity keeps our teams in the field.</p>
+  </section>
+
+  <!-- ── URGENCY BANNER ── -->
+  <div class="urgency-banner">
+    <p>⚠ <span>URGENT:</span> Over 1,000 people were displaced by a military raid in Hpruso Township in May 2026. Emergency shelter and food support is critically needed right now.</p>
+  </div>
+
+  <!-- ── WHERE MONEY GOES ── -->
+  <section id="where-money-goes">
+    <span class="section-tag">Transparency</span>
+    <h2 class="section-title">Where Your Money Goes</h2>
+    <p class="section-body">100% of donations go directly to field operations. Your contribution is allocated across three core intervention areas based on the most urgent needs on the ground.</p>
+    <div class="funding-grid">
+      <div class="funding-card">
+        <div class="funding-icon"><img src="./images/distributed_food.png" alt=""></div>
+        <h3>Emergency Food Provisions</h3>
+        <p>Funding standard rations distributed to IDP camps facing severe food insecurity across Karenni State.</p>
+        <ul class="funding-items">
+          <li>Rice bags (primary staple)</li>
+          <li>Cooking oil</li>
+          <li>Salt and split beans</li>
+          <li>Targeted distribution to female-headed households</li>
+        </ul>
+      </div>
+      <div class="funding-card">
+        <div class="funding-icon"><img src="./images/distributed_terpulin.png" alt="" class="funding-img"></div>
+        <h3>Shelter & Emergency Logistics</h3>
+        <p>Protecting displaced families from harsh weather, military operations, and seasonal flooding.</p>
+        <ul class="funding-items">
+          <li>Tarpaulins for emergency shelters</li>
+          <li>Winter blankets for vulnerable families</li>
+          <li>Construction materials for storm repairs</li>
+          <li>Transportation for aid delivery</li>
+        </ul>
+      </div>
+      <div class="funding-card">
+        <div class="funding-icon"><img src="./images/medical_support.png" alt=""></div>
+        <h3>Medical Support & Health</h3>
+        <p>Essential health interventions for communities with no access to clinics or medical facilities.</p>
+        <ul class="funding-items">
+          <li>Mosquito nets for malaria prevention</li>
+          <li>Basic medicines and antibiotics</li>
+          <li>Emergency medical supply runs</li>
+          <li>Support for mobile health clinics</li>
+        </ul>
+      </div>
+    </div>
+  </section>
+
+  <!-- ── IMPACT METRICS ── -->
+  <section id="impact-metrics">
+    <span class="section-tag">Accountability</span>
+    <h2 class="section-title">Proof of Field Delivery</h2>
+    <p class="section-body">Our impact is verified through field reports, distribution records, and monthly humanitarian briefers published for full transparency.</p>
+    <div class="metrics-grid">
+      <div class="metric-card">
+        <div class="metric-val">3,908</div>
+        <div class="metric-lbl">Families reached through comprehensive aid delivery across active distribution regions</div>
+      </div>
+      <div class="metric-card">
+        <div class="metric-val">131</div>
+        <div class="metric-lbl">Children under age 5 tracked and supported with targeted relief resources</div>
+      </div>
+      <div class="metric-card">
+        <div class="metric-val">60+</div>
+        <div class="metric-lbl">IDP camps served across 8 townships in Karenni State since March 2021</div>
+      </div>
+    </div>
+    <div class="townships-list">
+      <h4>Active Distribution Network</h4>
+      <p>Our logistical pipelines operate across highly remote regions including Nyaung Shwe, Kalaw, Taunggyi, Mese, Demoso, Bawlake, Shadaw, Hpruso, Loikaw, and Pekhon townships — reaching communities that no other organization currently serves.</p>
+    </div>
+  </section>
+
+  <!-- ── HOW TO DONATE ── -->
+  <section id="how-to-donate">
+    <span class="section-tag">Donate</span>
+    <h2 class="section-title">How to Support Us</h2>
+    <p class="section-body">We accept donations through trusted banking channels. All transactions are handled securely and confidentially.</p>
+    <div class="donate-grid">
+
+      <!-- MYANMAR BANKS -->
+      <div>
+        <div class="donate-method">
+          <h3><span class="donate-method-flag">🇲🇲</span> KBZ Pay</h3>
+          <div class="bank-detail">
+            <div class="bank-detail-row">
+              <span class="label">Account Name</span>
+              <span class="value">CTER – Karenni</span>
+            </div>
+            <div class="bank-detail-row">
+              <span class="label">Account No.</span>
+              <span class="value">Contact us for details</span>
+            </div>
+          </div>
+          <p class="donate-method-note">For KBZ Pay transfers, please contact us directly via email or Facebook to receive the current account details securely.</p>
+        </div>
+
+        <div class="donate-method" style="margin-top: 1.5rem;">
+          <h3><span class="donate-method-flag">🇹🇭</span> Thai Bank Transfer</h3>
+          <div class="bank-detail">
+            <div class="bank-detail-row">
+              <span class="label">Banks</span>
+              <span class="value">Krungthai Bank · SCB</span>
+            </div>
+            <div class="bank-detail-row">
+              <span class="label">Account</span>
+              <span class="value">Contact us for details</span>
+            </div>
+          </div>
+          <p class="donate-method-note">Thai bank transfers accepted via Krungthai Bank and SCB. Contact us directly for secure account details.</p>
+        </div>
+      </div>
+
+      <!-- INTERNATIONAL -->
+      <div>
+        <div class="donate-method" style="border-left-color: var(--accent);">
+          <h3><span class="donate-method-flag">🌍</span> International Transfer</h3>
+          <p style="font-size:0.9rem; color:var(--muted); line-height:1.7; font-weight:300; margin-bottom:1rem;">For international donors wishing to support from the US, Australia, Europe, or elsewhere — we work with trusted diaspora partners to facilitate secure cross-border transfers.</p>
+          <div class="international-note">
+            <strong>To arrange an international transfer:</strong>
+            Please contact us directly at <a href="mailto:cterkarenniinfo@gmail.com" style="color:var(--blue);">cterkarenniinfo@gmail.com</a> or via our Facebook page. We will provide verified banking details and confirm receipt of all donations.
+          </div>
+          <p class="donate-method-note">We are working to establish a formal international donation gateway. Updates will be posted here as they become available.</p>
+        </div>
+      </div>
+
+    </div>
+  </section>
+
+  <!-- ── CONFIDENTIALITY ── -->
+  <section id="confidentiality">
+    <div class="confidentiality-inner">
+      <span class="section-tag">Your Privacy Matters</span>
+      <h2>Our Commitment to Donor Safety</h2>
+      <p class="section-body" style="margin: 0 auto;">Given the sensitive operational environment in which we work, protecting our donors is not just a policy — it is a responsibility we take seriously.</p>
+      <div class="confidentiality-pledges">
+        <div class="pledge-item">
+          <div class="pledge-icon">🔒</div>
+          <h4>Confidential Payments</h4>
+          <p>All payment channels are handled through trusted partners and secure banking systems to shield transactions from third-party interference.</p>
+        </div>
+        <div class="pledge-item">
+          <div class="pledge-icon">👤</div>
+          <h4>Anonymity Safeguards</h4>
+          <p>Your personal details, contact data, and funding amounts are strictly confidential and will never be shared with external or third-party authorities.</p>
+        </div>
+        <div class="pledge-item">
+          <div class="pledge-icon">📍</div>
+          <h4>No Location Exposure</h4>
+          <p>We do not publish exact camp coordinates, village tract names, or live route maps to protect our field operations and the communities we serve.</p>
+        </div>
+      </div>
+      <div class="confidentiality-statement">
+        "Your personal details, contact data, and funding amounts are strictly confidential and will never be shared with external or third-party authorities, including government bodies or law enforcement agencies of any jurisdiction. CTER is committed to protecting the safety of every person who supports our mission."
+      </div>
+    </div>
+  </section>
+
+  <!-- ── CONTACT FOR DONATIONS ── -->
+  <section id="donation-contact">
+    <h2>Ready to Make a Difference?</h2>
+    <p>Reach out to us directly and we will guide you through the donation process safely and transparently.</p>
+    <div class="hero-btns">
+      <a href="mailto:cterkarenniinfo@gmail.com" class="btn btn-primary">Email Us to Donate</a>
+      <a href="https://facebook.com/CTER-Karenni" class="btn btn-outline" target="_blank">Message on Facebook</a>
+    </div>
+  </section>
+
+  <!-- ── FOOTER ── -->
+  <footer>
+    <div class="footer-grid">
+      <div class="footer-col">
+        <div class="footer-logo">
+          <img src="images/cter-logo-bg-free.png" alt="CTER Logo" />
+          <span>CTER – Karenni</span>
+        </div>
+        <p>Coordination Team for Emergency Relief (Karenni)</p>
+        <p style="margin-top:0.5rem;">Serving Karenni IDPs since March 2021</p>
+      </div>
+      <div class="footer-col">
+        <h4>Quick Links</h4>
+        <a href="about.html">About Us</a>
+        <a href="our-work.html">Our Work</a>
+        <a href="crisis.html">The Crisis</a>
+        <a href="briefer.html">Briefers</a>
+        <a href="support.html">Support Us</a>
+      </div>
+      <div class="footer-col">
+        <h4>Contact</h4>
+        <p>cterkarenniinfo@gmail.com</p>
+        <p>P.O. Box 6</p>
+        <p>Mae Hong Son 58000, Thailand</p>
+        <a href="https://facebook.com/CTER-Karenni" style="margin-top:0.5rem;">Facebook: @CTER-Karenni</a>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <p>© 2026 <span>Coordination Team for Emergency Relief (Karenni)</span> · All rights reserved</p>
+    </div>
+  </footer>
+
+  <script src="js/main.js"></script>
+
+</body>
+</html>

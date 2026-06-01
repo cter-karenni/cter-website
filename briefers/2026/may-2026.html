@@ -69,22 +69,20 @@
       font-weight: bold;
     }
 
-    #hero_photo_container{
-       display: grid;
-       place-content: center;
-        
+    #hero_photo_container {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
     }
 
     /* ── HERO PHOTO ── */
     .briefer-hero-photo {
-      width: 100%;
+      width: 80%;
       max-height: 420px;
       object-fit: cover;
       object-position: center;
       display: block;
       margin-bottom: 0.4rem;
-      position: relative;
-      left: 5px;
     }
 
     .briefer-hero-caption {
@@ -96,6 +94,7 @@
       margin-bottom: 1rem;
       border-bottom: 1px solid #1F3864;
       padding-bottom: 0.5rem;
+      width: 100%;
     }
 
     /* ── TWO COLUMN LAYOUT ── */
@@ -265,14 +264,16 @@
     .about-cter-label {
       display: inline-block;
       border: 1.5px solid #1F3864;
-      padding: 0.2rem 0.75rem;
+      padding: 10px;
       font-family: 'League Spartan', sans-serif;
-      font-size: 0.75rem;
+      font-size:16px;
       font-weight: 700;
       letter-spacing: 0.1em;
       text-transform: uppercase;
-      color: #1F3864;
+      color: #ffffff;
       margin-bottom: 0.75rem;
+      background-color: #1f3864;
+      border-radius: 3px;
     }
 
     .about-cter-section p {
@@ -293,21 +294,42 @@
     }
 
     .contact-us-bar {
-      background: #2E5A9C;
+      background: #1F3864;
       display: flex;
       align-items: center;
-      gap: 0.75rem;
-      padding: 0.5rem 1rem;
-      border-radius: 20px;
-      margin-bottom: 0.75rem;
-      width: fit-content;
+      gap: 0.65rem;
+      padding: 0.35rem 1.5rem 0.35rem 0.35rem;
+      border-radius: 30px;
+      margin-bottom: 1rem;
+      width: 230px;
+      height: 50px;
+    }
+
+    .contact-phone-circle {
+      width: 43px;
+      height: 43px;
+      background: #0d1b2e;
+      border-radius: 50%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      flex-shrink: 0;
     }
 
     .contact-us-bar span {
       font-family: 'Courier Prime', monospace;
-      font-size: 1rem;
+      font-size: 1.4rem;
       font-weight: 700;
       color: #ffffff;
+    }
+
+    .contact-icon {
+      width: 28px;
+      height: 28px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      flex-shrink: 0;
     }
 
     .contact-item {
@@ -315,13 +337,13 @@
       align-items: center;
       gap: 0.75rem;
       font-family: 'Tinos', serif;
-      font-size: 0.85rem;
-      margin-bottom: 0.4rem;
+      font-size: 1rem;
+      margin-bottom: 0.5rem;
       color: #1a1714;
     }
 
     .contact-item strong {
-      min-width: 70px;
+      min-width: 80px;
     }
 
     .contact-item a {
@@ -504,12 +526,13 @@
 
       <!-- RIGHT COLUMN -->
       <div class="briefer-p2-right">
-        <img src="../may-2026-photos/health.png" alt="Storm damaged shelter" class="briefer-inline-photo" />
-        <p class="briefer-inline-caption">IDP residents assess the damage to a temporary shelter destroyed by severe storms.</p>
+        
         <h2 class="briefer-story-headline">Education Crisis: Shortages Cripple IDP Schools</h2>
         <div class="briefer-article-text">
           <p>The approaching rainy season and ongoing conflict are severely disrupting education in Karenni State IDP camps. In western Mobye, pre-monsoon storms have destroyed school buildings and residential tents, leaving families exposed. Relief efforts are hindered by broken supply routes and tarpaulin prices surging to 100,000 MMK. Simultaneously, schools in eastern Demoso face critical stationary shortages for the 2026-2027 academic year. Textbooks are worn beyond use, and essential supplies like notebooks are prohibitively expensive for displaced parents.</p>
           <p>Adding to the crisis is a severe shortage of teaching staff. In eastern Loikaw Township, where over 40 schools operate, existing teachers are overburdened and often forced to teach multiple grades simultaneously. As camps attempt to expand curriculums to include high school science subjects, they face a critical lack of qualified instructors. Parents are urgently appealing for higher education programs within safe zones, fearing that without further opportunities, displaced youth face high risks of substance abuse or forced migration.</p>
+          <img src="../may-2026-photos/health.png" alt="Storm damaged shelter" class="briefer-inline-photo" />
+        <p class="briefer-inline-caption">IDP residents assess the damage to a temporary shelter destroyed by severe storms.</p>
         </div>
       </div>
 
@@ -553,17 +576,47 @@
     <!-- CONTACT US -->
     <div class="contact-us-section">
       <div class="contact-us-bar">
+        <div class="contact-phone-circle">
+          <svg width="22" height="22" viewBox="0 0 24 24" fill="white" xmlns="http://www.w3.org/2000/svg">
+            <path d="M6.62 10.79c1.44 2.83 3.76 5.14 6.59 6.59l2.2-2.2c.27-.27.67-.36 1.02-.24 1.12.37 2.33.57 3.57.57.55 0 1 .45 1 1V20c0 .55-.45 1-1 1-9.39 0-17-7.61-17-17 0-.55.45-1 1-1h3.5c.55 0 1 .45 1 1 0 1.25.2 2.45.57 3.57.11.35.03.74-.25 1.02l-2.2 2.2z"/>
+          </svg>
+        </div>
         <span>Contact Us</span>
       </div>
       <div class="contact-item">
+        <div class="contact-icon">
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 48 48" width="28" height="28">
+            <path fill="#4caf50" d="M45 16.2l-5 2.75-5 4.75L35 40h7c1.657 0 3-1.343 3-3V16.2z"/>
+            <path fill="#1e88e5" d="M3 16.2l3.614 1.71L13 23.7V40H6c-1.657 0-3-1.343-3-3V16.2z"/>
+            <polygon fill="#e53935" points="35,11.2 24,19.45 13,11.2 12,17 13,23.7 24,31.45 35,23.7 36,17"/>
+            <path fill="#c62828" d="M3 12.298V16.2l10 7.5V11.2L9.876 8.859C9.132 8.301 8.228 8 7.298 8 4.924 8 3 9.924 3 12.298z"/>
+            <path fill="#fbc02d" d="M45 12.298V16.2l-10 7.5V11.2l3.124-2.341C38.868 8.301 39.772 8 40.702 8 43.076 8 45 9.924 45 12.298z"/>
+          </svg>
+        </div>
         <strong>Email:</strong>
         <a href="mailto:cterkarenniinfo@gmail.com">cterkarenniinfo@gmail.com</a>
       </div>
       <div class="contact-item">
+        <div class="contact-icon">
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 48 48" width="28" height="28">
+            <linearGradient id="fb_grad" x1="9.993" x2="40.615" y1="9.993" y2="40.615" gradientUnits="userSpaceOnUse">
+              <stop offset="0" stop-color="#2aa4f4"/>
+              <stop offset="1" stop-color="#007ad9"/>
+            </linearGradient>
+            <path fill="url(#fb_grad)" d="M24 4C12.954 4 4 12.954 4 24s8.954 20 20 20 20-8.954 20-20S35.046 4 24 4z"/>
+            <path fill="#fff" d="M26.707 29.301h5.176l.813-5.258h-5.989v-2.874c0-2.184.714-4.121 2.757-4.121h3.283V12.46c-.577-.078-1.797-.248-4.102-.248-4.814 0-7.636 2.542-7.636 8.334v3.498H16.06v5.258h4.948v14.452C21.988 43.9 22.981 44 24 44c.921 0 1.82-.084 2.707-.204V29.301z"/>
+          </svg>
+        </div>
         <strong>Facebook:</strong>
         <a href="https://facebook.com/CTER-Karenni">@CTER-Karenni</a>
       </div>
       <div class="contact-item">
+        <div class="contact-icon">
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 48 48" width="28" height="28">
+            <path fill="#FF3D00" d="M43.2 33.9c-.4 2.1-2.1 3.7-4.2 4-3.3.5-8.8 1.1-15 1.1-6.1 0-11.6-.6-15-1.1-2.1-.3-3.8-1.9-4.2-4C4.4 31.6 4 28.1 4 24c0-4.1.4-7.6.8-9.9.4-2.1 2.1-3.7 4.2-4C12.3 9.6 17.8 9 24 9c6.2 0 11.6.6 15 1.1 2.1.3 3.8 1.9 4.2 4 .4 2.3.8 5.8.8 9.9 0 4.1-.3 7.6-.8 9.9z"/>
+            <path fill="#fff" d="M20 31l12-7-12-7z"/>
+          </svg>
+        </div>
         <strong>YouTube:</strong>
         <a href="https://www.youtube.com/@CTERKarenni">https://www.youtube.com/@CTERKarenni</a>
       </div>
