@@ -1,0 +1,195 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Contact Us - CTER Karenni</title>
+    <link rel="stylesheet" href="css/style.css" />
+    <style>
+        /* Modern CSS Variables & Reset */
+        :root {
+            --primary-color: #0056b3;
+            --primary-hover: #004085;
+            --text-dark: #2c3e50;
+            --text-light: #6c757d;
+            --bg-light: #f8f9fa;
+            --border-color: #dee2e6;
+            --accent-color: #e67e22;
+        }
+
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        }
+
+        body {
+            color: var(--text-dark);
+            line-height: 1.6;
+            background-color: #ffffff;
+        }
+
+        /* Hero / Header Section */
+        .contact-hero {
+            background: #1a1714;
+            color: white;
+            text-align: center;
+            padding: 60px 20px;
+        }
+
+        .contact-hero h1 {
+            font-size: 2.5rem;
+
+        }
+
+        .contact-hero p {
+            font-size: 1.1rem;
+            max-width: 600px;
+            margin: 0 auto;
+            opacity: 0.9;
+        }
+
+        /* Container Layout */
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 40px 20px;
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 40px;
+        }
+
+        @media (max-width: 768px) {
+            .container {
+                grid-template-columns: 1fr;
+            }
+            
+        }
+
+        .right-side{
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+
+       /* Support CTA Section */
+        .cta-section {
+            background-color: var(--bg-light);
+            text-align: center;
+            padding: 50px 20px;
+            border-top: 1px solid var(--border-color);
+        }
+
+        .cta-section h2 {
+            margin-bottom: 15px;
+        }
+
+        .cta-btn {
+            display: inline-block;
+            background-color: var(--accent-color);
+            color: white;
+            text-decoration: none;
+            padding: 12px 30px;
+            border-radius: 4px;
+            font-weight: bold;
+            margin-top: 15px;
+            transition: opacity 0.3s ease;
+        }
+
+        .cta-btn:hover {
+            opacity: 0.9;
+        }
+
+        /* Footer */
+        footer {
+            background-color: #212529;
+            color: white;
+            text-align: center;
+            padding: 20px;
+            font-size: 0.9rem;
+        }
+    </style>
+</head>
+<body>
+    
+<!-- ── NAVBAR ── -->
+    <nav id="navbar">
+        <div class="nav-logo">
+        <img src="images/cter-logo-bg-free.png" alt="CTER Logo" />
+        <span>CTER – Karenni</span>
+        </div>
+        <ul class="nav-links">
+        <li><a href="index.html">Home</a></li>
+        <li><a href="about.html">About Us</a></li>
+        <li><a href="our-work.html">Our Work</a></li>
+        <li><a href="crisis.html">The Crisis</a></li>
+        <li><a href="briefer.html" >Briefers</a></li>
+        <li><a href="support.html">Support Us</a></li>
+        <li><a href="contact.html"class="active">Contact</a></li>
+        </ul>
+        
+    </nav>
+
+    <header class="contact-hero">
+        <h1>Get in Touch</h1>
+        <p>Coordination Team for Emergency Relief (Karenni). Have questions, partnership proposals, or media inquiries? We are here to respond.</p>
+    </header>
+
+    <main class="container">
+        
+        <section class="contact-info">
+            <h2>Our Contact Information</h2>
+            <p style="margin-bottom: 30px; color: var(--text-light);">Reach out to us directly or connect through our mailing network in Thailand.</p>
+            
+            <div class="info-item">
+                <span class="icon">✉️</span>
+                <div>
+                    <h3>Email Address</h3>
+                    <p><a href="mailto:cterkarenniinfo@gmail.com">cterkarenniinfo@gmail.com</a></p>
+                </div>
+            </div>
+
+            <div class="info-item">
+                <span class="icon">📍</span>
+                <div>
+                    <h3>Mailing Address</h3>
+                    <p>P.O. Box 6<br>Mae Hong Son 58000, Thailand</p>
+                </div>
+            </div>
+
+            <div class="info-item">
+                <span class="icon">🌐</span>
+                <div>
+                    <h3>Social Media</h3>
+                    <p><a href="https://facebook.com/CTER-Karenni" target="_blank" rel="noopener">Facebook: @CTER-Karenni</a></p>
+                </div>
+            </div>
+            
+            <div class="info-item">
+                <span class="icon">⏳</span>
+                <div>
+                    <h3>Timeline Notice</h3>
+                    <p>Serving Karenni IDPs since March 2021. Due to the situation on the ground, response times to email inquiries can sometimes take 24–48 hours.</p>
+                </div>
+            </div>
+        </section>
+
+        <section class="right-side">
+            <img src="./images/cter-logo-bg-free.png" alt="" style="width: 300px; height: 300px;">
+        </section>
+
+    </main>
+
+    <section class="cta-section">
+        <h2>Stand with the Karenni People</h2>
+        <p>Your support provides life-saving food, shelter, and medicine to families facing unimaginable crises.</p>
+        <a href="support.html" class="cta-btn">Support Our Mission</a>
+    </section>
+
+    <footer>
+        <p>&copy; 2026 Coordination Team for Emergency Relief (Karenni). All rights reserved.</p>
+    </footer>
+
+</body>
+</html>
