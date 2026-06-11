@@ -1,0 +1,246 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>News Update – CTER Karenni</title>
+  <link rel="stylesheet" href="css/style.css" />
+
+  <style>
+    /* ── LATEST UPDATES MAIN CONTAINER ── */
+    #field-updates {
+      padding: 5rem 5vw;
+      background-color: #f9fafb;
+      font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+    }
+
+    .section-title-container {
+      text-align: center;
+      margin-bottom: 4rem;
+    }
+
+    .section-subtitle {
+      color: var(--accent, #c8a84b);
+      font-size: 0.85rem;
+      text-transform: uppercase;
+      letter-spacing: 0.15em;
+      font-weight: 700;
+      display: block;
+      margin-bottom: 0.6rem;
+    }
+
+    .section-title {
+      font-size: 2.2rem;
+      color: #0d1f3c;
+      text-transform: uppercase;
+      font-weight: 800;
+      margin: 0;
+    }
+
+    /* ── RESPONSIVE RESPONSIVE GRID ── */
+    .updates-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(480px, 1fr));
+      gap: 2.5rem;
+      max-width: 1200px;
+      margin: 0 auto;
+    }
+
+    /* ── STRUCTURAL CARDS ── */
+    .update-card {
+      background: var(--white, #ffffff);
+      border-radius: 6px;
+      overflow: hidden;
+      box-shadow: 0 4px 15px rgba(0, 0, 0, 0.04);
+      transition: transform 0.3s ease, box-shadow 0.3s ease;
+      border: 1px solid rgba(0, 0, 0, 0.06);
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+    }
+
+    .update-card:hover {
+      transform: translateY(-5px);
+      box-shadow: 0 12px 30px rgba(13, 31, 60, 0.08);
+    }
+
+    .update-card-content {
+      padding: 2rem;
+      flex-grow: 1;
+    }
+
+    .update-date {
+      font-size: 0.8rem;
+      font-weight: 600;
+      color: rgba(0, 0, 0, 0.4);
+      margin-bottom: 0.75rem;
+      text-transform: uppercase;
+      letter-spacing: 0.05em;
+    }
+
+    .update-card-content h3 {
+      font-size: 1.4rem;
+      color: #1F3864;
+      margin-bottom: 1rem;
+      line-height: 1.4;
+      font-weight: 700;
+      margin-top: 0;
+    }
+
+    .update-card-content p {
+      font-size: 0.98rem;
+      color: #555555;
+      line-height: 1.65;
+      margin-bottom: 0;
+    }
+
+    /* ── RESPONSIVE IMAGE GALLERY WRAPPER ── */
+    .update-img-wrapper {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 8px;
+      padding: 0 2rem 2rem 2rem;
+    }
+
+    .update-img {
+      flex: 1 1 calc(25% - 8px); /* Displays 4 items per row layout */
+      min-width: 80px;
+      height: 75px;
+      object-fit: cover;
+      border-radius: 4px;
+      border: 1px solid rgba(0, 0, 0, 0.05);
+      cursor: pointer;
+      transition: opacity 0.2s ease;
+    }
+
+    .update-img:hover {
+      opacity: 0.85;
+    }
+
+    /* ── MOBILE MEDIA QUERIES ── */
+    @media (max-width: 768px) {
+      #field-updates {
+        padding: 3rem 4vw;
+      }
+
+      .section-title {
+        font-size: 1.75rem;
+      }
+
+      .updates-grid {
+        grid-template-columns: 1fr; /* Force clean single columns on tabs and mobile phones */
+        gap: 1.75rem;
+      }
+
+      .update-card-content {
+        padding: 1.5rem;
+      }
+
+      .update-img-wrapper {
+        padding: 0 1.5rem 1.5rem 1.5rem;
+        gap: 6px;
+      }
+
+      .update-img {
+        flex: 1 1 calc(33.33% - 6px); /* Displays 3 items per row on narrow viewport */
+        height: 65px;
+      }
+    }
+  </style>
+</head>
+<body>
+
+  <nav id="navbar">
+    <div class="nav-logo">
+      <img src="../../images/cter-logo-bg-free.png" alt="CTER Logo" />
+      <span>CTER – Karenni</span>
+    </div>
+    <ul class="nav-links">
+      <li><a href="index.html">Home</a></li>
+      <li><a href="news_update.html" class="active">News update</a></li>
+      <li><a href="about.html">About Us</a></li>
+      <li><a href="our-work.html">Our Work</a></li>
+      <li><a href="briefer.html">Briefers</a></li>
+      <li><a href="support.html">Support Us</a></li>
+      <li><a href="contact.html">Contact</a></li>
+    </ul>
+    <button class="hamburger" id="hamburger">
+      <span></span>
+      <span></span>
+      <span></span>
+    </button>
+  </nav>
+
+  <div class="mobile-menu" id="mobileMenu">
+    <a href="../../index.html">Home</a>
+    <a href="news_update.html" class="active">News update</a>
+    <a href="../../about.html">About Us</a>
+    <a href="../../our-work.html">Our Work</a>
+    <a href="../../briefer.html">Briefers</a>
+    <a href="../../support.html">Support Us</a>
+    <a href="../../contact.html">Contact</a>
+  </div>
+
+  <section id="field-updates">
+    <div class="section-title-container">
+      <span class="section-subtitle">On The Ground</span>
+      <h2 class="section-title">Latest News & Field Updates</h2>
+    </div>
+
+    <div class="updates-grid">
+      
+      <article class="update-card">
+        <div class="update-card-content">
+          <div class="update-date">June 3, 2026</div>
+          <h3>Locally Procured Rice Distributed to IDPs in Need</h3>
+          <p>
+            CTER staff on the ground delivered food assistance to an IDP camp in eastern Demoso Township. 
+            Several months ago, CTER purchased and collected paddy rice from local residents as part of a 
+            community-based support initiative. The rice has now been processed and redistributed to internally 
+            displaced persons (IDPs) facing urgent food shortages to meet immediate operational requirements.
+          </p>
+        </div>
+
+        <div class="update-img-wrapper">
+          <img src="images/news_update's_img/deliver_food_assistance_to_DMS/staff_delivering_rice_bags_through_river-1.jpg" alt="Field Update" class="update-img">
+          <img src="images/news_update's_img/deliver_food_assistance_to_DMS/staff_delivering_rice_bags_through_the_river-2.jpg" alt="Field Update" class="update-img">
+          <img src="images/news_update's_img/deliver_food_assistance_to_DMS/staff_delivering_rice_bags_through_the_river-3.jpg" alt="Field Update" class="update-img">
+          <img src="images/news_update's_img/deliver_food_assistance_to_DMS/staff_delivering_rice_bags_through_the_river-4.jpg" alt="Field Update" class="update-img">
+          <img src="images/news_update's_img/deliver_food_assistance_to_DMS/staff_delivering_rice_bags_through_the_river-5.jpg" alt="Field Update" class="update-img">
+          <img src="images/news_update's_img/deliver_food_assistance_to_DMS/staff_delivering_rice_bags_through_the_river-6.jpg" alt="Field Update" class="update-img">
+          <img src="images/news_update's_img/deliver_food_assistance_to_DMS/staff_delivering_rice_bags_through_the_river-7.jpg" alt="Field Update" class="update-img">
+        </div>
+      </article>
+
+      <article class="update-card">
+        <div class="update-card-content">
+          <div class="update-date">May 18-26, 2026</div>
+          <h3>Bio-Sand Filter Installation in an IDPs Camp</h3>
+          <p>
+            A bio-sand filtration system was installed in an IDP camp to improve access to safe and better-quality water. 
+            Prior to the installation, community members and students relied directly on untreated stream water containing 
+            limestone and sediment. Using locally available resources, the filtration system effectively minimizes waste materials 
+            and limits local community health liabilities.
+          </p>
+        </div>
+
+        <div class="update-img-wrapper">
+          <img src="./images/news_update's_img/bio_sand_filter_installation_in_IDPs_camp/1.jpg" alt="Field Update" class="update-img">
+          <img src="./images/news_update's_img/bio_sand_filter_installation_in_IDPs_camp/2.jpg" alt="Field Update" class="update-img">
+          <img src="./images/news_update's_img/bio_sand_filter_installation_in_IDPs_camp/3.jpg" alt="Field Update" class="update-img">
+          <img src="./images/news_update's_img/bio_sand_filter_installation_in_IDPs_camp/4.jpg" alt="Field Update" class="update-img">
+          <img src="./images/news_update's_img/bio_sand_filter_installation_in_IDPs_camp/5.jpg" alt="Field Update" class="update-img">
+          <img src="./images/news_update's_img/bio_sand_filter_installation_in_IDPs_camp/6.jpg" alt="Field Update" class="update-img">
+          <img src="./images/news_update's_img/bio_sand_filter_installation_in_IDPs_camp/7.jpg" alt="Field Update" class="update-img">
+          <img src="./images/news_update's_img/bio_sand_filter_installation_in_IDPs_camp/8.jpg" alt="Field Update" class="update-img">
+          <img src="./images/news_update's_img/bio_sand_filter_installation_in_IDPs_camp/9.jpg" alt="Field Update" class="update-img">
+          <img src="./images/news_update's_img/bio_sand_filter_installation_in_IDPs_camp/10.jpg" alt="Field Update" class="update-img">
+        </div>
+      </article>
+
+    </div>
+  </section>
+
+  <script src="js/main.js"></script>
+</body>
+</html>

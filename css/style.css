@@ -61,7 +61,7 @@ nav {
 }
 
 nav.scrolled {
-  background: var(--navy);
+  background: var(--dark);
   box-shadow: 0 2px 20px rgba(0,0,0,0.2);
 }
 
@@ -144,7 +144,7 @@ nav.scrolled {
   display: none;
   position: fixed;
   top: 68px; left: 0; right: 0;
-  background: var(--navy);
+  background: var(--dark);
   padding: 1.5rem 5vw 2rem;
   z-index: 999;
   flex-direction: column;
@@ -161,7 +161,10 @@ nav.scrolled {
   transition: color 0.2s;
 }
 
-.mobile-menu a:hover { color: var(--white); }
+.mobile-menu a:hover { 
+  color: var(--white);
+  transform: scale(1.03);
+ }
 .mobile-menu.open { display: flex; }
 
 
