@@ -4,6 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>About us</title>
+    <link rel="icon" type="image/x-icon" href="./images/cter-logo-bg-free.png">
     <style>
                 /* ── ABOUT US SECTION STYLES ── */
         #about-us {
@@ -25,19 +26,40 @@
         color: #0056b3; /* Primary tone matching .btn-blue adjustments */
         letter-spacing: 0.05em;
         margin-bottom: 0.5rem;
+        
+        }
+        .about-hero-row{
+          background-color: var(--dark);
+          width: 100%;
+          height: 50vh;
+          
         }
 
         .about-hero-row h2 {
         font-size: 2.2rem;
         margin-bottom: 1.5rem;
-        color: var(--dark, #111111);
+        color: var(--white);
+        }
+
+        .about-text-block{
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            flex-direction: column;
+            padding: 2rem 0;
+            margin: 0 20%;
         }
 
         .about-text-block p {
+        text-align: justify;
         font-size: 1.1rem;
         line-height: 1.7;
         margin-bottom: 1.25rem;
-        color: #444444;
+        color: rgba(255,255,255,0.6);
+
+        }
+        strong{
+          color: var(--white);
         }
 
         /* Value Grid & Cards */
@@ -75,6 +97,7 @@
         }
 
         .principles-list {
+        text-align: justify;
         list-style: none;
         padding: 0;
         }
@@ -202,12 +225,9 @@
         <a href="contact.html">Contact</a>
     </div>
 
-    <section id="about-us">
-  <div class="about-container">
-    
     <div class="about-hero-row">
       <div class="about-text-block">
-        <span class="section-tag">Who We Are</span>
+        <span class="section-tag" style="margin: 4rem 0 1rem 0;">Who We Are</span>
         <h2>Born from Crisis, Built on Solidarity</h2>
         <p>
           The <strong>Coordination Team for Emergency Relief (Karenni)</strong>, widely known as <strong>CTER – Karenni</strong>, 
@@ -224,10 +244,17 @@
       </div>
     </div>
 
+    <section id="about-us">
+    
+    
+  <div class="about-container">
+    
+    
+
     <div class="about-grid">
       
       <div class="about-card">
-        <div class="card-icon">📋</div>
+        <div class="card-icon"></div>
         <h3>Core Principles</h3>
         <p>To preserve local trust and meet international standards, our operational actions strictly adhere to key humanitarian frameworks:</p>
         <ul class="principles-list">
@@ -238,7 +265,7 @@
       </div>
 
       <div class="about-card">
-        <div class="card-icon">🛡️</div>
+        <!-- <div class="card-icon">🛡️</div>
         <h3>Accountability & Ethics</h3>
         <p>
           CTER maintains a zero-tolerance stance toward operational malpractice. Every permanent employee, field officer, 
@@ -248,10 +275,17 @@
           Our administrative compliance requires full integration of <strong>PSEA (Protection from Sexual Exploitation and Abuse)</strong> 
           frameworks. We maintain standardized tracking, structured internal reporting lines, and transparent operational systems 
           to remain strictly audit-ready for international donor accountability.
-        </p>
+        </p> -->
+          <div class="who-visual">
+        <img src="images/cter-logo-bg-free.png" alt="CTER" />
+        <blockquote>"We coordinate so that no displaced family is left without support."</blockquote>
+        <cite>— CTER Karenni · Mae Hong Son, Thailand</cite>
+      </div>
       </div>
 
     </div>
+
+
 
     <div class="partnerships-block">
       <h3>Rooted in Our Community</h3>

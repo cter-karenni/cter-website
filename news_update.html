@@ -4,9 +4,13 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>News Update – CTER Karenni</title>
+  <link rel="icon" type="image/x-icon" href="./images/cter-logo-bg-free.png">
   <link rel="stylesheet" href="css/style.css" />
 
   <style>
+    *{
+      text-align: justify;
+    }
     /* ── LATEST UPDATES MAIN CONTAINER ── */
     #field-updates {
       padding: 5rem 5vw;
@@ -15,8 +19,14 @@
     }
 
     .section-title-container {
+      background-color: var(--dark);
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      flex-direction: column;
       text-align: center;
-      margin-bottom: 4rem;
+      /* margin: 4rem 0; */
+      padding: 5rem 0;
     }
 
     .section-subtitle {
@@ -31,7 +41,7 @@
 
     .section-title {
       font-size: 2.2rem;
-      color: #0d1f3c;
+      color: var(--white);
       text-transform: uppercase;
       font-weight: 800;
       margin: 0;
@@ -181,11 +191,13 @@
     <a href="../../contact.html">Contact</a>
   </div>
 
-  <section id="field-updates">
-    <div class="section-title-container">
+  <div class="section-title-container">
       <span class="section-subtitle">On The Ground</span>
       <h2 class="section-title">Latest News & Field Updates</h2>
-    </div>
+  </div>
+
+  <section id="field-updates">
+    
 
     <div class="updates-grid">
       

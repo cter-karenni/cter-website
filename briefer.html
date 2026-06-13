@@ -4,8 +4,97 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
   <title>Briefers – CTER Karenni</title>
+  <link rel="icon" type="image/x-icon" href="./images/cter-logo-bg-free.png">
   <link rel="stylesheet" href="css/style.css" />
-  </style>
+  <style>
+
+    /* ════════════════════════════════
+      VARIABLES & RESET
+    ════════════════════════════════ */
+    @import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600&family=Barlow+Condensed:wght@600;700;800&display=swap');
+    @import url('https://fonts.googleapis.com/css2?family=Padauk:wght@400;700&display=swap');
+    :root {
+      --navy:     #1F3864;
+      --blue:     #000071;
+      --light:    #D6E4F0;
+      --white:    #FFFFFF;
+      --offwhite: #F4F6F8;
+      --text:     #1a1714;
+      --muted:    #6b7068;
+      --accent:   #C8A84B;
+      --dark:     #1a1714;
+    }
+
+    *, *::before, *::after {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+      text-align: justify;
+    }
+
+    html { scroll-behavior: smooth; }
+
+    body {
+      font-family: 'Inter', sans-serif;
+      color: var(--text);
+      background: var(--white);
+      overflow-x: hidden;
+    }
+
+    h1, h2, h3, h4 {
+      font-family: 'Barlow Condensed', sans-serif;
+      line-height: 1.15;
+    }
+
+    p { line-height: 1.8; }
+
+    a {
+      text-decoration: none;
+      color: inherit;
+    }
+
+    img { max-width: 100%; }
+
+    #briefers-hero{
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      flex-direction: column;
+    }
+        
+    .hamburger {
+      display: none;
+      flex-direction: column;
+      gap: 5px;
+      cursor: pointer;
+      background: none;
+      border: none;
+      padding: 4px;
+    }
+
+    .hamburger span {
+      display: block;
+      width: 24px;
+      height: 2px;
+      background: #ffffff; /* Replace with var(--white) if defined */
+      border-radius: 2px;
+      transition: all 0.3s;
+    }
+
+    /* ── ADD THIS MEDIA QUERY BLOCK FOR MOBILE SCREENS ── */
+    @media (max-width: 768px) {
+      /* Hide the normal desktop navigation links */
+      .nav-links {
+        display: none;
+      }
+
+      /* Make the hamburger button visible */
+      .hamburger {
+        display: flex;
+      }
+    }
+      </style>
+  
 </head>
 <body>
 
@@ -17,22 +106,28 @@
     </div>
     <ul class="nav-links">
       <li><a href="index.html">Home</a></li>
+      <li><a href="news_update.html">News update</a></li>
       <li><a href="about.html">About Us</a></li>
       <li><a href="our-work.html">Our Work</a></li>
-      <li><a href="crisis.html">The Crisis</a></li>
-      <li><a href="briefer.html" class="active">Briefers</a></li>
+      <li><a href="briefer.html"class="active">Briefers</a></li>
       <li><a href="support.html">Support Us</a></li>
       <li><a href="contact.html">Contact</a></li>
     </ul>
-    
+
+    <button class="hamburger" id="hamburgerBtn" onclick="toggleMobileMenu()">
+      <span></span>
+      <span></span>
+      <span></span>
+    </button>
+
   </nav>
 
   <!-- Mobile Menu -->
   <div class="mobile-menu" id="mobileMenu">
     <a href="index.html">Home</a>
+    <a href="news_update.html">News update</a>
     <a href="about.html">About Us</a>
     <a href="our-work.html">Our Work</a>
-    <a href="crisis.html">The Crisis</a>
     <a href="briefer.html">Briefers</a>
     <a href="support.html">Support Us</a>
     <a href="contact.html">Contact</a>
@@ -42,7 +137,7 @@
   <section id="briefers-hero">
     <span class="section-tag">Publications</span>
     <h1>Monthly Briefers</h1>
-    <p>Field reports documenting the humanitarian situation in Karenni State, published monthly since May 2025.</p>
+    <p style="text-align: center;">Field reports documenting the humanitarian situation in Karenni State, published monthly since May 2025.</p>
     <div class="filter-bar">
         <button class="filter-btn active" onclick="filterBriefers('all', this)">All</button>
         <button class="filter-btn" onclick="filterBriefers('2025', this)">2025</button>
@@ -232,8 +327,18 @@
     </div>
   </footer>
 
-  <script src="js/main.js"></script>
+<script src="js/main.js"></script>
   <script>
+
+    function toggleMobileMenu() {
+      const hamburgerBtn = document.getElementById('hamburgerBtn');
+      const mobileMenu = document.getElementById('mobileMenu');
+      
+      // Toggles the animations on the lines and handles display
+      hamburgerBtn.classList.toggle('open');
+      mobileMenu.classList.toggle('open');
+    }
+
     function filterBriefers(year) {
       const cards = document.querySelectorAll('.briefer-archive-card');
       const buttons = document.querySelectorAll('.filter-btn');
@@ -250,6 +355,8 @@
       });
     }
   </script>
+  
+
 
 </body>
 </html>

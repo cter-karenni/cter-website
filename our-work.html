@@ -1,0 +1,306 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Our Work</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="icon" type="image/x-icon" href="./images/cter-logo-bg-free.png">
+    <!-- <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/lightgallery-js/1.4.0/css/lightgallery.min.css"> -->
+    <link rel="stylesheet" href="css/style.css">
+    <style>
+        /* ════════════════════════════════
+        VARIABLES & RESET
+        ════════════════════════════════ */
+        @import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600&family=Barlow+Condensed:wght@600;700;800&display=swap');
+        @import url('https://fonts.googleapis.com/css2?family=Padauk:wght@400;700&display=swap');
+        :root {
+            --navy:     #1F3864;
+            --blue:     #000071;
+            --light:    #D6E4F0;
+            --white:    #FFFFFF;
+            --offwhite: #F4F6F8;
+            --text:     #1a1714;
+            --muted:    #6b7068;
+            --accent:   #C8A84B;
+            --dark:     #1a1714;
+        }
+        *{
+            padding: 0;
+            margin: 0;
+            box-sizing: border-box;
+        }
+
+
+        /* ── OUR WORK PILLARS SECTION STYLES ── */
+        #our-work-pillars {
+            /* padding: 5rem 5vw; */
+            background-color: #ffffff;
+            font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+            color: #333333;
+            }
+
+        .pillars-container {
+            max-width: 100vw;
+            margin: 0 auto;
+            }
+
+        .pillars-header {
+            background-color: var(--dark);
+            text-align: center;
+            max-width: 100%;
+            height: 40vh;
+            /* margin: 5rem auto 4rem auto; */
+            padding: 100px 0;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            flex-direction: column;
+            }
+
+        .pillars-header h2 {
+            font-size: 2.2rem;
+            color: var(--white);
+            font-weight: 800;
+            margin-top: 0.5rem;
+            margin-bottom: 1rem;
+            text-transform: uppercase;
+            
+            }
+
+        .pillars-intro {
+            width: 50vw;
+            font-size: 1.1rem;
+            line-height: 1.6;
+            color: rgba(255,255,255,0.6);
+
+            text-align: center;
+            }
+
+        /* Updated 4-Card Responsive Layout Grid */
+        .pillars-grid {
+            display: grid;
+            /* grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); */
+            /* gap: 2rem; */
+            grid-template-columns: repeat(3, 1fr);
+            gap: 1.5rem;
+            margin-top: 3rem;
+        }
+
+        .pillar-card {
+            background: var(--white);
+            border-radius: 3px;
+            padding: 2rem 1.75rem;
+            border-top: 3px solid var(--blue);
+            transition: all 0.25s;
+            box-shadow: 0 12px 25px rgba(13, 31, 60, 0.08);
+
+            /* display: flex;
+            flex-direction: column;
+            overflow: hidden; Clips the top edges of your banners */
+        }
+
+        /* 
+        .funding-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 1.5rem;
+            margin-top: 3rem;
+            }
+
+            .funding-card {
+            background: var(--white);
+            border-radius: 3px;
+            padding: 2rem 1.75rem;
+            border-top: 3px solid var(--blue);
+            transition: all 0.25s;
+            }
+
+            .funding-card:hover {
+            transform: translateY(-4px);
+            box-shadow: 0 12px 32px rgba(31,56,100,0.1);
+            border-top-color: var(--accent);
+            }
+         */
+
+        .pillar-card:hover {
+        border-top: 3px solid var(--accent);
+        transform: translateY(-6px);
+        box-shadow: 0 12px 25px rgba(13, 31, 60, 0.08);
+        }
+
+        /* Image Banner Configuration */
+        .pillar-image-banner {
+        width: 100%;
+        height: 160px;
+        background-size: cover;
+        background-position: center;
+        border-bottom: 1px solid rgba(0, 0, 0, 0.06);
+        
+        }
+
+        /* Temporary style for columns that still use emojis */
+        .pillar-image-banner.placeholder-bg {
+        background-color: #f1f3f5;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        font-size: 3rem;
+        }
+
+        .pillar-card-body {
+            padding: 2rem 1.5rem;
+            display: flex;
+            flex-direction: column;
+            flex-grow: 1; /* Forces the inner card body to take up all available vertical space */
+            }
+
+        .pillar-card-body h3 {
+            font-size: 1.25rem;
+            color: #1F3864;
+            margin-top: 0;
+            margin-bottom: 0.85rem;
+            font-weight: 700;
+            line-height: 1.4;
+            }
+
+        .pillar-card-body p {
+            font-size: 0.95rem;
+            line-height: 1.6;
+            color: #555555;
+            margin-bottom: 0;
+            flex-grow: 1; /* CRITICAL: Forces all paragraphs to stretch equally to keep card bases perfectly aligned */
+            }
+        
+
+        
+        /* Mobile Media Queries */
+        @media (max-width: 768px) {
+        #our-work-pillars {
+            padding: 3.5rem 4vw;
+        }
+        .pillars-header h2 {
+            font-size: 1.8rem;
+        }
+        .pillar-image-banner {
+            height: 140px;
+        }
+        }
+        p{
+            text-align: justify;
+        }
+    </style>
+</head>
+<body>
+    <!-- ── NAVBAR ── -->
+  <nav id="navbar">
+    <div class="nav-logo">
+      
+      <a href="index.html">
+        <img src="images/cter-logo-bg-free.png" alt="CTER Logo"  />
+        <span>CTER – Karenni</span>
+      </a>
+    </div>
+    <ul class="nav-links">
+      <li><a href="index.html" >Home</a></li>
+      <li><a href="news_update.html">News update</a></li>
+      <li><a href="about.html">About Us</a></li>
+      <li><a href="our-work.html" class="active">Our Work</a></li>
+      <li><a href="briefer.html">Briefers</a></li>
+      <li><a href="support.html">Support Us</a></li>
+      <li><a href="contact.html">Contact</a></li>
+     
+    </ul>
+    <button class="hamburger" id="hamburger">
+      <span></span>
+      <span></span>
+      <span></span>
+    </button>
+    
+  </nav>
+
+  <!-- Mobile Menu -->
+  <div class="mobile-menu" id="mobileMenu">
+    <a href="index.html">Home</a>
+    <a href="news_update.html">News update</a>
+    <a href="about.html">About Us</a>
+    <a href="our-work.html">Our Work</a>
+    <a href="briefer.html">Briefers</a>
+    <a href="support.html">Support Us</a>
+    <a href="contact.html">Contact</a>
+  </div>
+
+    <div class="pillars-header">
+            <span class="section-tag">What We Do</span>
+            <h2>Our Core Programs & Operations</h2>
+            <p class="pillars-intro">
+                CTER delivers strategic, field-tested interventions across emergency channels to secure immediate survival 
+                and stabilize displaced families throughout Karenni State and surrounding border environments.
+            </p>
+    </div>
+
+    <section id="our-work-pillars">
+        
+    <div class="pillars-container">
+        
+        
+
+        <div class="pillars-grid">
+        
+        <div class="pillar-card">
+            <div class="pillar-image-banner" style="background-image: url('images/news_update\'s_img/deliver_food_assistance_to_DMS/staff_delivering_rice_bags_through_river-1.jpg');"></div>
+                <div class="pillar-card-body">
+                    <h3>1. Emergency Food Assistance</h3>
+                    <p>
+                        CTER distributes essential daily rations to internally displaced persons (IDP) camps and returnee villages 
+                        that are currently facing severe food insecurity. To stabilize basic nutrition for these vulnerable communities, 
+                        our emergency food distributions specifically provide sacks of rice, cooking oil, salt, and yellow split beans.
+                    </p>
+                </div>
+        </div>
+
+        <div class="pillar-card">
+            <div class="pillar-image-banner placeholder-bg" style="background-image: url('images/our_work_img/delivering_terpulin.png');"></div>
+            <div class="pillar-card-body">
+            <h3>2. Shelter & NFIs (Non-Food Items)</h3>
+            <p>
+                We are dedicated to protecting vulnerable families from harsh seasonal weather conditions and vector-borne diseases. 
+                To ensure their daily survival, dignity, and safety, CTER procures and provides life-saving Non-Food Items (NFIs), 
+                strictly prioritizing heavy-duty tarpaulins, mosquito nets, and blankets.
+            </p>
+            </div>
+        </div>
+
+        <div class="pillar-card">
+            <div class="pillar-image-banner placeholder-bg" style="background-image: url('images/our_work_img/distributed_food_nfi_dms.png');"></div>
+            <div class="pillar-card-body">
+            <h3>3. Disaster Response</h3>
+            <p>
+                Karenni communities often face compounding crises. CTER rapidly mobilizes targeted relief for victims of sudden 
+                natural disasters, such as the recent 7.7 magnitude earthquake and severe summer storms. This emergency response 
+                directly supports affected households by providing cash assistance, emergency supplies, and critical construction 
+                materials like nails and roofing to help them rebuild their destroyed shelters.
+            </p>
+            </div>
+        </div>
+
+        <div class="pillar-card">
+             <div class="pillar-image-banner placeholder-bg" style="background-image: url('images/our_work_img/advocating.jpeg');"></div>
+
+            <div class="pillar-card-body">
+            <h3>4. Advocacy & Assessment</h3>
+            <p>
+                To ensure that limited resources are directed to the most life-saving priorities, CTER conducts comprehensive, 
+                on-the-ground humanitarian needs assessments directly within the IDP camps. This critical, field-based data is 
+                then used to raise global awareness about the Karenni crisis and accurately guide interventions by international 
+                donors and humanitarian actors.
+            </p>
+            </div>
+        </div>
+
+        </div>
+
+    </div>
+    </section>
+</body>
+</html>

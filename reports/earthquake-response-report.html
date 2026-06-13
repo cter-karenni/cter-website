@@ -1,0 +1,429 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="icon" type="image/x-icon" href="../images/cter-logo-bg-free.png">
+    <title>Earthquake Emergency Response | CTER</title>
+    <link rel="stylesheet" href="css/style.css">
+    <style>
+        /* ════════════════════════════════
+   VARIABLES & RESET
+════════════════════════════════ */
+        @import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600&family=Barlow+Condensed:wght@600;700;800&display=swap');
+        @import url('https://fonts.googleapis.com/css2?family=Padauk:wght@400;700&display=swap');
+        
+        :root {
+          --navy:     #1F3864;
+          --blue:     #000071;
+          --light:    #D6E4F0;
+          --white:    #FFFFFF;
+          --offwhite: #F4F6F8;
+          --text:     #1a1714;
+          --muted:    #6b7068;
+          --accent:   #C8A84B;
+          --dark:     #1a1714;
+        }
+
+        /* Base Typography Adjustments for Report Pages */
+        body {
+            font-family: 'Inter', sans-serif;
+            color: var(--text);
+            background-color: var(--white);
+            line-height: 1.6;
+            margin: 0;
+            padding: 0;
+        }
+
+        /* Back Link - Clean Padding Control */
+        .back-link-container {
+            max-width: 1000px;
+            margin: 2rem auto 0 auto;
+            padding: 0 2rem;
+        }
+
+        .back-link {
+            display: inline-flex;
+            align-items: center;
+            gap: 0.5rem;
+            color: var(--navy);
+            text-decoration: none;
+            font-size: 0.95rem;
+            font-weight: 500;
+            transition: color 0.2s ease, transform 0.2s ease;
+        }
+
+        .back-link .arrow {
+            font-size: 1.1rem;
+            transition: transform 0.2s ease;
+        }
+
+        .back-link:hover {
+            color: var(--accent);
+        }
+
+        .back-link:hover .arrow {
+            transform: translateX(-4px);
+        }
+
+        /* Hero Styles */
+        .report-hero {
+            background-color: var(--offwhite);
+            border-bottom: 1px solid var(--light);
+            padding: 4rem 2rem;
+            margin-top: 1rem;
+        }
+
+        .report-hero-content {
+            max-width: 800px;
+            margin: 0 auto;
+        }
+
+        .report-meta-tag {
+            font-family: 'Barlow Condensed', sans-serif;
+            text-transform: uppercase;
+            letter-spacing: 1.5px;
+            color: var(--navy);
+            font-size: 0.9rem;
+            font-weight: 600;
+            display: inline-block;
+            margin-bottom: 0.75rem;
+        }
+
+        .report-hero h1 {
+            font-family: 'Barlow Condensed', sans-serif;
+            font-size: 3rem;
+            font-weight: 800;
+            color: var(--navy);
+            line-height: 1.1;
+            margin: 0 0 1rem 0;
+        }
+
+        .report-hero h1[data-my] {
+            font-family: 'Padauk', 'Inter', sans-serif;
+        }
+
+        .report-lead {
+            font-size: 1.2rem;
+            color: var(--muted);
+            font-weight: 300;
+            margin: 0;
+        }
+
+        /* Layout Container */
+        .report-container {
+            max-width: 1000px;
+            margin: 0 auto;
+            padding: 4rem 2rem;
+        }
+
+        /* Two-Column Overview */
+        .report-overview-layout {
+            display: grid;
+            grid-template-columns: 2fr 1fr;
+            gap: 4rem;
+            margin-bottom: 4rem;
+        }
+
+        .overview-main-text h2 {
+            font-family: 'Barlow Condensed', sans-serif;
+            font-size: 1.75rem;
+            color: var(--navy);
+            margin: 0 0 1rem 0;
+        }
+
+        .overview-main-text p {
+            margin-bottom: 1.25rem;
+            color: var(--text);
+            text-align: justify;
+        }
+
+        /* Metadata Sidebar */
+        .overview-sidebar {
+            background-color: var(--offwhite);
+            padding: 1.5rem;
+            border-radius: 4px;
+            border-left: 3px solid var(--navy);
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            gap: 1.25rem;
+            height: fit-content;
+        }
+
+        .meta-item {
+            display: flex;
+            flex-direction: column;
+        }
+
+        .meta-label {
+            font-size: 0.8rem;
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
+            color: var(--muted);
+            font-weight: 500;
+        }
+
+        .meta-value {
+            font-size: 1rem;
+            font-weight: 600;
+            color: var(--dark);
+        }
+
+        /* Key Findings Header */
+        .section-header-minimal {
+            margin-bottom: 2.5rem;
+        }
+
+        .section-header-minimal h2 {
+            font-family: 'Barlow Condensed', sans-serif;
+            font-size: 1.75rem;
+            color: var(--navy);
+            margin: 0 0 0.5rem 0;
+        }
+
+        .minimal-line {
+            width: 60px;
+            height: 2px;
+            background-color: var(--accent);
+        }
+
+        /* Findings Grid Styling */
+        .report-findings-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+            gap: 2rem;
+            margin-bottom: 4rem;
+        }
+
+        .finding-card {
+            background: var(--white);
+            border-radius: 8px;
+            overflow: hidden;
+            display: flex;
+            flex-direction: column;
+            box-shadow: 0 4px 20px rgba(26, 23, 20, 0.05);
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+        }
+
+        .finding-card:hover {
+            transform: translateY(-4px);
+            box-shadow: 0 10px 30px rgba(31, 56, 100, 0.12);
+        }
+
+        /* Borderless premium image display rules */
+        .finding-card img {
+            width: 100%;
+            margin: 0;
+            height: 240px;
+            object-fit: cover;
+            object-position: center;
+            display: block;
+            border-radius: 0;
+        }
+
+        .card-accent-bar{
+            width: 100%;
+            height: 2px;
+            background-color: var(--accent);
+        }
+
+        /* Internal layout grid content elements padding rules */
+        .finding-card-content {
+            padding: 2rem;
+        }
+
+        .card-title-area {
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+            margin-bottom: 1rem;
+        }
+
+        .finding-card h3 {
+            font-family: 'Inter', sans-serif;
+            font-size: 1.15rem;
+            font-weight: 600;
+            color: var(--navy);
+            margin: 0;
+        }
+
+        .finding-card p {
+            font-size: 0.95rem;
+            color: var(--text);
+            line-height: 1.6;
+            margin: 0;
+        }
+
+        .highlight-stat {
+            font-size: 1.3rem;
+            font-weight: 600;
+            color: var(--navy);
+            border-bottom: 1px dashed var(--accent);
+        }
+
+        /* Centered Download Section Box */
+        .download-action-box {
+            text-align: center;
+            background-color: var(--offwhite);
+            padding: 3rem 2rem;
+            border-radius: 4px;
+            border: 1px solid var(--light);
+            margin-top: 5rem;
+        }
+
+        .download-action-box p {
+            max-width: 600px;
+            margin: 0 auto 1.5rem auto;
+            color: var(--muted);
+        }
+
+        .download-pdf-btn {
+            display: inline-block;
+            background-color: var(--navy);
+            color: var(--white);
+            padding: 0.85rem 2rem;
+            text-decoration: none;
+            font-weight: 600;
+            font-size: 0.95rem;
+            border-radius: 4px;
+            transition: background-color 0.2s ease;
+        }
+
+        .download-pdf-btn:hover {
+            background-color: var(--blue);
+        }
+
+        /* Responsive Adjustments */
+        @media (max-width: 768px) {
+            .back-link-container {
+                margin: 1.5rem auto 0 auto;
+            }
+            .report-hero h1 {
+                font-size: 2.25rem;
+            }
+            .report-hero {
+                padding: 3rem 1.5rem;
+            }
+            .report-container {
+                padding: 2.5rem 1.5rem;
+            }
+            .report-overview-layout {
+                grid-template-columns: 1fr;
+                gap: 2rem;
+            }
+            .report-findings-grid {
+                grid-template-columns: 1fr;
+            }
+            .finding-card img {
+                height: 180px;
+            }
+        }
+    </style>
+</head>
+<body>
+
+    <div class="back-link-container">
+         <a href="../index.html" class="back-link">
+            <span class="arrow">←</span> Back to Briefers
+        </a>
+    </div>
+
+    <header class="report-hero">
+        <div class="report-hero-content">
+            <span class="report-meta-tag">June 2025 Report</span>
+            <h1 class="lang-text" data-en="Earthquake Emergency Response" data-my="ငလျင်ဘေး အရေးပေါ်တုံ့ပြန်မှု">Earthquake Emergency Response</h1>
+            <p class="report-lead">Activity report detailing the distribution of aid to 3,908 individuals across 28 earthquake-affected sites in Southern Shan State.</p>
+        </div>
+    </header>
+
+    <main class="report-container">
+        
+        <section class="report-overview-layout">
+            <div class="overview-main-text">
+                <h2>Crisis Background</h2>
+                <p>In early June 2025, a moderate earthquake struck Southern Shan State, severely affecting vulnerable Karenni communities residing in Nyaung Shwe, Kalaw, and the Inlay region. Many of the impacted households were already displaced due to conflict in Kayah State. The earthquake damaged temporary shelters, disrupted market access, and compounded existing humanitarian needs.</p>
+                <p>In response to this emergency, relief efforts were promptly targeted to secure stabilization resources and re-establish immediate core safety baselines across the affected camp extensions.</p>
+            </div>
+            
+            <div class="overview-sidebar">
+                <div class="meta-item">
+                    <span class="meta-label">Timeline</span>
+                    <span class="meta-value">June 8 – 17, 2025</span>
+                </div>
+                <div class="meta-item">
+                    <span class="meta-label">Scope</span>
+                    <span class="meta-value">28 Affected Sites</span>
+                </div>
+                <div class="meta-item">
+                    <span class="meta-label">Region</span>
+                    <span class="meta-value">Southern Shan State</span>
+                </div>
+            </div>
+        </section>
+
+        <section class="key-findings-section">
+            <div class="section-header-minimal">
+                <h2>Our Response Details</h2>
+                <div class="minimal-line"></div>
+            </div>
+            
+            <div class="report-findings-grid">
+                
+                <div class="finding-card">
+                    <img src="./img/earthquake-response.png" alt="CTER field team conducting emergency evaluations at an affected township site.">
+                    <div class="card-accent-bar"></div>
+                    <div class="finding-card-content">
+                        <div class="card-title-area">
+                            <h3>Population Reached</h3>
+                        </div>
+                        <p>CTER successfully delivered aid to <span class="highlight-stat">3,908 individuals</span> across <strong>28 displacement sites</strong>. Distributions strictly prioritized vulnerable groups, directly supporting 1,485 children under 18 years old, women-led households, and 277 Persons with Disabilities (PWDs).</p>
+                    </div>
+                </div>
+
+                <div class="finding-card">
+                    <img src="./img/field-distribution-rice.png" alt="Arranging essential grain rations for immediate delivery to displaced families.">
+                    <div class="card-accent-bar"></div>
+                    <div class="finding-card-content">
+                        <div class="card-title-area">
+                            <h3>Emergency Food</h3>
+                        </div>
+                        <p>To stabilize immediate food security, standard rations were distributed to cover 7–10 days of basic consumption. Packages included <strong>sacks of rice (50kg per 4 persons), cooking oil, and salt</strong>.</p>
+                    </div>
+                </div>
+
+                <div class="finding-card">
+                    <img src="./img/emergency-tarp-shelter.jpg.png" alt="Emergency shelters reinforced with structural tarpaulins to protect against natural hazards.">
+                    <div class="card-accent-bar"></div>
+                    <div class="finding-card-content">
+                        <div class="card-title-area">
+                            <h3>Shelter & NFIs</h3>
+                        </div>
+                        <p>To improve living conditions and protection from weather and vector-borne diseases, CTER distributed Non-Food Items including <strong>heavy-duty tarpaulins, winter blankets, and mosquito nets</strong> to the most severely affected families.</p> 
+                    </div>
+                </div>
+
+                <div class="finding-card">
+                    <img src="./img/coordination-assessment.png" alt="Meeting with local village representatives to cross-verify resource delivery schedules.">
+                    <div class="card-accent-bar"></div>
+                    <div class="finding-card-content">
+                        <div class="card-title-area">
+                            <h3>Accountability</h3>
+                        </div>
+                        <p>The response was carried out in close coordination with community focal points and women representatives. All activities strictly adhered to <strong>Do No Harm, Inclusion, and Duty of Care</strong> principles to ensure safe and respectful delivery.</p>
+                    </div>
+                </div>
+
+            </div>
+        </section>
+
+        <section class="download-action-box">
+            <p>To view the full narrative report, distribution constraints, and ongoing unmet needs, please download the activity report.</p>
+            <a href="assets/Earthquake_Response_Activity_Report.pdf" target="_blank" class="download-pdf-btn">
+                Download Full PDF Report
+            </a>
+        </section>
+    </main>
+
+</body>
+</html>

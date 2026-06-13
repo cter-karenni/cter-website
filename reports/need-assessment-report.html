@@ -1,0 +1,430 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="icon" type="image/x-icon" href="../images/cter-logo-bg-free.png">
+    <title>Humanitarian Needs Assessment | CTER</title>
+    <link rel="stylesheet" href="css/style.css">
+    <style>
+        /* ════════════════════════════════
+   VARIABLES & RESET
+════════════════════════════════ */
+        @import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600&family=Barlow+Condensed:wght@600;700;800&display=swap');
+        @import url('https://fonts.googleapis.com/css2?family=Padauk:wght@400;700&display=swap');
+        
+        :root {
+          --navy:     #1F3864;
+          --blue:     #000071;
+          --light:    #D6E4F0;
+          --white:    #FFFFFF;
+          --offwhite: #F4F6F8;
+          --text:     #1a1714;
+          --muted:    #6b7068;
+          --accent:   #C8A84B;
+          --dark:     #1a1714;
+        }
+
+        /* Base Typography Adjustments for Report Pages */
+        body {
+            font-family: 'Inter', sans-serif;
+            color: var(--text);
+            background-color: var(--white);
+            line-height: 1.6;
+            margin: 0;
+            padding: 0;
+        }
+
+        /* Back Link - Clean Padding Control */
+        .back-link-container {
+            max-width: 1000px;
+            margin: 2rem auto 0 auto;
+            padding: 0 2rem;
+        }
+
+        .back-link {
+            display: inline-flex;
+            align-items: center;
+            gap: 0.5rem;
+            color: var(--navy);
+            text-decoration: none;
+            font-size: 0.95rem;
+            font-weight: 500;
+            transition: color 0.2s ease, transform 0.2s ease;
+        }
+
+        .back-link .arrow {
+            font-size: 1.1rem;
+            transition: transform 0.2s ease;
+        }
+
+        .back-link:hover {
+            color: var(--accent);
+        }
+
+        .back-link:hover .arrow {
+            transform: translateX(-4px);
+        }
+
+        /* Hero Styles */
+        .report-hero {
+            background-color: var(--offwhite);
+            border-bottom: 1px solid var(--light);
+            padding: 4rem 2rem;
+            margin-top: 1rem;
+        }
+
+        .report-hero-content {
+            max-width: 800px;
+            margin: 0 auto;
+        }
+
+        .report-meta-tag {
+            font-family: 'Barlow Condensed', sans-serif;
+            text-transform: uppercase;
+            letter-spacing: 1.5px;
+            color: var(--navy);
+            font-size: 0.9rem;
+            font-weight: 600;
+            display: inline-block;
+            margin-bottom: 0.75rem;
+        }
+
+        .report-hero h1 {
+            font-family: 'Barlow Condensed', sans-serif;
+            font-size: 3rem;
+            font-weight: 800;
+            color: var(--navy);
+            line-height: 1.1;
+            margin: 0 0 1rem 0;
+        }
+
+        .report-hero h1[data-my] {
+            font-family: 'Padauk', 'Inter', sans-serif;
+        }
+
+        .report-lead {
+            font-size: 1.2rem;
+            color: var(--muted);
+            font-weight: 300;
+            margin: 0;
+        }
+
+        /* Layout Container */
+        .report-container {
+            max-width: 1000px;
+            margin: 0 auto;
+            padding: 4rem 2rem;
+        }
+
+        /* Two-Column Overview */
+        .report-overview-layout {
+            display: grid;
+            grid-template-columns: 2fr 1fr;
+            gap: 4rem;
+            margin-bottom: 4rem;
+        }
+
+        .overview-main-text h2 {
+            font-family: 'Barlow Condensed', sans-serif;
+            font-size: 1.75rem;
+            color: var(--navy);
+            margin: 0 0 1rem 0;
+        }
+
+        .overview-main-text p {
+            margin-bottom: 1.25rem;
+            color: var(--text);
+            text-align: justify;
+        }
+
+        /* Metadata Sidebar */
+        .overview-sidebar {
+            background-color: var(--offwhite);
+            padding: 1.5rem;
+            border-radius: 4px;
+            border-left: 3px solid var(--navy);
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            gap: 1.25rem;
+            height: fit-content;
+        }
+
+        .meta-item {
+            display: flex;
+            flex-direction: column;
+        }
+
+        .meta-label {
+            font-size: 0.8rem;
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
+            color: var(--muted);
+            font-weight: 500;
+        }
+
+        .meta-value {
+            font-size: 1rem;
+            font-weight: 600;
+            color: var(--dark);
+        }
+
+        /* Key Findings Header */
+        .section-header-minimal {
+            margin-bottom: 2.5rem;
+        }
+
+        .section-header-minimal h2 {
+            font-family: 'Barlow Condensed', sans-serif;
+            font-size: 1.75rem;
+            color: var(--navy);
+            margin: 0 0 0.5rem 0;
+        }
+
+        .minimal-line {
+            width: 60px;
+            height: 2px;
+            background-color: var(--accent);
+        }
+
+        /* Findings Grid Styling */
+        .report-findings-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(320px, 1fr)); /* Better minimum scale for mobile/tablets */
+            gap: 2rem;
+            margin-bottom: 4rem;
+        }
+
+        .finding-card {
+            background: var(--white);
+            border-radius: 8px;              /* Slightly softer corners to match the inspiration layout */
+            overflow: hidden;
+            display: flex;
+            flex-direction: column;
+            box-shadow: 0 4px 20px rgba(26, 23, 20, 0.05); /* Soft, museum-grade layout shadow using var(--text) */
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+        }
+
+        .finding-card:hover {
+            transform: translateY(-4px);     /* Smooth, slight lift on hover */
+            box-shadow: 0 10px 30px rgba(31, 56, 100, 0.12); /* Deeper interactive focus shadow using var(--navy) */
+        }
+
+        /* Beautiful borderless image structure */
+        .finding-card img {
+            width: 95%;                     /* Fills the card completely to the edges */
+            margin: 0 auto;                       /* Removes the outer margins completely */
+            height: 240px;                   /* Slightly taller height for better documentary framing */
+            object-fit: cover;      
+            object-position: center; 
+            display: block;
+            border-radius: 0;                /* Resets top corners so it integrates cleanly under the gold bar */
+           
+        }
+
+        .card-accent-bar{
+            width: 100%;
+            height: 2px;
+            background-color: var(--accent);
+        }
+
+        /* Internal content padding matching the premium layout */
+        .finding-card-content {
+            padding: 2rem;                   /* Generous spacing inside the text wrapper */
+        }
+
+        .card-title-area {
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+            margin-bottom: 1rem;
+        }
+
+        .finding-card h3 {
+            font-family: 'Inter', sans-serif;
+            font-size: 1.15rem;
+            font-weight: 600;
+            color: var(--navy);
+            margin: 0;
+        }
+
+        .finding-card p {
+            font-size: 0.95rem;
+            color: var(--text);
+            line-height: 1.6;
+            margin: 0;
+        }
+
+        .highlight-stat {
+            font-size: 1.3rem;
+            font-weight: 600;
+            color: var(--navy);
+            border-bottom: 1px dashed var(--accent);
+        }
+
+        /* Centered Download Section Box */
+        .download-action-box {
+            text-align: center;
+            background-color: var(--offwhite);
+            padding: 3rem 2rem;
+            border-radius: 4px;
+            border: 1px solid var(--light);
+            margin-top: 5rem;
+        }
+
+        .download-action-box p {
+            max-width: 600px;
+            margin: 0 auto 1.5rem auto;
+            color: var(--muted);
+        }
+
+        .download-pdf-btn {
+            display: inline-block;
+            background-color: var(--navy);
+            color: var(--white);
+            padding: 0.85rem 2rem;
+            text-decoration: none;
+            font-weight: 600;
+            font-size: 0.95rem;
+            border-radius: 4px;
+            transition: background-color 0.2s ease;
+        }
+
+        .download-pdf-btn:hover {
+            background-color: var(--blue);
+        }
+
+        /* Responsive Adjustments */
+        @media (max-width: 768px) {
+            .back-link-container {
+                margin: 1.5rem auto 0 auto;
+            }
+            .report-hero h1 {
+                font-size: 2.25rem;
+            }
+            .report-hero {
+                padding: 3rem 1.5rem;
+            }
+            .report-container {
+                padding: 2.5rem 1.5rem;
+            }
+            .report-overview-layout {
+                grid-template-columns: 1fr;
+                gap: 2rem;
+            }
+            .report-findings-grid {
+                grid-template-columns: 1fr;
+            }
+            .finding-card img {
+                height: 180px; /* Marginally shorter height for comfortable mobile reading */
+            }
+        }
+    </style>
+</head>
+<body>
+
+    <div class="back-link-container">
+         <a href="../index.html" class="back-link">
+            <span class="arrow">←</span> Back to Briefers
+        </a>
+    </div>
+
+    <header class="report-hero">
+        <div class="report-hero-content">
+            <span class="report-meta-tag">Field Situation Briefing</span>
+            <h1 class="lang-text" data-en="Humanitarian Needs Assessment" data-my="လူသားချင်းစာနာထောက်ထားမှု လိုအပ်ချက် ဆန်းစစ်လေ့လာချက်">Humanitarian Needs Assessment</h1>
+            <p class="report-lead">A comprehensive field study across 60 IDP camps in 8 townships highlighting critical gaps in food, WASH, and protection.</p>
+        </div>
+    </header>
+
+    <main class="report-container">
+        
+        <section class="report-overview-layout">
+            <div class="overview-main-text">
+                <h2>Assessment Overview</h2>
+                <p>From November 3–10, 2024, CTER conducted a critical humanitarian needs assessment across 8 townships in Karenni State: Loikaw, Pekhon, Demoso, Hpruso, Bawlake, Shadaw, Hpa-Saung, and Mese . Surveying 93 respondents across 60 IDP camps, this report identifies the most urgent basic needs of displaced households to guide international prioritization and response.</p>
+                <p>The findings reflect a prolonged crisis environment where local community coping mechanisms are severely strained, and access to stable survival resources remains heavily restricted by security conditions.</p>
+            </div>
+            
+            <div class="overview-sidebar">
+                <div class="meta-item">
+                    <span class="meta-label">Published</span>
+                    <span class="meta-value">November 2024</span>
+                </div>
+                <div class="meta-item">
+                    <span class="meta-label">Scope</span>
+                    <span class="meta-value">60 IDP Camps / 8 Townships</span>
+                </div>
+                <div class="meta-item">
+                    <span class="meta-label">Methodology</span>
+                    <span class="meta-value">93 Key Informant Surveys </span>
+                </div>
+            </div>
+        </section>
+
+        <section class="key-findings-section">
+            <div class="section-header-minimal">
+                <h2>Key Findings at a Glance</h2>
+                <div class="minimal-line"></div>
+            </div>
+            
+            <div class="report-findings-grid">
+                
+                <div class="finding-card">
+                    <img src="./img/field-distribution-rice.png" alt="Community members organizing and distributing emergency rice rations.">
+                    <div class="card-accent-bar"></div>
+                    <div class="finding-card-content">
+                        <div class="card-title-area">
+                            <h3>Food Security</h3>
+                        </div>
+                        <p><span class="highlight-stat">72%</span> of respondents rank food security as their absolute highest priority. Furthermore, <strong>84%</strong> rely entirely on food aid as their primary source of nutrition, yet only 20% receive food assistance on a regular monthly basis.</p>
+                    </div>
+                </div>
+
+                <div class="finding-card">
+                    <img src="./img/emergency-tarp-shelter.jpg.png" alt="Displaced family seeking shelter under a temporary heavy-duty tarpaulin setup.">
+                    <div class="card-accent-bar"></div>
+                    <div class="finding-card-content">
+                        <div class="card-title-area">
+                            <h3>Shelter & NFIs</h3>
+                        </div>
+                        <p><span class="highlight-stat">88%</span> of displaced populations urgently need Non-Food Items for daily survival. The most critically requested items are heavy-duty tarpaulins (60%), followed by essential medicine (43%) and kitchen utilities (33%).</p> 
+                    </div>
+                </div>
+
+                <div class="finding-card">
+                    <img src="./img/camp-wash-water-tanks.png" alt="Community members gathering clean drinking water from large storage distribution tanks.">
+                    <div class="card-accent-bar"></div>
+                    <div class="finding-card-content">
+                        <div class="card-title-area">
+                            <h3>Water & Sanitation</h3>
+                        </div>
+                        <p>Access to clean water is a severe challenge, with <span class="highlight-stat">45%</span> facing non-functional or dried-up water points and <strong>42%</strong> reporting contaminated drinking water. Additionally, <strong>70%</strong> of households lack mosquito nets, increasing public health risks.</p>
+                    </div>
+                </div>
+
+                <div class="finding-card">
+                    <img src="./img/village-destruction-overview.png" alt="Overview of structural devastation and burnt materials in a conflict-affected village.">
+                    <div class="card-accent-bar"></div>
+                    <div class="finding-card-content">
+                        <div class="card-title-area">
+                            <h3>Protection & Safety</h3>
+                        </div>
+                        <p>Over <span class="highlight-stat">50%</span> of respondents feel unsafe in their current temporary shelters due to the ongoing threat of airstrikes, artillery shelling, and landmines. <strong>80%</strong> of the community identified children as the most vulnerable group in this crisis.</p>
+                    </div>
+                </div>
+
+            </div>
+        </section>
+
+        <section class="download-action-box">
+            <p>To view the complete datasets, comprehensive community recommendations, and proposed localized interventions, please review the full field report.</p>
+            <a href="assets/Report_Humanitarian_Assessment.pdf" target="_blank" class="download-pdf-btn">
+                Download Full PDF Report
+            </a>
+        </section>
+    </main>
+
+</body>
+</html>
