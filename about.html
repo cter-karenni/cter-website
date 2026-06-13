@@ -3,314 +3,512 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>About us</title>
-    <link rel="icon" type="image/x-icon" href="./images/cter-logo-bg-free.png">
-    <style>
-                /* ── ABOUT US SECTION STYLES ── */
-        #about-us {
-        padding: 5rem 5vw;
-        background-color: var(--white, #ffffff);
-        color: #333333;
-        }
-
-        .about-container {
-        max-width: 1100px;
-        margin: 0 auto;
-        }
-
-        .section-tag {
-        display: inline-block;
-        font-size: 0.85rem;
-        font-weight: 700;
-        text-transform: uppercase;
-        color: #0056b3; /* Primary tone matching .btn-blue adjustments */
-        letter-spacing: 0.05em;
-        margin-bottom: 0.5rem;
-        
-        }
-        .about-hero-row{
-          background-color: var(--dark);
-          width: 100%;
-          height: 50vh;
-          
-        }
-
-        .about-hero-row h2 {
-        font-size: 2.2rem;
-        margin-bottom: 1.5rem;
-        color: var(--white);
-        }
-
-        .about-text-block{
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            flex-direction: column;
-            padding: 2rem 0;
-            margin: 0 20%;
-        }
-
-        .about-text-block p {
-        text-align: justify;
-        font-size: 1.1rem;
-        line-height: 1.7;
-        margin-bottom: 1.25rem;
-        color: rgba(255,255,255,0.6);
-
-        }
-        strong{
-          color: var(--white);
-        }
-
-        /* Value Grid & Cards */
-        .about-grid {
-        display: grid;
-        grid-template-columns: repeat(auto-fit, minmax(450px, 1fr));
-        gap: 2rem;
-        margin: 4rem 0;
-        }
-
-        .about-card {
-        background: #f8f9fa;
-        border-top: 4px solid #0056b3;
-        padding: 2.5rem;
-        border-radius: 6px;
-        box-shadow: 0 4px 12px rgba(0,0,0,0.04);
-        }
-
-        .card-icon {
-        font-size: 2.5rem;
-        margin-bottom: 1rem;
-        }
-
-        .about-card h3 {
-        font-size: 1.4rem;
-        margin-bottom: 1rem;
-        color: var(--dark, #111111);
-        }
-
-        .about-card p {
-        font-size: 1rem;
-        line-height: 1.6;
-        margin-bottom: 1rem;
-        color: #555555;
-        }
-
-        .principles-list {
-        text-align: justify;
-        list-style: none;
-        padding: 0;
-        }
-
-        .principles-list li {
-        position: relative;
-        padding-left: 1.5rem;
-        margin-bottom: 0.75rem;
-        font-size: 0.95rem;
-        line-height: 1.5;
-        color: #555555;
-        }
-
-        .principles-list li::before {
-        content: "✓";
-        position: absolute;
-        left: 0;
-        color: #0056b3;
-        font-weight: bold;
-        }
-
-        /* Partnerships Sub-section */
-        .partnerships-block {
-        background: var(--dark, #1a1a1a);
-        color: #ffffff;
-        padding: 3rem;
-        border-radius: 8px;
-        text-align: center;
-        }
-
-        .partnerships-block h3 {
-        font-size: 1.6rem;
-        margin-bottom: 1rem;
-        }
-
-        .partnerships-block p {
-        font-size: 1rem;
-        line-height: 1.6;
-        max-width: 800px;
-        margin: 0 auto 2.5rem;
-        color: rgba(255,255,255,0.8);
-        }
-
-        .partners-logos-grid {
-        display: grid;
-        grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
-        gap: 1.5rem;
-        }
-
-        .partner-item {
-        background: rgba(255,255,255,0.06);
-        border: 1px solid rgba(255,255,255,0.1);
-        padding: 1.5rem;
-        border-radius: 6px;
-        display: flex;
-        flex-direction: column;
-        justify-content: center;
-        align-items: center;
-        }
-
-        .partner-item strong {
-        font-size: 1.2rem;
-        color: #ffffff;
-        margin-bottom: 0.25rem;
-        }
-
-        .partner-item span {
-        font-size: 0.85rem;
-        color: rgba(255,255,255,0.6);
-        }
-
-        /* Responsive adjustments inside Mobile Media Query */
-        @media (max-width: 768px) {
-        .about-grid {
-            grid-template-columns: 1fr;
-        }
-        
-        .about-card {
-            padding: 1.75rem;
-        }
-        
-        .partnerships-block {
-            padding: 2rem 1rem;
-        }
-        }
-    </style>
+    <link rel="icon" type="image/x-icon" href="images/cter-logo-bg-free.png">
+    <title>About Us | CTER Karenni</title>
     <link rel="stylesheet" href="./css/style.css">
+    <style>
+      /* ════════════════════════════════
+   VARIABLES & EDITORIAL TYPE PAIRING
+════════════════════════════════ */
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600&family=Lora:ital,wght@0,500;0,600;0,700;1,400&family=Barlow+Condensed:wght@600;700;800&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Padauk:wght@400;700&display=swap');
+
+:root {
+  /* --font-heading: 'Lora', serif;
+  --font-body:    'Inter', sans-serif;
+  --font-meta:    'Barlow Condensed', sans-serif; */
+  
+  
+  --navy:     #1F3864;
+  --blue:     #000071;
+  --light:    #D6E4F0;
+  --white:    #FFFFFF;
+  --offwhite: #F4F6F8;
+  --text:     #1a1714;
+  --muted:    #6b7068;
+  --accent:   #C8A84B;
+  --dark:     #1a1714;
+
+}
+
+p{
+  font-family: 'Inter', sans-serif;
+}
+
+body {
+    color: var(--text);
+    background-color: var(--white);
+    line-height: 1.6;
+    margin: 0;
+    padding: 0;
+}
+
+/* Back link structural rules */
+.back-link-container {
+    max-width: 1000px;
+    margin: 2rem auto 0 auto;
+    padding: 0 2rem;
+}
+
+.back-link {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.5rem;
+    color: var(--navy);
+    text-decoration: none;
+    font-size: 0.95rem;
+    font-weight: 500;
+    transition: color 0.2s ease;
+}
+
+.back-link:hover {
+    color: var(--accent);
+}
+
+.back-link .arrow {
+    font-size: 1.1rem;
+    transition: transform 0.2s ease;
+}
+
+.back-link:hover .arrow {
+    transform: translateX(-4px);
+}
+
+/* Hero Style */
+.report-hero {
+    background-color: var(--dark);
+    border-bottom: 1px solid var(--light);
+    padding: 4rem 2rem;
+    margin-top: 1rem;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+}
+
+.report-hero-content {
+    max-width: 800px;
+    margin: 0 auto;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+}
+
+.report-hero-content h1{
+    font-size: 2.2rem;
+    color: var(--white);
+    font-weight: 800;
+    margin-top: 0.5rem;
+    margin-bottom: 1rem;
+    text-transform: uppercase;
+}
+
+.report-meta-tag {
+    font-family: var(--font-meta);
+    text-transform: uppercase;
+    letter-spacing: 1.5px;
+    color: var(--accent);
+    font-size: 0.9rem;
+    font-weight: 600;
+    display: inline-block;
+    margin-bottom: 0.75rem;
+}
+
+.report-hero h1 {
+    font-family: var(--font-heading);
+    font-size: 3.2rem;
+    font-weight: 600;
+    color: var(--white);
+    line-height: 1.15;
+    margin: 0 0 1rem 0;
+    letter-spacing: -0.5px;
+}
+
+.report-lead {
+    font-size: 1.25rem;
+    color: var(--light);
+    font-style: italic;
+    margin: 0;
+}
+
+/* Layout Main Boundaries */
+.report-container {
+    max-width: 1000px;
+    margin: 0 auto;
+    padding: 5rem 2rem;
+}
+
+/* Premium Profile Indexes */
+.archive-index {
+    font-family: var(--font-meta);
+    font-size: 0.85rem;
+    font-weight: 700;
+    letter-spacing: 1px;
+    color: var(--accent);
+    display: block;
+    margin-bottom: 0.5rem;
+}
+
+/* Editorial Two-Column Structure */
+.profile-editorial-layout {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 4rem;
+    align-items: center;
+    margin-bottom: 1rem;
+}
+
+.overview-main-text h2 {
+    font-family: var(--font-heading);
+    font-size: 2rem;
+    color: var(--navy);
+    margin: 0 0 1.25rem 0;
+}
+
+.overview-main-text p {
+    /* margin-bottom: 1.25rem; */
+    color: var(--text);
+    text-align: justify;
+}
+
+/* Image Frames Setup */
+.editorial-image-frame {
+    width: 100%;
+    height: 400px;
+    overflow: hidden;
+    border-radius: 6px;
+    box-shadow: 0 4px 25px rgba(26, 23, 20, 0.05);
+}
+
+.editorial-image-frame img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    object-position: center;
+    display: block;
+}
+
+/* Strategic Pillars Custom Section Header */
+
+/* ════════════════════════════════
+   MINIMALIST PILLARS TEXT FLOW
+════════════════════════════════ */
+
+.section-header-minimal h2{
+  color: var(--navy);
+  margin-bottom: 1rem;
+}
+
+.pillars-section-minimal {
+    /* margin-bottom: 7rem; */
+    max-width: 750px; /* Restricts line width exactly like the CARE layout for premium readability */
+}
+
+.pillars-text-flow {
+    display: flex;
+    flex-direction: column;
+    gap: 3.5rem; /* Generous space between each block */
+    /* margin-top: 3rem; */
+}
+
+.pillar-row {
+    display: flex;
+    flex-direction: column;
+    gap: 0.75rem; /* Space between the heading and its paragraph */
+}
+
+.pillar-row h3 {
+    font-family: var(--font-heading); /* Uses your beautiful Lora serif */
+    font-size: 2rem; /* Large, bold presence exactly like the reference */
+    font-weight: 600;
+    color: var(--navy);
+    margin: 0;
+}
+
+.pillar-row p {
+    font-family: var(--font-body); /* Uses your clean Inter text */
+    font-size: 1.05rem;
+    color: var(--text);
+    line-height: 1.65;
+    margin: 0;
+    text-align: left; /* Avoid full justification here to match the modern documentary layout */
+}
+
+/* Responsive adjustment for mobile screens */
+@media (max-width: 768px) {
+    .pillars-section-minimal {
+        margin-bottom: 5rem;
+    }
+    .pillar-row h3 {
+        font-size: 1.65rem; /* Gently scales down the typography on small phone views */
+    }
+    .pillars-text-flow {
+        gap: 2.5rem;
+    }
+}
+
+
+/* Compliance Governance Framework Box Layout */
+.framework-compliance-box {
+    background-color: var(--offwhite);
+    border: 1px solid var(--light);
+    border-radius: 6px;
+    padding: 3rem;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 4rem;
+    margin-bottom: 6rem;
+}
+
+.framework-column {
+    display: flex;
+    flex-direction: column;
+}
+
+.small-gold-indicator {
+    width: 150px;
+    height: 3px;
+    background-color: var(--accent);
+    margin-bottom: 0.5rem;
+}
+
+.framework-column h3 {
+    font-family: var(--font-heading);
+    font-size: 1.3rem;
+    color: var(--navy);
+    margin: 0;
+}
+
+.framework-column p {
+    font-size: 0.95rem;
+    color: var(--text);
+    margin-top: 0.75rem;
+}
+
+/* Formalized Governance Network Lists layout */
+.governance-list {
+    list-style: none;
+    padding: 0;
+    margin: 1.5rem 0 0 0;
+}
+
+.governance-list li {
+    position: relative;
+    padding-left: 1.5rem;
+    margin-bottom: 1.25rem;
+    display: flex;
+    flex-direction: column;
+}
+
+.governance-list li::before {
+    content: "—";
+    position: absolute;
+    left: 0;
+    color: var(--accent);
+    font-weight: bold;
+}
+
+.governance-list li strong {
+    font-size: 1.05rem;
+    color: var(--navy);
+}
+
+.governance-list li span {
+    font-size: 0.9rem;
+    color: var(--muted);
+}
+
+/* Mobile-Responsive Breakpoint Configurations */
+@media (max-width: 768px) {
+    .back-link-container {
+        margin: 1.5rem auto 0 auto;
+    }
+    .report-hero h1 {
+        font-size: 2.25rem;
+    }
+    .report-container {
+        padding: 3rem 1.5rem;
+    }
+    .profile-editorial-layout {
+        grid-template-columns: 1fr;
+        gap: 2.5rem;
+        margin-bottom: 4rem;
+    }
+    /* Swaps order on mobile view so text stays above the photo container */
+    .reverse-layout {
+        display: flex;
+        flex-direction: column-reverse;
+    }
+    .editorial-image-frame {
+        height: 260px;
+    }
+    .framework-compliance-box {
+        grid-template-columns: 1fr;
+        gap: 2.5rem;
+        padding: 2rem;
+        margin-bottom: 4rem;
+    }
+    .report-findings-grid {
+        grid-template-columns: 1fr;
+        gap: 1.75rem;
+    }
+}
+
+h1{
+  font-family: 'Barlow Condensed', sans-serif;
+}
+
+
+    </style>
+    
+
 </head>
 <body>
-        <!-- ── NAVBAR ── -->
-    <nav id="navbar">
-        <div class="nav-logo">
-        
-        <a href="index.html">
-            <img src="images/cter-logo-bg-free.png" alt="CTER Logo"  />
-            <span>CTER – Karenni</span>
-        </a>
-        </div>
-        <ul class="nav-links">
-        <li><a href="index.html" >Home</a></li>
-        <li><a href="news_update.html">News update</a></li>
-        <li><a href="about.html" class="active">About Us</a></li>
-        <li><a href="our-work.html">Our Work</a></li>
-        <li><a href="briefer.html">Briefers</a></li>
-        <li><a href="support.html">Support Us</a></li>
-        <li><a href="contact.html">Contact</a></li>
-        
-        </ul>
-        <button class="hamburger" id="hamburger">
-        <span></span>
-        <span></span>
-        <span></span>
-        </button>
-        
-    </nav>
 
-    <!-- Mobile Menu -->
-    <div class="mobile-menu" id="mobileMenu">
-        <a href="index.html">Home</a>
-        <a href="news_update.html">News update</a>
-        <a href="about.html">About Us</a>
-        <a href="our-work.html">Our Work</a>
-        <a href="briefer.html">Briefers</a>
-        <a href="support.html">Support Us</a>
-        <a href="contact.html">Contact</a>
-    </div>
-
-    <div class="about-hero-row">
-      <div class="about-text-block">
-        <span class="section-tag" style="margin: 4rem 0 1rem 0;">Who We Are</span>
-        <h2>Born from Crisis, Built on Solidarity</h2>
-        <p>
-          The <strong>Coordination Team for Emergency Relief (Karenni)</strong>, widely known as <strong>CTER – Karenni</strong>, 
-          was officially formed on <strong>March 9, 2021</strong>. Established by a dedicated network of local volunteers 
-          and diaspora members, CTER emerged in direct response to the severe humanitarian crisis triggered by the 
-          Myanmar military coup.
-        </p>
-        <p>
-          Our primary mission is to stabilize immediate food security and provide critical life-saving resources—including 
-          emergency food items, humanitarian shelter, and basic medical supplies—to Internally Displaced Persons (IDPs) 
-          and disaster-affected communities throughout Karenni State and neighboring regions. Concurrently, we advocate 
-          for the protection and human rights of the Karenni people on global platforms.
-        </p>
-      </div>
-    </div>
-
-    <section id="about-us">
-    
-    
-  <div class="about-container">
-    
-    
-
-    <div class="about-grid">
+    <!-- ── NAVBAR ── -->
+  <nav id="navbar">
+    <div class="nav-logo">
       
-      <div class="about-card">
-        <div class="card-icon"></div>
-        <h3>Core Principles</h3>
-        <p>To preserve local trust and meet international standards, our operational actions strictly adhere to key humanitarian frameworks:</p>
-        <ul class="principles-list">
-          <li><strong>Do No Harm:</strong> Ensuring that our presence and delivery processes do not inadvertently create or exacerbate local vulnerabilities.</li>
-          <li><strong>Inclusion:</strong> Prioritizing aid distribution equitably based on need, with specific focus on vulnerable households, children, the elderly, and persons with disabilities (PWDs).</li>
-          <li><strong>Duty of Care:</strong> Safeguarding the security, physical safety, and dignity of both our field staff and the beneficiaries we serve.</li>
-        </ul>
-      </div>
-
-      <div class="about-card">
-        <!-- <div class="card-icon">🛡️</div>
-        <h3>Accountability & Ethics</h3>
-        <p>
-          CTER maintains a zero-tolerance stance toward operational malpractice. Every permanent employee, field officer, 
-          volunteer, and intern is strictly bound by a formalized <strong>Organizational Code of Conduct</strong>.
-        </p>
-        <p>
-          Our administrative compliance requires full integration of <strong>PSEA (Protection from Sexual Exploitation and Abuse)</strong> 
-          frameworks. We maintain standardized tracking, structured internal reporting lines, and transparent operational systems 
-          to remain strictly audit-ready for international donor accountability.
-        </p> -->
-          <div class="who-visual">
-        <img src="images/cter-logo-bg-free.png" alt="CTER" />
-        <blockquote>"We coordinate so that no displaced family is left without support."</blockquote>
-        <cite>— CTER Karenni · Mae Hong Son, Thailand</cite>
-      </div>
-      </div>
-
+      <a href="index.html">
+        <img src="images/cter-logo-bg-free.png" alt="CTER Logo"  />
+        <span>CTER – Karenni</span>
+      </a>
     </div>
+    <ul class="nav-links">
+      <li><a href="index.html">Home</a></li>
+      <li><a href="news_update.html">News update</a></li>
+      <li><a href="about.html" class="active">About Us</a></li>
+      <li><a href="our-work.html">Our Work</a></li>
+      <li><a href="briefer.html">Briefers</a></li>
+      <li><a href="support.html">Support Us</a></li>
+      <li><a href="contact.html">Contact</a></li>
+     
+    </ul>
+    <button class="hamburger" id="hamburgerBtn" onclick="toggleMobileMenu()">
+      <span></span>
+      <span></span>
+      <span></span>
+    </button>
+    
+  </nav>
 
-
-
-    <div class="partnerships-block">
-      <h3>Rooted in Our Community</h3>
-      <p>
-        Effective aid delivery in conflict areas requires unbreakable last-mile logistics. CTER achieves this through close, 
-        formalized coordination with trusted local structures and governance entities on the ground. Our prominent implementation 
-        and administrative partners include:
-      </p>
-      <div class="partners-logos-grid">
-        <div class="partner-item">
-          <strong>KSWDC</strong>
-          <span>Karenni Social Welfare & Development Centre</span>
-        </div>
-        <div class="partner-item">
-          <strong>Local IDP Committees</strong>
-          <span>Camp Management Focal Points</span>
-        </div>
-        <div class="partner-item">
-          <strong>Interim Executive Council</strong>
-          <span>Karenni IEC Governance Framework</span>
-        </div>
-      </div>
-    </div>
-
+   <!-- Mobile Menu -->
+  <div class="mobile-menu" id="mobileMenu">
+    <a href="index.html">Home</a>
+    <a href="news_update.html">News update</a>
+    <a href="about.html">About Us</a>
+    <a href="our-work.html">Our Work</a>
+    <a href="briefer.html">Briefers</a>
+    <a href="support.html">Support Us</a>
+    <a href="contact.html">Contact</a>
   </div>
-</section>
+
+    <header class="report-hero">
+        <div class="report-hero-content">
+            <span class="report-meta-tag">Organizational Profile</span>
+            <h1 class="lang-text" data-en="About CTER" data-my="CTER အကြောင်း">About CTER</h1>
+            <p class="report-lead">Born from Crisis, Built on Solidarity.</p>
+        </div>
+    </header>
+
+    <main class="report-container">
+        
+        <section class="profile-editorial-layout">
+            <div class="overview-main-text">
+                <span class="archive-index">01 // CONTEXT</span>
+                <h2>Who We Are</h2>
+                <p>The Coordination Team for Emergency Relief (Karenni), widely known as <strong>CTER – Karenni</strong>, was officially formed on March 9, 2021. Established by a dedicated network of local volunteers and diaspora members, CTER emerged in direct response to the severe humanitarian crisis triggered by the Myanmar military coup.</p>
+                <p>Operating under strict neutrality and safety guidelines along the borderlands, our team bridge crucial resource gaps, ensuring that emergency aid is collected, tracked, and safely moved straight to the families who need it most.</p>
+            </div>
+            <div class="editorial-image-frame">
+                <img src="./images/sorting-supplies-aid.jpeg" alt="CTER humanitarian team members preparing emergency aid strategies for conflict-affected townships.">
+            </div>
+        </section>
+
+              <section class="pillars-section-minimal">
+                <div class="section-header-minimal">
+                    <span class="archive-index">02 // ARCHITECTURE</span>
+                    <h2>Strategic Pillars</h2>
+                    <div class="minimal-line"></div>
+                </div>
+                
+                <div class="pillars-text-flow">
+                    
+                    <div class="pillar-row">
+                        <h3>Our Vision</h3>
+                        <p>To alleviate the physical burdens and psychological stress of the Karenni people suffering in displacement by ensuring they receive immediate, life-saving emergency relief.</p>
+                    </div>
+
+                    <div class="pillar-row">
+                        <h3>Our Mission</h3>
+                        <p>To stabilize immediate food security and provide critical life-saving resources to Internally Displaced Persons (IDPs) and disaster-affected communities in Karenni State and neighboring regions.</p>
+                    </div>
+
+                    <div class="pillar-row">
+                        <h3>Our Focus</h3>
+                        <p>Global advocacy, human rights accountability, and direct emergency interventions on the ground across vulnerable borderland sectors.</p>
+                    </div>
+
+                    <div class="pillar-row">
+                        <h3>Our Core Activities</h3>
+                        <p>Deliver food, shelter, and medicine to IDPs across Karenni State and neighboring regions by working with local partners, civil society organizations, and international donor organizations.</p>
+                        <p>Advocate for the Karenni people on the international stage, and document the truth of what is happening — so the world cannot look away.</p>
+                    </div>
+
+                </div>
+            </section>
+
+
+           
+       
+
+        <section class="framework-compliance-box">
+            <div class="framework-column">
+                <div class="card-title-area">
+                    <h3>Core Principles</h3>
+                    <div class="small-gold-indicator"></div>
+                </div>
+                <p>We strictly adhere to the humanitarian frameworks of <strong>Do No Harm, Inclusion, and Duty of Care</strong> to ensure safe, equitable, and respectful delivery of assistance across all intervention zones.</p>
+            </div>
+            <div class="framework-column">
+                <div class="card-title-area">
+                    <h3>Accountability</h3>
+                    <div class="small-gold-indicator"></div>
+                </div>
+                <p>All CTER personnel and volunteers are bound by a rigorous organizational <strong>Code of Conduct</strong> and a strict <strong>PSEA (Protection from Sexual Exploitation and Abuse)</strong> policy to maintain absolute integrity.</p>
+            </div>
+        </section>
+
+        <section class="profile-editorial-layout reverse-layout">
+            <div class="editorial-image-frame">
+                <img src="./images/idp-receiving-rice.jpg" alt="Trusted field delivery and local logistics infrastructure at a Karenni displacement site.">
+            </div>
+            <div class="overview-main-text">
+                <span class="archive-index">03 // LAST-MILE LOGISTICS</span>
+                <h2>Rooted in Our Community</h2>
+                <p>Effective aid delivery in conflict areas requires unbreakable last-mile logistics. CTER achieves this through close, formalized coordination with trusted local structures and governance entities on the ground.</p>
+                
+                <ul class="governance-list">
+                    <li>
+                        <strong>KSWDC</strong> 
+                        <span>Karenni Social Welfare & Development Centre</span>
+                    </li>
+                    <li>
+                        <strong>Local IDP Committees</strong> 
+                        <span>Camp Management & Field Focal Points</span>
+                    </li>
+                    <li>
+                        <strong>Interim Executive Council</strong> 
+                        <span>Karenni IEC Governance Framework Coordination</span>
+                    </li>
+                </ul>
+            </div>
+        </section>
+
+    </main>
+
 </body>
 </html>
