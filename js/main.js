@@ -57,3 +57,28 @@ function filterBriefers(year, btn) {
     }
   });
 }
+
+function toggleMobileMenu() {
+      const hamburgerBtn = document.getElementById('hamburgerBtn');
+      const mobileMenu = document.getElementById('mobileMenu');
+      
+      // Toggles the animations on the lines and handles display
+      hamburgerBtn.classList.toggle('open');
+      mobileMenu.classList.toggle('open');
+    }
+
+    function filterBriefers(year) {
+      const cards = document.querySelectorAll('.briefer-archive-card');
+      const buttons = document.querySelectorAll('.filter-btn');
+
+      buttons.forEach(btn => btn.classList.remove('active'));
+      event.target.classList.add('active');
+
+      cards.forEach(card => {
+        if (year === 'all' || card.dataset.year === year) {
+          card.classList.remove('hidden');
+        } else {
+          card.classList.add('hidden');
+        }
+      });
+    }
