@@ -4,7 +4,7 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>News Update – CTER Karenni</title>
-  <link rel="icon" type="image/x-icon" href="./images/cter-logo-bg-free.png">
+  <link rel="icon" type="image/x-icon" href="./images/cter-logo-bg-free.jpg">
   <link rel="stylesheet" href="css/style.css" />
 
   <style>
@@ -156,14 +156,81 @@
         height: 65px;
       }
     }
+
+        /* ── LIGHTBOX ── */
+    .lightbox-overlay {
+      display: none;
+      position: fixed;
+      inset: 0;
+      background: rgba(0, 0, 0, 0.92);
+      z-index: 9999;
+      justify-content: center;
+      align-items: center;
+    }
+
+    .lightbox-overlay.active {
+      display: flex;
+    }
+
+    .lightbox-img {
+      max-width: 90vw;
+      max-height: 85vh;
+      object-fit: contain;
+      border-radius: 4px;
+      box-shadow: 0 8px 40px rgba(0, 0, 0, 0.6);
+    }
+
+    .lightbox-close {
+      position: absolute;
+      top: 1.25rem;
+      right: 1.5rem;
+      background: none;
+      border: none;
+      color: white;
+      font-size: 2rem;
+      cursor: pointer;
+      line-height: 1;
+      opacity: 0.8;
+      transition: opacity 0.2s;
+    }
+
+    .lightbox-close:hover {
+      opacity: 1;
+    }
+
+    .lightbox-prev,
+    .lightbox-next {
+        position: absolute;
+        top: 50%;
+        transform: translateY(-50%);
+        background: rgba(255, 255, 255, 0.1);
+        border: none;
+        color: white;
+        font-size: 3rem;
+        cursor: pointer;
+        padding: 0.5rem 1rem;
+        border-radius: 4px;
+        transition: background 0.2s;
+        line-height: 1;
+    }
+
+    .lightbox-prev { left: 1.5rem; }
+    .lightbox-next { right: 1.5rem; }
+
+    .lightbox-prev:hover,
+    .lightbox-next:hover {
+        background: rgba(255, 255, 255, 0.25);
+    }
   </style>
 </head>
 <body>
 
   <nav id="navbar">
     <div class="nav-logo">
-      <img src="../../images/cter-logo-bg-free.png" alt="CTER Logo" />
-      <span>CTER – Karenni</span>
+      <a href="./index.html">
+        <img src="../../images/cter-logo-bg-free.png" alt="CTER Logo" />
+        <span>CTER – Karenni</span>
+      </a>
     </div>
     <ul class="nav-links">
       <li><a href="index.html">Home</a></li>
@@ -215,13 +282,13 @@
         </div>
 
         <div class="update-img-wrapper">
-          <img src="images/news_update's_img/deliver_food_assistance_to_DMS/staff_delivering_rice_bags_through_river-1.jpg" alt="Field Update" class="update-img">
-          <img src="images/news_update's_img/deliver_food_assistance_to_DMS/staff_delivering_rice_bags_through_the_river-2.jpg" alt="Field Update" class="update-img">
-          <img src="images/news_update's_img/deliver_food_assistance_to_DMS/staff_delivering_rice_bags_through_the_river-3.jpg" alt="Field Update" class="update-img">
-          <img src="images/news_update's_img/deliver_food_assistance_to_DMS/staff_delivering_rice_bags_through_the_river-4.jpg" alt="Field Update" class="update-img">
-          <img src="images/news_update's_img/deliver_food_assistance_to_DMS/staff_delivering_rice_bags_through_the_river-5.jpg" alt="Field Update" class="update-img">
-          <img src="images/news_update's_img/deliver_food_assistance_to_DMS/staff_delivering_rice_bags_through_the_river-6.jpg" alt="Field Update" class="update-img">
-          <img src="images/news_update's_img/deliver_food_assistance_to_DMS/staff_delivering_rice_bags_through_the_river-7.jpg" alt="Field Update" class="update-img">
+          <img src="images/news_update's_img/deliver_food_assistance_to_DMS/staff_delivering_rice_bags_through_river-1.webp" alt="Field Update" class="update-img">
+          <img src="images/news_update's_img/deliver_food_assistance_to_DMS/staff_delivering_rice_bags_through_the_river-2.webp" alt="Field Update" class="update-img">
+          <img src="images/news_update's_img/deliver_food_assistance_to_DMS/staff_delivering_rice_bags_through_the_river-3.webp" alt="Field Update" class="update-img">
+          <img src="images/news_update's_img/deliver_food_assistance_to_DMS/staff_delivering_rice_bags_through_the_river-4.webp" alt="Field Update" class="update-img">
+          <img src="images/news_update's_img/deliver_food_assistance_to_DMS/staff_delivering_rice_bags_through_the_river-5.webp" alt="Field Update" class="update-img">
+          <img src="images/news_update's_img/deliver_food_assistance_to_DMS/staff_delivering_rice_bags_through_the_river-6.webp" alt="Field Update" class="update-img">
+          <img src="images/news_update's_img/deliver_food_assistance_to_DMS/staff_delivering_rice_bags_through_the_river-7.webp" alt="Field Update" class="update-img">
         </div>
       </article>
 
@@ -238,21 +305,108 @@
         </div>
 
         <div class="update-img-wrapper">
-          <img src="./images/news_update's_img/bio_sand_filter_installation_in_IDPs_camp/1.jpg" alt="Field Update" class="update-img">
-          <img src="./images/news_update's_img/bio_sand_filter_installation_in_IDPs_camp/2.jpg" alt="Field Update" class="update-img">
-          <img src="./images/news_update's_img/bio_sand_filter_installation_in_IDPs_camp/3.jpg" alt="Field Update" class="update-img">
-          <img src="./images/news_update's_img/bio_sand_filter_installation_in_IDPs_camp/4.jpg" alt="Field Update" class="update-img">
-          <img src="./images/news_update's_img/bio_sand_filter_installation_in_IDPs_camp/5.jpg" alt="Field Update" class="update-img">
-          <img src="./images/news_update's_img/bio_sand_filter_installation_in_IDPs_camp/6.jpg" alt="Field Update" class="update-img">
-          <img src="./images/news_update's_img/bio_sand_filter_installation_in_IDPs_camp/7.jpg" alt="Field Update" class="update-img">
-          <img src="./images/news_update's_img/bio_sand_filter_installation_in_IDPs_camp/8.jpg" alt="Field Update" class="update-img">
-          <img src="./images/news_update's_img/bio_sand_filter_installation_in_IDPs_camp/9.jpg" alt="Field Update" class="update-img">
-          <img src="./images/news_update's_img/bio_sand_filter_installation_in_IDPs_camp/10.jpg" alt="Field Update" class="update-img">
+          <img src="./images/news_update's_img/bio_sand_filter_installation_in_IDPs_camp/1.webp" alt="Field Update" class="update-img">
+          <img src="./images/news_update's_img/bio_sand_filter_installation_in_IDPs_camp/2.webp" alt="Field Update" class="update-img">
+          <img src="./images/news_update's_img/bio_sand_filter_installation_in_IDPs_camp/3.webp" alt="Field Update" class="update-img">
+          <img src="./images/news_update's_img/bio_sand_filter_installation_in_IDPs_camp/4.webp" alt="Field Update" class="update-img">
+          <img src="./images/news_update's_img/bio_sand_filter_installation_in_IDPs_camp/5.webp" alt="Field Update" class="update-img">
+          <img src="./images/news_update's_img/bio_sand_filter_installation_in_IDPs_camp/6.webp" alt="Field Update" class="update-img">
+          <img src="./images/news_update's_img/bio_sand_filter_installation_in_IDPs_camp/7.webp" alt="Field Update" class="update-img">
+          <img src="./images/news_update's_img/bio_sand_filter_installation_in_IDPs_camp/8.webp" alt="Field Update" class="update-img">
+          <img src="./images/news_update's_img/bio_sand_filter_installation_in_IDPs_camp/9.webp" alt="Field Update" class="update-img">
+          <img src="./images/news_update's_img/bio_sand_filter_installation_in_IDPs_camp/10.webp" alt="Field Update" class="update-img">
+        </div>
+      </article>
+
+      <article class="update-card">
+        <div class="update-card-content">
+          <div class="update-date">May 11, 2026</div>
+          <h3>More Displacement in Eastern Hpruso</h3>
+          <p>
+            Junta military troops have launched operations toward villages in the eastern part of Hpruso Township, forcing more civilians to flee their homes. More than 200 villagers were displaced a few days ago, and now over 1,000 additional residents have reportedly fled and are in urgent need of emergency support.
+According to reports from the ground, no humanitarian assistance has reached the displaced communities so far due to ongoing security concerns.
+CTER has attempted to reach the affected areas; however, some locations remain inaccessible. Reports also indicate that some residents are still trapped in their villages and are unable to flee due to the security situation.
+          </p>
+        </div>
+
+        <div class="update-img-wrapper">
+          <img src="./images/news_update's_img/displacement in demoso/img-1.webp" alt="Field Update" class="update-img">
+          <img src="./images/news_update's_img/displacement in demoso/img-2.webp" alt="Field Update" class="update-img">
+          <img src="./images/news_update's_img/displacement in demoso/img-3.webp" alt="Field Update" class="update-img">
+          <img src="./images/news_update's_img/displacement in demoso/img-4.webp" alt="Field Update" class="update-img">
+          <img src="./images/news_update's_img/displacement in demoso/img-5.webp" alt="Field Update" class="update-img">
+          <img src="./images/news_update's_img/displacement in demoso/img-6.webp" alt="Field Update" class="update-img">
+          <img src="./images/news_update's_img/displacement in demoso/img-7.webp" alt="Field Update" class="update-img">
         </div>
       </article>
 
     </div>
   </section>
+
+    <!-- Lightbox -->
+  <div class="lightbox-overlay" id="lightbox">
+    <button class="lightbox-close" id="lightboxClose">&times;</button>
+    <button class="lightbox-prev" id="lightboxPrev">&#8249;</button>
+      <img class="lightbox-img" id="lightboxImg" src="" alt="">
+    <button class="lightbox-next" id="lightboxNext">&#8250;</button>
+  </div>
+
+  <script>
+  const lightbox = document.getElementById('lightbox');
+  const lightboxImg = document.getElementById('lightboxImg');
+  const lightboxClose = document.getElementById('lightboxClose');
+  const lightboxPrev = document.getElementById('lightboxPrev');
+  const lightboxNext = document.getElementById('lightboxNext');
+
+  let images = [];
+  let currentIndex = 0;
+
+  function openLightbox(index) {
+    currentIndex = index;
+    lightboxImg.src = images[currentIndex].src;
+    lightboxImg.alt = images[currentIndex].alt;
+    lightbox.classList.add('active');
+    document.body.style.overflow = 'hidden';
+  }
+
+  function closeLightbox() {
+    lightbox.classList.remove('active');
+    document.body.style.overflow = '';
+  }
+
+  function showPrev() {
+    currentIndex = (currentIndex - 1 + images.length) % images.length;
+    lightboxImg.src = images[currentIndex].src;
+  }
+
+  function showNext() {
+    currentIndex = (currentIndex + 1) % images.length;
+    lightboxImg.src = images[currentIndex].src;
+  }
+
+  // Collect all images and attach click handlers
+  images = Array.from(document.querySelectorAll('.update-img'));
+  images.forEach((img, index) => {
+    img.addEventListener('click', () => openLightbox(index));
+  });
+
+  lightboxClose.addEventListener('click', closeLightbox);
+  lightboxPrev.addEventListener('click', showPrev);
+  lightboxNext.addEventListener('click', showNext);
+
+  // Close on clicking outside
+  lightbox.addEventListener('click', (e) => {
+    if (e.target === lightbox) closeLightbox();
+  });
+
+  // Keyboard navigation
+  document.addEventListener('keydown', (e) => {
+    if (!lightbox.classList.contains('active')) return;
+    if (e.key === 'Escape') closeLightbox();
+    if (e.key === 'ArrowLeft') showPrev();
+    if (e.key === 'ArrowRight') showNext();
+  });
+</script>
 
   <script src="js/main.js"></script>
 </body>

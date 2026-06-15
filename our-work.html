@@ -5,192 +5,173 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Our Work</title>
     <script src="https://cdn.tailwindcss.com"></script>
-    <link rel="icon" type="image/x-icon" href="./images/cter-logo-bg-free.png">
+    <link rel="icon" type="image/x-icon" href="./images/cter-logo-bg-free.jpg">
     <!-- <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/lightgallery-js/1.4.0/css/lightgallery.min.css"> -->
     <link rel="stylesheet" href="css/style.css">
     <style>
-        /* ════════════════════════════════
-        VARIABLES & RESET
-        ════════════════════════════════ */
-        @import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600&family=Barlow+Condensed:wght@600;700;800&display=swap');
-        @import url('https://fonts.googleapis.com/css2?family=Padauk:wght@400;700&display=swap');
-        :root {
-            --navy:     #1F3864;
-            --blue:     #000071;
-            --light:    #D6E4F0;
-            --white:    #FFFFFF;
-            --offwhite: #F4F6F8;
-            --text:     #1a1714;
-            --muted:    #6b7068;
-            --accent:   #C8A84B;
-            --dark:     #1a1714;
-        }
-        *{
-            padding: 0;
-            margin: 0;
-            box-sizing: border-box;
-        }
+    @import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600&family=Barlow+Condensed:wght@600;700;800&display=swap');
+    @import url('https://fonts.googleapis.com/css2?family=Padauk:wght@400;700&display=swap');
 
+    :root {
+        --navy:     #1F3864;
+        --blue:     #000071;
+        --light:    #D6E4F0;
+        --white:    #FFFFFF;
+        --offwhite: #F4F6F8;
+        --text:     #1a1714;
+        --muted:    #6b7068;
+        --accent:   #C8A84B;
+        --dark:     #1a1714;
+    }
 
-        /* ── OUR WORK PILLARS SECTION STYLES ── */
-        #our-work-pillars {
-            /* padding: 5rem 5vw; */
-            background-color: #ffffff;
-            font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
-            color: #333333;
-            }
+    * {
+        padding: 0;
+        margin: 0;
+        box-sizing: border-box;
+    }
 
-        .pillars-container {
-            max-width: 100vw;
-            margin: 0 auto;
-            }
+    p {
+        text-align: justify;
+    }
 
-        .pillars-header {
-            background-color: var(--dark);
-            text-align: center;
-            max-width: 100%;
-            height: 40vh;
-            /* margin: 5rem auto 4rem auto; */
-            padding: 100px 0;
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            flex-direction: column;
-            }
+    /* ── OUR WORK PILLARS SECTION ── */
+    #our-work-pillars {
+        background-color: #ffffff;
+        font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+        color: #333333;
+    }
 
-        .pillars-header h2 {
-            font-size: 2.2rem;
-            color: var(--white);
-            font-weight: 800;
-            margin-top: 0.5rem;
-            margin-bottom: 1rem;
-            text-transform: uppercase;
-            
-            }
+    .pillars-container {
+        max-width: 100vw;
+        margin: 0 auto;
+    }
 
-        .pillars-intro {
-            width: 50vw;
-            font-size: 1.1rem;
-            line-height: 1.6;
-            color: rgba(255,255,255,0.6);
+    .pillars-header {
+        background-color: var(--dark);
+        text-align: center;
+        max-width: 100%;
+        height: 40vh;
+        padding: 100px 0;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        flex-direction: column;
+    }
 
-            text-align: center;
-            }
+    .pillars-header h2 {
+        font-size: 2.2rem;
+        color: var(--white);
+        font-weight: 800;
+        margin-top: 0.5rem;
+        margin-bottom: 1rem;
+        text-transform: uppercase;
+    }
 
-        /* Updated 4-Card Responsive Layout Grid */
-        .pillars-grid {
-            display: grid;
-            /* grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); */
-            /* gap: 2rem; */
-            grid-template-columns: repeat(3, 1fr);
-            gap: 1.5rem;
-            margin-top: 3rem;
-        }
+    .pillars-intro {
+        width: 90%;
+        max-width: 600px;
+        font-size: 1.1rem;
+        line-height: 1.6;
+        color: rgba(255, 255, 255, 0.6);
+        text-align: center;
+    }
 
-        .pillar-card {
-            background: var(--white);
-            border-radius: 3px;
-            padding: 2rem 1.75rem;
-            border-top: 3px solid var(--blue);
-            transition: all 0.25s;
-            box-shadow: 0 12px 25px rgba(13, 31, 60, 0.08);
+    /* ── GRID ── */
+    .pillars-grid {
+        display: grid;
+        grid-template-columns: repeat(3, 1fr);
+        gap: 1.5rem;
+        margin-top: 3rem;
+        padding: 0 2rem 3rem;
+    }
 
-            /* display: flex;
-            flex-direction: column;
-            overflow: hidden; Clips the top edges of your banners */
-        }
+    /* ── CARDS ── */
+    .pillar-card {
+        background: var(--white);
+        border-radius: 3px;
+        border-top: 3px solid var(--blue);
+        transition: all 0.25s;
+        box-shadow: 0 12px 25px rgba(13, 31, 60, 0.08);
+        overflow: hidden;
+    }
 
-        /* 
-        .funding-grid {
-            display: grid;
-            grid-template-columns: repeat(3, 1fr);
-            gap: 1.5rem;
-            margin-top: 3rem;
-            }
-
-            .funding-card {
-            background: var(--white);
-            border-radius: 3px;
-            padding: 2rem 1.75rem;
-            border-top: 3px solid var(--blue);
-            transition: all 0.25s;
-            }
-
-            .funding-card:hover {
-            transform: translateY(-4px);
-            box-shadow: 0 12px 32px rgba(31,56,100,0.1);
-            border-top-color: var(--accent);
-            }
-         */
-
-        .pillar-card:hover {
+    .pillar-card:hover {
         border-top: 3px solid var(--accent);
         transform: translateY(-6px);
         box-shadow: 0 12px 25px rgba(13, 31, 60, 0.08);
-        }
+    }
 
-        /* Image Banner Configuration */
-        .pillar-image-banner {
+    .pillar-image-banner {
         width: 100%;
         height: 300px;
         object-fit: cover;
         background-size: cover;
         background-position: center;
         border-bottom: 1px solid rgba(0, 0, 0, 0.06);
-        
-        }
+    }
 
-        /* Temporary style for columns that still use emojis */
-        .pillar-image-banner.placeholder-bg {
+    .pillar-image-banner.placeholder-bg {
         background-color: #f1f3f5;
         display: flex;
         justify-content: center;
         align-items: center;
         font-size: 3rem;
+    }
+
+    .pillar-card-body {
+        padding: 2rem 1.5rem;
+        display: flex;
+        flex-direction: column;
+        flex-grow: 1;
+    }
+
+    .pillar-card-body h3 {
+        font-size: 1.25rem;
+        color: #1F3864;
+        margin-top: 0;
+        margin-bottom: 0.85rem;
+        font-weight: 700;
+        line-height: 1.4;
+    }
+
+    .pillar-card-body p {
+        font-size: 0.95rem;
+        line-height: 1.6;
+        color: #555555;
+        margin-bottom: 0;
+        flex-grow: 1;
+    }
+
+    /* ── TABLET (2 columns) ── */
+    @media (max-width: 1024px) {
+        .pillars-grid {
+            grid-template-columns: repeat(2, 1fr);
+        }
+    }
+
+    /* ── MOBILE (1 column) ── */
+    @media (max-width: 768px) {
+        .pillars-header {
+            height: auto;
+            padding: 4rem 1.5rem;
         }
 
-        .pillar-card-body {
-            padding: 2rem 1.5rem;
-            display: flex;
-            flex-direction: column;
-            flex-grow: 1; /* Forces the inner card body to take up all available vertical space */
-            }
-
-        .pillar-card-body h3 {
-            font-size: 1.25rem;
-            color: #1F3864;
-            margin-top: 0;
-            margin-bottom: 0.85rem;
-            font-weight: 700;
-            line-height: 1.4;
-            }
-
-        .pillar-card-body p {
-            font-size: 0.95rem;
-            line-height: 1.6;
-            color: #555555;
-            margin-bottom: 0;
-            flex-grow: 1; /* CRITICAL: Forces all paragraphs to stretch equally to keep card bases perfectly aligned */
-            }
-        
-
-        
-        /* Mobile Media Queries */
-        @media (max-width: 768px) {
-        #our-work-pillars {
-            padding: 3.5rem 4vw;
-        }
         .pillars-header h2 {
             font-size: 1.8rem;
         }
+
+        .pillars-grid {
+            grid-template-columns: 1fr;
+            gap: 1rem;
+            margin-top: 2rem;
+            padding: 0 1rem 2rem;
+        }
+
         .pillar-image-banner {
-            height: 140px;
+            height: 200px;
         }
-        }
-        p{
-            text-align: justify;
-        }
-    </style>
+    }
+</style>
 </head>
 <body>
     <!-- ── NAVBAR ── -->
@@ -249,7 +230,7 @@
         <div class="pillars-grid">
         
         <div class="pillar-card">
-            <div class="pillar-image-banner" style="background-image: url('images/news_update\'s_img/deliver_food_assistance_to_DMS/staff_delivering_rice_bags_through_river-1.jpg');"></div>
+            <div class="pillar-image-banner" style="background-image: url('images/news_update\'s_img/deliver_food_assistance_to_DMS/staff_delivering_rice_bags_through_river-1.webp');"></div>
                 <div class="pillar-card-body">
                     <h3>1. Emergency Food Assistance</h3>
                     <p>
@@ -261,7 +242,7 @@
         </div>
 
         <div class="pillar-card">
-            <div class="pillar-image-banner placeholder-bg" style="background-image: url('images/our_work_img/delivering_terpulin.png');"></div>
+            <div class="pillar-image-banner placeholder-bg" style="background-image: url('images/our_work_img/delivering_terpulin.webp');"></div>
             <div class="pillar-card-body">
             <h3>2. Shelter & NFIs (Non-Food Items)</h3>
             <p>
@@ -273,7 +254,7 @@
         </div>
 
         <div class="pillar-card">
-            <div class="pillar-image-banner placeholder-bg" style="background-image: url('images/our_work_img/distributed_food_nfi_dms.png');"></div>
+            <div class="pillar-image-banner placeholder-bg" style="background-image: url('images/our_work_img/distributed_food_nfi_dms.webp');"></div>
             <div class="pillar-card-body">
             <h3>3. Disaster Response</h3>
             <p>
@@ -286,7 +267,7 @@
         </div>
 
         <div class="pillar-card">
-             <div class="pillar-image-banner placeholder-bg" style="background-image: url('images/our_work_img/advocating.jpeg');"></div>
+             <div class="pillar-image-banner placeholder-bg" style="background-image: url('images/our_work_img/advocating.webp');"></div>
 
             <div class="pillar-card-body">
             <h3>4. Advocacy & Assessment</h3>

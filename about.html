@@ -3,366 +3,350 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="icon" type="image/x-icon" href="images/cter-logo-bg-free.png">
+    <link rel="icon" type="image/x-icon" href="./images/cter-logo-bg-free.jpg">
     <title>About Us | CTER Karenni</title>
     <link rel="stylesheet" href="./css/style.css">
     <style>
-      /* ════════════════════════════════
-   VARIABLES & EDITORIAL TYPE PAIRING
-════════════════════════════════ */
-@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600&family=Lora:ital,wght@0,500;0,600;0,700;1,400&family=Barlow+Condensed:wght@600;700;800&display=swap');
-@import url('https://fonts.googleapis.com/css2?family=Padauk:wght@400;700&display=swap');
+    @import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600&family=Barlow+Condensed:wght@600;700;800&display=swap');
+    @import url('https://fonts.googleapis.com/css2?family=Padauk:wght@400;700&display=swap');
 
-:root {
-  /* --font-heading: 'Lora', serif;
-  --font-body:    'Inter', sans-serif;
-  --font-meta:    'Barlow Condensed', sans-serif; */
-  
-  
-  --navy:     #1F3864;
-  --blue:     #000071;
-  --light:    #D6E4F0;
-  --white:    #FFFFFF;
-  --offwhite: #F4F6F8;
-  --text:     #1a1714;
-  --muted:    #6b7068;
-  --accent:   #C8A84B;
-  --dark:     #1a1714;
+    :root {
+        --navy:     #1F3864;
+        --blue:     #000071;
+        --light:    #D6E4F0;
+        --white:    #FFFFFF;
+        --offwhite: #F4F6F8;
+        --text:     #1a1714;
+        --muted:    #6b7068;
+        --accent:   #C8A84B;
+        --dark:     #1a1714;
+    }
 
-}
+    * {
+        padding: 0;
+        margin: 0;
+        box-sizing: border-box;
+    }
 
-p{
-  font-family: 'Inter', sans-serif;
-}
+    body {
+        color: var(--text);
+        background-color: var(--white);
+        line-height: 1.6;
+    }
 
-body {
-    color: var(--text);
-    background-color: var(--white);
-    line-height: 1.6;
-    margin: 0;
-    padding: 0;
-}
+    h1, h2, h3 {
+        font-family: 'Barlow Condensed', sans-serif;
+    }
 
-/* Back link structural rules */
-.back-link-container {
-    max-width: 1000px;
-    margin: 2rem auto 0 auto;
-    padding: 0 2rem;
-}
+    p {
+        font-family: 'Inter', sans-serif;
+    }
 
-.back-link {
-    display: inline-flex;
-    align-items: center;
-    gap: 0.5rem;
-    color: var(--navy);
-    text-decoration: none;
-    font-size: 0.95rem;
-    font-weight: 500;
-    transition: color 0.2s ease;
-}
+    /* ── BACK LINK ── */
+    .back-link-container {
+        max-width: 1000px;
+        margin: 2rem auto 0 auto;
+        padding: 0 2rem;
+    }
 
-.back-link:hover {
-    color: var(--accent);
-}
+    .back-link {
+        display: inline-flex;
+        align-items: center;
+        gap: 0.5rem;
+        color: var(--navy);
+        text-decoration: none;
+        font-size: 0.95rem;
+        font-weight: 500;
+        transition: color 0.2s ease;
+    }
 
-.back-link .arrow {
-    font-size: 1.1rem;
-    transition: transform 0.2s ease;
-}
+    .back-link:hover {
+        color: var(--accent);
+    }
 
-.back-link:hover .arrow {
-    transform: translateX(-4px);
-}
+    .back-link .arrow {
+        font-size: 1.1rem;
+        transition: transform 0.2s ease;
+    }
 
-/* Hero Style */
-.report-hero {
-    background-color: var(--dark);
-    border-bottom: 1px solid var(--light);
-    padding: 4rem 2rem;
-    margin-top: 1rem;
+    .back-link:hover .arrow {
+        transform: translateX(-4px);
+    }
 
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    flex-direction: column;
-}
+    /* ── HERO ── */
+    .report-hero {
+        background-color: var(--dark);
+        border-bottom: 1px solid var(--light);
+        padding: 4rem 2rem;
+        margin-top: 1rem;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        flex-direction: column;
+    }
 
-.report-hero-content {
-    max-width: 800px;
-    margin: 0 auto;
+    .report-hero-content {
+        max-width: 800px;
+        margin: 0 auto;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        flex-direction: column;
+        text-align: center;
+    }
 
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    flex-direction: column;
-}
+    .report-hero-content h1 {
+        font-size: 2.2rem;
+        color: var(--white);
+        font-weight: 800;
+        margin-top: 0.5rem;
+        margin-bottom: 1rem;
+        text-transform: uppercase;
+    }
 
-.report-hero-content h1{
-    font-size: 2.2rem;
-    color: var(--white);
-    font-weight: 800;
-    margin-top: 0.5rem;
-    margin-bottom: 1rem;
-    text-transform: uppercase;
-}
+    .report-meta-tag {
+        text-transform: uppercase;
+        letter-spacing: 1.5px;
+        color: var(--accent);
+        font-size: 0.9rem;
+        font-weight: 600;
+        font-family: 'Barlow Condensed', sans-serif;
+        display: inline-block;
+        margin-bottom: 0.75rem;
+    }
 
-.report-meta-tag {
-    font-family: var(--font-meta);
-    text-transform: uppercase;
-    letter-spacing: 1.5px;
-    color: var(--accent);
-    font-size: 0.9rem;
-    font-weight: 600;
-    display: inline-block;
-    margin-bottom: 0.75rem;
-}
+    .report-lead {
+        font-size: 1.25rem;
+        color: var(--light);
+        font-style: italic;
+        margin: 0;
+    }
 
-.report-hero h1 {
-    font-family: var(--font-heading);
-    font-size: 3.2rem;
-    font-weight: 600;
-    color: var(--white);
-    line-height: 1.15;
-    margin: 0 0 1rem 0;
-    letter-spacing: -0.5px;
-}
+    /* ── LAYOUT ── */
+    .report-container {
+        max-width: 1000px;
+        margin: 0 auto;
+        padding: 5rem 2rem;
+    }
 
-.report-lead {
-    font-size: 1.25rem;
-    color: var(--light);
-    font-style: italic;
-    margin: 0;
-}
+    .archive-index {
+        font-family: 'Barlow Condensed', sans-serif;
+        font-size: 0.85rem;
+        font-weight: 700;
+        letter-spacing: 1px;
+        color: var(--accent);
+        display: block;
+        margin-bottom: 0.5rem;
+    }
 
-/* Layout Main Boundaries */
-.report-container {
-    max-width: 1000px;
-    margin: 0 auto;
-    padding: 5rem 2rem;
-}
-
-/* Premium Profile Indexes */
-.archive-index {
-    font-family: var(--font-meta);
-    font-size: 0.85rem;
-    font-weight: 700;
-    letter-spacing: 1px;
-    color: var(--accent);
-    display: block;
-    margin-bottom: 0.5rem;
-}
-
-/* Editorial Two-Column Structure */
-.profile-editorial-layout {
-    display: grid;
-    grid-template-columns: 1fr;
-    gap: 4rem;
-    align-items: center;
-    margin-bottom: 1rem;
-}
-
-.overview-main-text h2 {
-    font-family: var(--font-heading);
-    font-size: 2rem;
-    color: var(--navy);
-    margin: 0 0 1.25rem 0;
-}
-
-.overview-main-text p {
-    /* margin-bottom: 1.25rem; */
-    color: var(--text);
-    text-align: justify;
-}
-
-/* Image Frames Setup */
-.editorial-image-frame {
-    width: 100%;
-    height: 400px;
-    overflow: hidden;
-    border-radius: 6px;
-    box-shadow: 0 4px 25px rgba(26, 23, 20, 0.05);
-}
-
-.editorial-image-frame img {
-    width: 100%;
-    height: 100%;
-    object-fit: cover;
-    object-position: center;
-    display: block;
-}
-
-/* Strategic Pillars Custom Section Header */
-
-/* ════════════════════════════════
-   MINIMALIST PILLARS TEXT FLOW
-════════════════════════════════ */
-
-.section-header-minimal h2{
-  color: var(--navy);
-  margin-bottom: 1rem;
-}
-
-.pillars-section-minimal {
-    /* margin-bottom: 7rem; */
-    max-width: 750px; /* Restricts line width exactly like the CARE layout for premium readability */
-}
-
-.pillars-text-flow {
-    display: flex;
-    flex-direction: column;
-    gap: 3.5rem; /* Generous space between each block */
-    /* margin-top: 3rem; */
-}
-
-.pillar-row {
-    display: flex;
-    flex-direction: column;
-    gap: 0.75rem; /* Space between the heading and its paragraph */
-}
-
-.pillar-row h3 {
-    font-family: var(--font-heading); /* Uses your beautiful Lora serif */
-    font-size: 2rem; /* Large, bold presence exactly like the reference */
-    font-weight: 600;
-    color: var(--navy);
-    margin: 0;
-}
-
-.pillar-row p {
-    font-family: var(--font-body); /* Uses your clean Inter text */
-    font-size: 1.05rem;
-    color: var(--text);
-    line-height: 1.65;
-    margin: 0;
-    text-align: left; /* Avoid full justification here to match the modern documentary layout */
-}
-
-/* Responsive adjustment for mobile screens */
-@media (max-width: 768px) {
-    .pillars-section-minimal {
+    /* ── WHO WE ARE ── */
+    .profile-editorial-layout {
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        gap: 4rem;
+        align-items: center;
         margin-bottom: 5rem;
     }
-    .pillar-row h3 {
-        font-size: 1.65rem; /* Gently scales down the typography on small phone views */
+
+    .overview-main-text h2 {
+        font-size: 2rem;
+        color: var(--navy);
+        margin: 0 0 1.25rem 0;
     }
-    .pillars-text-flow {
-        gap: 2.5rem;
+
+    .overview-main-text p {
+        color: var(--text);
+        text-align: justify;
+        margin-bottom: 1rem;
     }
-}
 
-
-/* Compliance Governance Framework Box Layout */
-.framework-compliance-box {
-    background-color: var(--offwhite);
-    border: 1px solid var(--light);
-    border-radius: 6px;
-    padding: 3rem;
-    display: grid;
-    grid-template-columns: 1fr 1fr;
-    gap: 4rem;
-    margin-bottom: 6rem;
-}
-
-.framework-column {
-    display: flex;
-    flex-direction: column;
-}
-
-.small-gold-indicator {
-    width: 150px;
-    height: 3px;
-    background-color: var(--accent);
-    margin-bottom: 0.5rem;
-}
-
-.framework-column h3 {
-    font-family: var(--font-heading);
-    font-size: 1.3rem;
-    color: var(--navy);
-    margin: 0;
-}
-
-.framework-column p {
-    font-size: 0.95rem;
-    color: var(--text);
-    margin-top: 0.75rem;
-}
-
-/* Formalized Governance Network Lists layout */
-.governance-list {
-    list-style: none;
-    padding: 0;
-    margin: 1.5rem 0 0 0;
-}
-
-.governance-list li {
-    position: relative;
-    padding-left: 1.5rem;
-    margin-bottom: 1.25rem;
-    display: flex;
-    flex-direction: column;
-}
-
-.governance-list li::before {
-    content: "—";
-    position: absolute;
-    left: 0;
-    color: var(--accent);
-    font-weight: bold;
-}
-
-.governance-list li strong {
-    font-size: 1.05rem;
-    color: var(--navy);
-}
-
-.governance-list li span {
-    font-size: 0.9rem;
-    color: var(--muted);
-}
-
-/* Mobile-Responsive Breakpoint Configurations */
-@media (max-width: 768px) {
-    .back-link-container {
-        margin: 1.5rem auto 0 auto;
+    .overview-main-text p:last-child {
+        margin-bottom: 0;
     }
-    .report-hero h1 {
-        font-size: 2.25rem;
-    }
-    .report-container {
-        padding: 3rem 1.5rem;
-    }
-    .profile-editorial-layout {
-        grid-template-columns: 1fr;
-        gap: 2.5rem;
-        margin-bottom: 4rem;
-    }
-    /* Swaps order on mobile view so text stays above the photo container */
-    .reverse-layout {
-        display: flex;
-        flex-direction: column-reverse;
-    }
+
+    /* ── IMAGE FRAME ── */
     .editorial-image-frame {
-        height: 260px;
+        width: 100%;
+        height: 400px;
+        overflow: hidden;
+        border-radius: 6px;
+        box-shadow: 0 4px 25px rgba(26, 23, 20, 0.05);
     }
+
+    .editorial-image-frame img {
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+        object-position: center;
+        display: block;
+    }
+
+    /* ── STRATEGIC PILLARS ── */
+    .section-header-minimal h2 {
+        color: var(--navy);
+        margin-bottom: 1rem;
+    }
+
+    .pillars-section-minimal {
+        max-width: 750px;
+        margin-bottom: 5rem;
+    }
+
+    .pillars-text-flow {
+        display: flex;
+        flex-direction: column;
+        gap: 3.5rem;
+    }
+
+    .pillar-row {
+        display: flex;
+        flex-direction: column;
+        gap: 0.75rem;
+    }
+
+    .pillar-row h3 {
+        font-size: 2rem;
+        font-weight: 600;
+        color: var(--navy);
+        margin: 0;
+    }
+
+    .pillar-row p {
+        font-size: 1.05rem;
+        color: var(--text);
+        line-height: 1.65;
+        margin: 0;
+        text-align: left;
+    }
+
+    /* ── FRAMEWORK BOX ── */
     .framework-compliance-box {
-        grid-template-columns: 1fr;
-        gap: 2.5rem;
-        padding: 2rem;
-        margin-bottom: 4rem;
+        background-color: var(--offwhite);
+        border: 1px solid var(--light);
+        border-radius: 6px;
+        padding: 3rem;
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        gap: 4rem;
+        margin-bottom: 5rem;
     }
-    .report-findings-grid {
-        grid-template-columns: 1fr;
-        gap: 1.75rem;
+
+    .framework-column {
+        display: flex;
+        flex-direction: column;
     }
-}
 
-h1{
-  font-family: 'Barlow Condensed', sans-serif;
-}
+    .small-gold-indicator {
+        width: 150px;
+        height: 3px;
+        background-color: var(--accent);
+        margin-top: 0.5rem;
+        margin-bottom: 0.75rem;
+    }
 
+    .framework-column h3 {
+        font-size: 1.5rem;
+        color: var(--navy);
+        margin: 0;
+    }
 
-    </style>
+    .framework-column p {
+        font-size: 0.95rem;
+        color: var(--text);
+        margin-top: 0;
+    }
+
+    /* ── GOVERNANCE LIST ── */
+    .governance-list {
+        list-style: none;
+        padding: 0;
+        margin: 1.5rem 0 0 0;
+    }
+
+    .governance-list li {
+        position: relative;
+        padding-left: 1.5rem;
+        margin-bottom: 1.25rem;
+        display: flex;
+        flex-direction: column;
+    }
+
+    .governance-list li::before {
+        content: "—";
+        position: absolute;
+        left: 0;
+        color: var(--accent);
+        font-weight: bold;
+    }
+
+    .governance-list li strong {
+        font-size: 1.05rem;
+        color: var(--navy);
+    }
+
+    .governance-list li span {
+        font-size: 0.9rem;
+        color: var(--muted);
+    }
+
+    /* ── TABLET ── */
+    @media (max-width: 1024px) {
+        .profile-editorial-layout {
+            grid-template-columns: 1fr;
+            gap: 2.5rem;
+        }
+
+        .framework-compliance-box {
+            grid-template-columns: 1fr;
+            gap: 2.5rem;
+        }
+    }
+
+    /* ── MOBILE ── */
+    @media (max-width: 768px) {
+        .back-link-container {
+            margin: 1.5rem auto 0 auto;
+        }
+
+        .report-hero-content h1 {
+            font-size: 1.8rem;
+        }
+
+        .report-container {
+            padding: 3rem 1.5rem;
+        }
+
+        .profile-editorial-layout {
+            margin-bottom: 3rem;
+        }
+
+        .reverse-layout {
+            display: flex;
+            flex-direction: column-reverse;
+        }
+
+        .editorial-image-frame {
+            height: 260px;
+        }
+
+        .framework-compliance-box {
+            padding: 2rem;
+            margin-bottom: 3rem;
+        }
+
+        .pillars-section-minimal {
+            margin-bottom: 3rem;
+        }
+
+        .pillar-row h3 {
+            font-size: 1.65rem;
+        }
+
+        .pillars-text-flow {
+            gap: 2.5rem;
+        }
+    }
+</style>
     
 
 </head>
@@ -373,7 +357,7 @@ h1{
     <div class="nav-logo">
       
       <a href="index.html">
-        <img src="images/cter-logo-bg-free.png" alt="CTER Logo"  />
+        <img src="images/cter-logo-bg-free.webp" alt="CTER Logo"  />
         <span>CTER – Karenni</span>
       </a>
     </div>
@@ -424,7 +408,7 @@ h1{
                 <p>Operating under strict neutrality and safety guidelines along the borderlands, our team bridge crucial resource gaps, ensuring that emergency aid is collected, tracked, and safely moved straight to the families who need it most.</p>
             </div>
             <div class="editorial-image-frame">
-                <img src="./images/sorting-supplies-aid.jpeg" alt="CTER humanitarian team members preparing emergency aid strategies for conflict-affected townships.">
+                <img src="./images/sorting-supplies-aid.webp" alt="CTER humanitarian team members preparing emergency aid strategies for conflict-affected townships.">
             </div>
         </section>
 
@@ -484,7 +468,7 @@ h1{
 
         <section class="profile-editorial-layout reverse-layout">
             <div class="editorial-image-frame">
-                <img src="./images/idp-receiving-rice.jpg" alt="Trusted field delivery and local logistics infrastructure at a Karenni displacement site.">
+                <img src="./images/idp-receiving-rice.webp" alt="Trusted field delivery and local logistics infrastructure at a Karenni displacement site.">
             </div>
             <div class="overview-main-text">
                 <span class="archive-index">03 // LAST-MILE LOGISTICS</span>
