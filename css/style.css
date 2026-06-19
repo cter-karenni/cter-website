@@ -110,6 +110,111 @@ nav.scrolled {
   border-bottom-color: var(--accent);
 }
 
+/* ── MEDIA DROPDOWN ── */
+.nav-links .has-dropdown {
+  position: relative;
+}
+
+.nav-links .has-dropdown > a {
+  display: flex;
+  align-items: center;
+  gap: 0.3em;
+}
+
+.nav-links .has-dropdown > a::after {
+  content: '▾';
+  font-size: 0.75em;
+  transition: transform 0.2s;
+}
+
+.nav-links .has-dropdown:hover > a::after {
+  transform: rotate(180deg);
+}
+
+.nav-dropdown {
+  display: none;
+  position: absolute;
+  top: calc(100% + 10px);
+  left: 50%;
+  transform: translateX(-50%);
+  background: var(--dark);
+  border-top: 2px solid var(--accent);
+  list-style: none;
+  min-width: 160px;
+  padding: 0.4rem 0;
+  z-index: 200;
+  box-shadow: 0 8px 24px rgba(0,0,0,0.4);
+}
+
+.has-dropdown:hover .nav-dropdown {
+  display: block;
+}
+
+.nav-dropdown li a {
+  display: block;
+  padding: 0.55rem 1.2rem;
+  color: rgba(255,255,255,0.8);
+  font-size: 0.75rem;
+  font-weight: 500;
+  letter-spacing: 0.07em;
+  text-transform: uppercase;
+  border-bottom: none;
+  white-space: nowrap;
+  transition: background 0.15s, color 0.15s;
+}
+
+.nav-dropdown li a:hover {
+  color: var(--white);
+  background: rgba(255,255,255,0.07);
+  border-bottom: none;
+}
+
+/* ── MOBILE ACCORDION ── */
+.mobile-acc-toggle {
+  background: none;
+  border: none;
+  color: rgba(255,255,255,0.85);
+  font-size: 1rem;
+  font-weight: 500;
+  text-transform: uppercase;
+  letter-spacing: 0.06em;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  gap: 0.4em;
+  padding: 0;
+  width: 100%;
+  text-align: left;
+  transition: color 0.2s;
+}
+
+.mobile-acc-toggle:hover { color: var(--white); }
+
+.mobile-acc-toggle .acc-arrow {
+  font-size: 0.75em;
+  transition: transform 0.2s;
+  margin-left: auto;
+}
+
+.mobile-acc-toggle.open .acc-arrow {
+  transform: rotate(180deg);
+}
+
+.mobile-acc-content {
+  display: none;
+  flex-direction: column;
+  gap: 0.75rem;
+  padding: 0.75rem 0 0.25rem 1rem;
+}
+
+.mobile-acc-content.open { display: flex; }
+
+.mobile-acc-content a {
+  color: rgba(255,255,255,0.7) !important;
+  font-size: 0.85rem !important;
+  letter-spacing: 0.06em;
+}
+
 /* hamburger */
 .hamburger {
   display: none;

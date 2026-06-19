@@ -1,3 +1,10 @@
+// ── MOBILE ACCORDION ──
+function toggleMobileAccordion(btn) {
+  const content = btn.nextElementSibling;
+  btn.classList.toggle('open');
+  content.classList.toggle('open');
+}
+
 // ── HAMBURGER MENU ──
 const hamburger = document.getElementById('hamburger');
 const mobileMenu = document.getElementById('mobileMenu');
@@ -82,3 +89,5 @@ function toggleMobileMenu() {
         }
       });
     }
+
+    

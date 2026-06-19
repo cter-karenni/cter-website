@@ -234,10 +234,18 @@
     </div>
     <ul class="nav-links">
       <li><a href="index.html">Home</a></li>
-      <li><a href="news_update.html" class="active">News update</a></li>
       <li><a href="about.html">About Us</a></li>
       <li><a href="our-work.html">Our Work</a></li>
-      <li><a href="briefer.html">Briefers</a></li>
+      <li class="has-dropdown">
+        <a href="#" class="active">Media</a>
+        <ul class="nav-dropdown">
+          <li><a href="news_update.html">News Update</a></li>
+          <li><a href="briefer.html">Briefers</a></li>
+          <li><a href="media/gallery.html">Gallery</a></li>
+          <li><a href="#">Videos</a></li>
+          <li><a href="#">Reports</a></li>
+        </ul>
+      </li>
       <li><a href="support.html">Support Us</a></li>
       <li><a href="contact.html">Contact</a></li>
     </ul>
@@ -251,10 +259,18 @@
   <!-- Mobile Menu -->
   <div class="mobile-menu" id="mobileMenu">
     <a href="index.html">Home</a>
-    <a href="news_update.html">News update</a>
     <a href="about.html">About Us</a>
     <a href="our-work.html">Our Work</a>
-    <a href="briefer.html">Briefers</a>
+    <div>
+      <button class="mobile-acc-toggle" onclick="toggleMobileAccordion(this)">Media <span class="acc-arrow">▾</span></button>
+      <div class="mobile-acc-content">
+        <a href="news_update.html">News Update</a>
+        <a href="briefer.html">Briefers</a>
+        <a href="media/gallery.html">Gallery</a>
+        <a href="#">Videos</a>
+        <a href="#">Reports</a>
+      </div>
+    </div>
     <a href="support.html">Support Us</a>
     <a href="contact.html">Contact</a>
   </div>
