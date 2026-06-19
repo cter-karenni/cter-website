@@ -91,6 +91,7 @@ nav.scrolled {
   display: flex;
   gap: 2rem;
   list-style: none;
+  align-items: center;
 }
 
 .nav-links a {
@@ -134,7 +135,7 @@ nav.scrolled {
 .nav-dropdown {
   display: none;
   position: absolute;
-  top: calc(100% + 10px);
+  top: 100%;
   left: 50%;
   transform: translateX(-50%);
   background: var(--dark);
@@ -142,6 +143,7 @@ nav.scrolled {
   list-style: none;
   min-width: 160px;
   padding: 0.4rem 0;
+  padding-top: 10px;
   z-index: 200;
   box-shadow: 0 8px 24px rgba(0,0,0,0.4);
 }
