@@ -1,0 +1,268 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Reports – CTER Karenni</title>
+  <link rel="icon" type="image/x-icon" href="../images/cter-logo-bg-free.jpg">
+  <link rel="stylesheet" href="../css/style.css" />
+  <style>
+    @import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600&family=Barlow+Condensed:wght@600;700;800&display=swap');
+
+    #gallery-hero {
+      padding: 7rem 5vw 3rem;
+      background: var(--dark);
+      text-align: center;
+      color: var(--white);
+    }
+
+    #gallery-hero h1 {
+      font-family: 'Barlow Condensed', sans-serif;
+      font-size: clamp(2rem, 5vw, 3.5rem);
+      font-weight: 800;
+      text-transform: uppercase;
+      letter-spacing: 0.04em;
+      margin: 0.5rem 0 1rem;
+    }
+
+    #gallery-hero p {
+      color: rgba(255,255,255,0.7);
+      max-width: 560px;
+      margin: 0 auto;
+      font-size: 0.95rem;
+      line-height: 1.7;
+    }
+
+    .gallery-section {
+      padding: 4rem 5vw;
+      max-width: 1200px;
+      margin: 0 auto;
+    }
+
+    .gallery-section-label {
+      font-size: 0.75rem;
+      font-weight: 700;
+      letter-spacing: 0.15em;
+      text-transform: uppercase;
+      color: var(--accent);
+      margin-bottom: 0.5rem;
+    }
+
+    .gallery-section-title {
+      font-family: 'Barlow Condensed', sans-serif;
+      font-size: clamp(1.6rem, 3vw, 2.4rem);
+      font-weight: 800;
+      text-transform: uppercase;
+      color: var(--dark);
+      margin-bottom: 2rem;
+    }
+
+    .gallery-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+      gap: 2rem;
+    }
+
+    .gallery-card {
+      background: var(--white);
+      border: 1px solid rgba(0,0,0,0.08);
+      border-radius: 4px;
+      overflow: hidden;
+      transition: box-shadow 0.2s, transform 0.2s;
+    }
+
+    .gallery-card:hover {
+      box-shadow: 0 8px 32px rgba(0,0,0,0.12);
+      transform: translateY(-3px);
+    }
+
+    .gallery-card img {
+      width: 100%;
+      height: 220px;
+      object-fit: cover;
+      display: block;
+    }
+
+    .gallery-card-body {
+      padding: 1.25rem 1.5rem 1.5rem;
+    }
+
+    .gallery-card-tag {
+      font-size: 0.7rem;
+      font-weight: 700;
+      letter-spacing: 0.12em;
+      text-transform: uppercase;
+      color: var(--accent);
+      margin-bottom: 0.4rem;
+    }
+
+    .gallery-card-title {
+      font-family: 'Barlow Condensed', sans-serif;
+      font-size: 1.4rem;
+      font-weight: 800;
+      text-transform: uppercase;
+      color: var(--dark);
+      margin-bottom: 0.5rem;
+      line-height: 1.2;
+    }
+
+    .gallery-card-desc {
+      font-size: 0.875rem;
+      color: #555;
+      line-height: 1.6;
+      margin-bottom: 1.25rem;
+    }
+
+    .gallery-card-date {
+      font-size: 0.75rem;
+      color: #999;
+      margin-bottom: 0.5rem;
+    }
+  </style>
+</head>
+<body>
+
+  <!-- ── NAVBAR ── -->
+  <nav id="navbar">
+    <div class="nav-logo">
+      <a href="../index.html">
+        <img src="../images/cter-logo-bg-free.webp" alt="CTER Logo" />
+        <span>CTER – Karenni</span>
+      </a>
+    </div>
+    <ul class="nav-links">
+      <li><a href="../index.html">Home</a></li>
+      <li><a href="../about.html">About Us</a></li>
+      <li><a href="../our-work.html">Our Work</a></li>
+      <li class="has-dropdown">
+        <a href="#" class="active">Media</a>
+        <ul class="nav-dropdown">
+          <li><a href="../news_update.html">News Update</a></li>
+          <li><a href="../briefer.html">Briefers</a></li>
+          <li><a href="./gallery.html">Gallery</a></li>
+          <li><a href="#">Videos</a></li>
+          <li><a href="report.html">Reports</a></li>
+        </ul>
+      </li>
+      <li><a href="../support.html">Support Us</a></li>
+      <li><a href="../contact.html">Contact</a></li>
+    </ul>
+    <button class="hamburger" id="hamburgerBtn" onclick="toggleMobileMenu()">
+      <span></span>
+      <span></span>
+      <span></span>
+    </button>
+  </nav>
+
+  <!-- Mobile Menu -->
+  <div class="mobile-menu" id="mobileMenu">
+    <a href="../index.html">Home</a>
+    <a href="../about.html">About Us</a>
+    <a href="../our-work.html">Our Work</a>
+    <div>
+      <button class="mobile-acc-toggle" onclick="toggleMobileAccordion(this)">Media <span class="acc-arrow">▾</span></button>
+      <div class="mobile-acc-content">
+        <a href="../news_update.html">News Update</a>
+        <a href="../briefer.html">Briefers</a>
+        <a href="gallery.html">Gallery</a>
+        <a href="#">Videos</a>
+        <a href="./report.html">Reports</a>
+      </div>
+    </div>
+    <a href="../support.html">Support Us</a>
+    <a href="../contact.html">Contact</a>
+  </div>
+
+  <!-- ── HERO ── -->
+  <section id="gallery-hero">
+    <span class="section-tag">Transparency & Accountability</span>
+    <h1>Reports</h1>
+    <p>Field assessments, activity reports, and situational updates documenting CTER's humanitarian response in Karenni State.</p>
+  </section>
+
+  <!-- ── REPORTS GRID ── -->
+  <div class="gallery-section">
+    <div class="gallery-section-label">Field & Activity Reports</div>
+    <div class="gallery-section-title">Published Reports</div>
+
+    <div class="gallery-grid">
+
+      <div class="gallery-card">
+        <img src="../images/Humanitarian Needs Assessment Report (5).webp" alt="Humanitarian Needs Assessment Report" />
+        <div class="gallery-card-body">
+          <div class="gallery-card-date">November 2024</div>
+          <div class="gallery-card-tag">Field Assessment</div>
+          <div class="gallery-card-title">Humanitarian Needs Assessment</div>
+          <p class="gallery-card-desc">A comprehensive field study across 60 IDP camps in 8 townships highlighting critical gaps in food, WASH, and protection.</p>
+          <a href="../reports/need-assessment-report.html" class="btn btn-blue">Read Report</a>
+        </div>
+      </div>
+
+      <div class="gallery-card">
+        <img src="../images/Narrative Report (1).webp" alt="Earthquake Emergency Response Report" />
+        <div class="gallery-card-body">
+          <div class="gallery-card-date">June 2025</div>
+          <div class="gallery-card-tag">Activity Report</div>
+          <div class="gallery-card-title">Earthquake Emergency Response</div>
+          <p class="gallery-card-desc">Activity report detailing the distribution of aid to 3,908 individuals across 28 earthquake-affected sites in Southern Shan State.</p>
+          <a href="../reports/earthquake-response-report.html" class="btn btn-blue">Read Report</a>
+        </div>
+      </div>
+
+      <div class="gallery-card">
+        <img src="../images/May_monthly_briefer_third_page.webp" alt="Bio-Sand Water Filtration System Report" />
+        <div class="gallery-card-body">
+          <div class="gallery-card-date">May 2026</div>
+          <div class="gallery-card-tag">Activity Report</div>
+          <div class="gallery-card-title">Bio-Sand Water Filtration System</div>
+          <p class="gallery-card-desc">CTER installs a clean water filtration system at Daw Nye Khu IDP camp, serving 442 displaced individuals and 248 students.</p>
+          <a href="../news_update.html" class="btn btn-blue">Read Report</a>
+        </div>
+      </div>
+
+    </div>
+  </div>
+
+  <!-- ── FOOTER ── -->
+  <footer>
+    <div class="footer-grid">
+      <div class="footer-col">
+        <div class="footer-logo">
+          <img src="../images/cter-logo-bg-free.webp" alt="CTER Logo" />
+          <span>CTER – Karenni</span>
+        </div>
+        <p>Coordination Team for Emergency Relief (Karenni)</p>
+        <p style="margin-top:0.5rem;">Serving Karenni IDPs since March 2021</p>
+      </div>
+      <div class="footer-col">
+        <h4>Quick Links</h4>
+        <a href="../about.html">About Us</a>
+        <a href="../our-work.html">Our Work</a>
+        <a href="../briefer.html">Briefers</a>
+        <a href="../support.html">Support Us</a>
+      </div>
+      <div class="footer-col">
+        <h4>Contact</h4>
+        <p>cterkarenniinfo@gmail.com</p>
+        <p>P.O. Box 6</p>
+        <p>Mae Hong Son 58000, Thailand</p>
+        <a href="https://facebook.com/CTER-Karenni" style="margin-top:0.5rem;">Facebook: @CTER-Karenni</a>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <p>© 2026 <span>Coordination Team for Emergency Relief (Karenni)</span> · All rights reserved</p>
+    </div>
+  </footer>
+
+  <script src="../js/main.js"></script>
+  <script>
+    function toggleMobileMenu() {
+      const hamburgerBtn = document.getElementById('hamburgerBtn');
+      const mobileMenu = document.getElementById('mobileMenu');
+      hamburgerBtn.classList.toggle('open');
+      mobileMenu.classList.toggle('open');
+    }
+  </script>
+
+</body>
+</html>
