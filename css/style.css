@@ -128,7 +128,7 @@ nav.scrolled {
   transition: transform 0.2s;
 }
 
-.nav-links .has-dropdown:hover > a::after {
+.nav-links .has-dropdown.open > a::after {
   transform: rotate(180deg);
 }
 
@@ -142,13 +142,12 @@ nav.scrolled {
   border-top: 2px solid var(--accent);
   list-style: none;
   min-width: 160px;
-  padding: 0.4rem 0;
-  padding-top: 10px;
+  padding: 0.5rem 0;
   z-index: 200;
   box-shadow: 0 8px 24px rgba(0,0,0,0.4);
 }
 
-.has-dropdown:hover .nav-dropdown {
+.has-dropdown.open .nav-dropdown {
   display: block;
 }
 

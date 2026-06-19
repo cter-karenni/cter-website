@@ -5,6 +5,30 @@ function toggleMobileAccordion(btn) {
   content.classList.toggle('open');
 }
 
+// ── MEDIA DROPDOWN (click to open) ──
+document.addEventListener('DOMContentLoaded', function () {
+  const dropdowns = document.querySelectorAll('.has-dropdown');
+
+  dropdowns.forEach(function (item) {
+    const link = item.querySelector('a');
+    link.addEventListener('click', function (e) {
+      e.preventDefault();
+      const isOpen = item.classList.contains('open');
+      // close all first
+      dropdowns.forEach(d => d.classList.remove('open'));
+      // toggle this one
+      if (!isOpen) item.classList.add('open');
+    });
+  });
+
+  // close when clicking outside
+  document.addEventListener('click', function (e) {
+    if (!e.target.closest('.has-dropdown')) {
+      dropdowns.forEach(d => d.classList.remove('open'));
+    }
+  });
+});
+
 // ── HAMBURGER MENU ──
 const hamburger = document.getElementById('hamburger');
 const mobileMenu = document.getElementById('mobileMenu');
