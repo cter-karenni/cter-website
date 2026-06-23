@@ -300,7 +300,7 @@ nav.scrolled {
   background: #dbb94f;
   transform: translateY(-2px);
   color: var(--light);
-  background-color: var(--blue);
+  background-color: var(--dark);
 }
 
 .btn-outline {
@@ -630,6 +630,133 @@ section {
   color: rgba(214,228,240,0.6);
   font-style: normal;
   letter-spacing: 0.05em;
+}
+
+/* =========================================
+   HOME PAGE WASH HIGHLIGHT (100vh Split)
+========================================= */
+.home-feature-wash {
+    display: flex;
+    align-items: center;
+    min-height: 100vh; /* Forces full screen height */
+    width: 100vw;
+    background-color: #f9fafb;
+    overflow: hidden;
+}
+
+.wash-image-col {
+    flex: 1;
+    height: 100vh; /* Image takes up the whole left side */
+}
+
+.wash-image-col img {
+    width: 100%;
+    height: 100%;
+    margin-right: 1rem;
+    object-fit: cover;
+    cursor: pointer;
+    transition: transform 0.3s ease;
+}
+
+.wash-image-col img:hover {
+    transform: scale(1.02); /* Slight zoom on hover */
+}
+
+.wash-text-col {
+    flex: 1;
+    padding: 5rem 8%;
+    position: relative;
+}
+
+/* Giant Gold Watermark Number */
+.wash-number {
+    font-size: 12rem;
+    font-weight: 900;
+    color: rgba(200, 168, 75, 0.10); /* Transparent Gold */
+    position: absolute;
+    top: -2rem;
+    left: 2rem;
+    z-index: 0;
+}
+
+.wash-text-col h2, 
+.wash-text-col p, 
+.wash-text-col ul {
+    position: relative;
+    z-index: 1; /* Keeps text above the watermark */
+}
+
+.wash-text-col h2 {
+    font-size: 2.8rem;
+    color: #1F3864;
+    margin-bottom: 1rem;
+    text-transform: uppercase;
+    font-weight: 800;
+}
+
+.wash-text-col p {
+    font-size: 1.15rem;
+    color: #444;
+    line-height: 1.7;
+    margin-bottom: 2rem;
+}
+
+/* Data Bullet Points */
+.wash-data-list {
+    list-style: none;
+    padding: 0;
+}
+
+.wash-data-list li {
+    font-size: 1.05rem;
+    color: #333;
+    margin-bottom: 1.25rem;
+    padding-left: 2rem;
+    position: relative;
+    line-height: 1.5;
+}
+
+/* .wash-data-list li::before {
+    content: '💧'; /* Adds a water drop icon to the bullets */
+    /* position: absolute;
+    left: 0;
+    top: 0;
+} */ 
+
+.wash-data-list li strong {
+    color: #c8a84b; /* Gold accent for the numbers */
+    font-size: 1.3rem;
+    font-weight: 800;
+}
+
+.wash-image-col{
+      height: 500px;
+}
+
+strong{
+  font-size: bold;
+  color: var(--accent);
+}
+
+/* Mobile Responsiveness */
+@media (max-width: 768px) {
+    .home-feature-wash {
+        flex-direction: column;
+    }
+    .wash-image-col {
+        height: 50vh; /* On mobile, image takes top half */
+        width: 95%;
+    }
+
+    .wash-text-col {
+        padding: 4rem 5%;
+    }
+    .wash-number {
+        font-size: 8rem;
+    }
+    .wash-text-col h2 {
+        font-size: 2.2rem;
+    }
 }
 
 /* ════════════════════════════════

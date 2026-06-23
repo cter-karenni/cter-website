@@ -124,6 +124,9 @@
             gap: 4rem;
             margin-bottom: 4rem;
         }
+        .overview-main-text{
+            width: 100%;
+        }
 
         .overview-main-text h2 {
             font-family: 'Barlow Condensed', sans-serif;
@@ -320,13 +323,58 @@
                 height: 180px; /* Marginally shorter height for comfortable mobile reading */
             }
         }
+
+                .btn-position{
+            width: 50%;
+            display: flex;
+            justify-content: start;
+            align-items: start;
+
+        }
+        .btn {
+            background-color: var(--blue);
+            display: inline-block;
+            padding: 0.8rem 1.75rem;
+            margin-bottom: 3rem;
+            border-radius: 2px;
+            font-size: 0.8rem;
+            font-weight: 600;
+            letter-spacing: 0.08em;
+            text-transform: uppercase;
+            text-decoration: none;
+            transition: all 0.25s;
+            cursor: pointer;
+            border: none;
+            font-family: 'Inter', sans-serif;
+            
+        }
+
+        .btn-blue {
+            background: var(--blue);
+            color: var(--white);
+        }
+        .btn-blue:hover {
+            background: var(--navy);
+            transform: translateY(-2px);
+            color: var(--white);
+        }
+
+        .btn-outline-dark {
+            background: transparent;
+            color: var(--navy);
+            border: 1.5px solid var(--navy);
+        }
+        .btn-outline-dark:hover {
+            background: var(--navy);
+            color: var(--white);
+        }
     </style>
 </head>
 <body>
 
     <div class="back-link-container">
          <a href="../media/report.html" class="back-link">
-            <span class="arrow">←</span> Back to Briefers
+            <span class="arrow">←</span> Back to report
         </a>
     </div>
 
@@ -347,20 +395,7 @@
                 <p>The findings reflect a prolonged crisis environment where local community coping mechanisms are severely strained, and access to stable survival resources remains heavily restricted by security conditions.</p>
             </div>
             
-            <div class="overview-sidebar">
-                <div class="meta-item">
-                    <span class="meta-label">Published</span>
-                    <span class="meta-value">November 2024</span>
-                </div>
-                <div class="meta-item">
-                    <span class="meta-label">Scope</span>
-                    <span class="meta-value">60 IDP Camps / 8 Townships</span>
-                </div>
-                <div class="meta-item">
-                    <span class="meta-label">Methodology</span>
-                    <span class="meta-value">93 Key Informant Surveys </span>
-                </div>
-            </div>
+            
         </section>
 
         <section class="key-findings-section">
@@ -424,6 +459,9 @@
                 Download Full PDF Report
             </a>
         </section> -->
+        <div class="btn-position">
+                <a href="../media/report.html" class="btn btn-blue">Back to Report</a>
+        </div>
     </main>
 
 </body>
