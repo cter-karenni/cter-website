@@ -142,6 +142,12 @@
         flex-grow: 1;
     }
 
+    .work-stats-list span {
+        color: var(--accent);
+        font-size: 1.3rem;
+        font-weight: 800;
+    }
+
     /* ── TABLET (2 columns) ── */
     @media (max-width: 1024px) {
         .pillars-grid {
@@ -236,89 +242,106 @@
             </p>
     </div>
 
-    <section id="our-work-pillars">
+    
         
-    <div class="pillars-container">
-        
-        
-
-        <div class="pillars-grid">
-        
-        <div class="pillar-card">
-            <div class="pillar-image-banner" style="background-image: url('images/news_update\'s_img/deliver_food_assistance_to_DMS/staff_delivering_rice_bags_through_river-1.webp');"></div>
-                <div class="pillar-card-body">
-                    <h3>1. Emergency Food Assistance</h3>
-                    <p>
-                        CTER distributes essential daily rations to internally displaced persons (IDP) camps and returnee villages 
-                        that are currently facing severe food insecurity. To stabilize basic nutrition for these vulnerable communities, 
-                        our emergency food distributions specifically provide sacks of rice, cooking oil, salt, and yellow split beans.
-                    </p>
-                </div>
+    
         </div>
 
-        <div class="pillar-card">
-            <div class="pillar-image-banner placeholder-bg" style="background-image: url('images/our_work_img/delivering_terpulin.webp');"></div>
-            <div class="pillar-card-body">
-            <h3>2. Shelter & NFIs (Non-Food Items)</h3>
-            <p>
-                We are dedicated to protecting vulnerable families from harsh seasonal weather conditions and vector-borne diseases. 
-                To ensure their daily survival, dignity, and safety, CTER procures and provides life-saving Non-Food Items (NFIs), 
-                strictly prioritizing heavy-duty tarpaulins, mosquito nets, and blankets.
-            </p>
-            </div>
-        </div>
-
-        <div class="pillar-card">
-            <div class="pillar-image-banner placeholder-bg" style="background-image: url('images/our_work_img/distributed_food_nfi_dms.webp');"></div>
-            <div class="pillar-card-body">
-            <h3>3. Disaster Response</h3>
-            <p>
-                Karenni communities often face compounding crises. CTER rapidly mobilizes targeted relief for victims of sudden 
-                natural disasters, such as the recent 7.7 magnitude earthquake and severe summer storms. This emergency response 
-                directly supports affected households by providing cash assistance, emergency supplies, and critical construction 
-                materials like nails and roofing to help them rebuild their destroyed shelters.
-            </p>
-            </div>
-        </div>
-
-        <div class="pillar-card">
-            <div class="pillar-img-wrapper">
-                <img src="activities/dawNoeKu/img-1.webp" alt="Bio-Sand Water Filtration Project" class="pillar-image-banner placeholder-bg" >
-            </div>
-            <div class="pillar-card-body">
-                <h3>4. WASH & Clean Water</h3>
-                <p>To combat severe water contamination and damaged infrastructure in IDP camps, CTER installs sustainable, community-led water solutions. By building multi-stage Bio-Sand filtration systems, laying mountain transmission pipelines, and constructing spring water catchments, recent projects across regions like Northern Shadaw and Daw Nye Khu have successfully restored safe drinking water access to over 550 displaced individuals and 300 students.</p>
-            </div>
-        </div>
-
-        <div class="pillar-card">
-             <div class="pillar-image-banner placeholder-bg" style="background-image: url('images/our_work_img/advocating.webp');"></div>
-
-            <div class="pillar-card-body">
-            <h3>5. Advocacy & Assessment</h3>
-            <p>
-                To ensure that limited resources are directed to the most life-saving priorities, CTER conducts comprehensive, 
-                on-the-ground humanitarian needs assessments directly within the IDP camps. This critical, field-based data is 
-                then used to raise global awareness about the Karenni crisis and accurately guide interventions by international 
-                donors and humanitarian actors.
-            </p>
-            </div>
-        </div>
-
-        </div>
-
+        <!-- 01 -->
         <!-- STANDALONE HOMEPAGE HIGHLIGHT: WASH 100vh Feature -->
-        <section class="home-feature-wash">
+        <section class="home-feature-our-work">
             <!-- Image Side (Left) -->
             <div class="wash-image-col">
                 <!-- Make sure wash-filtration.jpg is in your assets folder! -->
-                <img src="./activities/dawNoeKu/img-1.webp" alt="Bio-Sand Water Filtration Project" onclick="openLightbox(this)">
+                <img src="./images/news_update's_img/deliver_food_assistance_to_DMS/staff_delivering_rice_bags_through_river-1.webp" class="our-work-img-left" alt="Bio-Sand Water Filtration Project" onclick="openLightbox(this)">
+
             </div>
             
             <!-- Text & Data Side (Right) -->
             <div class="wash-text-col">
                 <!-- This creates a giant, beautiful background watermark number -->
-                <span class="wash-number">05</span> 
+                <span class="wash-number">01</span> 
+                
+                <h2>EMERGENCY FOOD ASSISTANCE</h2>
+                <p>To stabilize basic nutrition across conflict-affected townships, CTER delivers life-saving food aid directly to families fleeing violence. We prioritize reaching last-mile returnee villages and remote IDP camps cut off from regular supply chains.</p>
+                
+                <ul class="wash-data-list">
+                    <li><strong>72%</strong> of displaced populations rank food security as their absolute highest priority for survival.</li>
+                    <li><strong>Essential Rations</strong> distributed include vital sacks of rice, cooking oil, salt, and nutrient-dense yellow split beans.</li>
+                    <li><strong>60+ IDP Camps</strong> and villages are systematically reached through our coordinated community distribution networks.</li>
+                </ul>
+            </div>
+        </section>
+
+        <br>
+
+        <!-- 02 -->
+        <!-- STANDALONE HOMEPAGE HIGHLIGHT: WASH 100vh Feature -->
+        <section class="home-feature-our-work">
+            
+            
+            <!-- Text & Data Side (left) -->
+            <div class="wash-text-col">
+                <!-- This creates a giant, beautiful background watermark number -->
+                <span class="wash-number">02</span> 
+                
+                <h2>SHELTER & NON-FOOD ITEMS (NFIs)</h2>
+                <p>Continuous conflict and aerial bombardments leave thousands of arriving families exposed to harsh seasonal elements without basic protection. CTER steps in immediately to provide essential materials that safeguard daily health, restore basic privacy, and help individuals live with dignity.</p>
+                
+                <ul class="work-stats-list">
+                    <li><span>88%</span> of displaced communities urgently require regular distributions of protective supplies for survival.</li>
+                    <li><span>Critical Protection</span> is delivered through the distribution of heavy-duty tarpaulins, warm blankets, and treated mosquito nets to prevent vector-borne illnesses.</li>
+                    <li><span>Over 50%</span> of families currently reside in makeshift shelters where they feel fundamentally unsafe from active local security threats.</li>
+                </ul>
+            </div>
+
+            <!-- Image Side (right) -->
+            <div class="wash-image-col">
+                <!-- Make sure wash-filtration.jpg is in your assets folder! -->
+                <img src="./images/our_work_img/delivering_terpulin.webp" class="our-work-img-right" alt="Bio-Sand Water Filtration Project" onclick="openLightbox(this)">
+            </div>
+        </section>
+
+        <br>
+
+
+        <!-- 03 -->
+        <!-- STANDALONE HOMEPAGE HIGHLIGHT: WASH 100vh Feature -->
+        <section class="home-feature-our-work">
+            <!-- Image Side (Left) -->
+            <div class="wash-image-col">
+                <!-- Make sure wash-filtration.jpg is in your assets folder! -->
+                <img src="./images/our_work_img/distributed_food_nfi_dms.webp" class="our-work-img-left" alt="Bio-Sand Water Filtration Project" onclick="openLightbox(this)">
+            </div>
+            
+            <!-- Text & Data Side (Right) -->
+            <div class="wash-text-col">
+                <!-- This creates a giant, beautiful background watermark number -->
+                <span class="wash-number">03</span> 
+                
+                <h2>EMERGENCY DISASTER RESPONSE</h2>
+                <p>Displaced Karenni communities face compounding crises when active conflict overlaps with severe environmental emergencies. When sudden natural disasters hit, CTER rapidly mobilizes targeted emergency relief funds and critical resources to support hard-to-reach camps and returning villages in stabilizing their living conditions.</p>
+                
+                <ul class="work-stats-list">
+                    <li><span>3,908 Individuals</span> across 28 disaster-affected locations were rapidly reached with direct support following the recent severe regional earthquake.</li>
+                    <li><span>Direct Mobilization</span> includes distributing immediate emergency cash assistance alongside crucial construction items like heavy nails and zinc roofing sheets.</li>
+                    <li><span>Rebuilding Shelters</span> serves as our primary operational goal, allowing highly vulnerable families to quickly restore security and rebuild destroyed community infrastructure.</li>
+                </ul>
+            </div>
+        </section>
+
+        <br>
+
+
+        <!-- 04 -->
+        <!-- STANDALONE HOMEPAGE HIGHLIGHT: WASH 100vh Feature -->
+        <section class="home-feature-our-work">
+            
+            
+            <!-- Text & Data Side (left) -->
+            <div class="wash-text-col">
+                <!-- This creates a giant, beautiful background watermark number -->
+                <span class="wash-number">04</span> 
                 
                 <h2>WASH & Clean Water</h2>
                 <p>To combat severe water contamination and damaged infrastructure in IDP camps, CTER installs sustainable, community-led water solutions. By building multi-stage Bio-Sand filtration systems, mountain transmission pipelines, and spring water catchments, we deliver life-saving clean water directly to those who need it most.</p>
@@ -327,6 +350,40 @@
                     <li><strong>45%</strong> of displaced people currently face non-functional or dried-up water points.</li>
                     <li><strong>Over 550</strong> displaced individuals recently received restored access to safe drinking water.</li>
                     <li><strong>300 students</strong> are now protected from waterborne diseases through our recent school installations.</li>
+                </ul>
+            </div>
+
+            <!-- Image Side (right) -->
+            <div class="wash-image-col">
+                <!-- Make sure wash-filtration.jpg is in your assets folder! -->
+                <img src="./activities/dawNoeKu/img-1.webp" class="our-work-img-right" alt="Bio-Sand Water Filtration Project" onclick="openLightbox(this)">
+            </div>
+        </section>
+
+        <br>
+
+
+        <!-- 05 -->
+        <!-- STANDALONE HOMEPAGE HIGHLIGHT: WASH 100vh Feature -->
+        <section class="home-feature-our-work">
+            <!-- Image Side (Left) -->
+            <div class="wash-image-col">
+                <!-- Make sure wash-filtration.jpg is in your assets folder! -->
+                <img src="./images/our_work_img/advocating.webp" class="our-work-img-left" alt="Bio-Sand Water Filtration Project" onclick="openLightbox(this)">
+            </div>
+            
+            <!-- Text & Data Side (Right) -->
+            <div class="wash-text-col">
+                <!-- This creates a giant, beautiful background watermark number -->
+                <span class="wash-number">05</span> 
+                
+                <h2>ADVOCACY & ASSESSMENT</h2>
+                <p>To ensure that limited humanitarian resources are directed to where they are needed most, CTER conducts systematic, on-the-ground needs assessments directly within conflict zones. This critical, field-based evidence is shared globally to amplify the voices of displaced communities and guide donor interventions accurately.</p>
+                
+                <ul class="work-stats-list">
+                    <li><span>60+ IDP Camps</span> are directly surveyed by our field teams to map out gaps in food security, clean water, and physical protection.</li>
+                    <li><span>8 Townships</span> across Karenni State and neighboring border regions are continuously assessed to capture shifting migration patterns.</li>
+                    <li><span>Global Awareness</span> is driven by our monthly briefers, transforming raw data into strategic tools for international advocacy and transparent donor funding.</li>
                 </ul>
             </div>
         </section>

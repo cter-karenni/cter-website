@@ -635,24 +635,27 @@ section {
 /* =========================================
    HOME PAGE WASH HIGHLIGHT (100vh Split)
 ========================================= */
-.home-feature-wash {
+.home-feature-our-work {
     display: flex;
     align-items: center;
-    min-height: 100vh; /* Forces full screen height */
+    min-height: 50vh; /* Forces full screen height */
     width: 100vw;
     background-color: #f9fafb;
     overflow: hidden;
 }
 
+
+
 .wash-image-col {
     flex: 1;
-    height: 100vh; /* Image takes up the whole left side */
+    height: 80%; /* Image takes up the whole left side */
 }
 
 .wash-image-col img {
-    width: 100%;
+    width: 90%;
     height: 100%;
     margin-right: 1rem;
+    margin-left: 1rem;
     object-fit: cover;
     cursor: pointer;
     transition: transform 0.3s ease;
@@ -664,7 +667,7 @@ section {
 
 .wash-text-col {
     flex: 1;
-    padding: 5rem 8%;
+    padding: 0 8%;
     position: relative;
 }
 
@@ -674,7 +677,7 @@ section {
     font-weight: 900;
     color: rgba(200, 168, 75, 0.10); /* Transparent Gold */
     position: absolute;
-    top: -2rem;
+    top: -8rem;
     left: 2rem;
     z-index: 0;
 }
@@ -702,7 +705,7 @@ section {
 }
 
 /* Data Bullet Points */
-.wash-data-list {
+.wash-data-list{
     list-style: none;
     padding: 0;
 }
