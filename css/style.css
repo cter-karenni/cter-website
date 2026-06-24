@@ -743,7 +743,7 @@ strong{
 
 /* Mobile Responsiveness */
 @media (max-width: 768px) {
-    .home-feature-wash {
+    .home-feature-our-work {
         flex-direction: column;
     }
     .wash-image-col {
